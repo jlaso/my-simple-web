@@ -1,6 +1,6 @@
 <?php
 
     define('DBHOST', 'localhost');
-    define('DBNAME', 'mag-laso');
+    define('DBNAME', 'my-simple-web');
     define('DBUSER', 'root');
     define('DBPASS', 'root');
