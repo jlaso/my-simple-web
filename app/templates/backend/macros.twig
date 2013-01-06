@@ -1,0 +1,7 @@
+{% macro form_error(field) %}
+
+    {% if field is not null %}
+        <br/><br/><p class="text-error">{{ field }}</p>
+    {% endif %}
+
+{% endmacro form_error %}

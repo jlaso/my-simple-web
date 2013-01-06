@@ -1,0 +1,44 @@
+{% extends 'frontend/layout.html.twig' %}
+
+{% import 'frontend/macros.twig' as macro %}
+
+{% block subcontent %}
+
+    {{ macro.form_styles() }}
+
+    <div class="h2 grid_12">&nbsp;</div>
+    <div class="clear"></div>
+    <div class="grid_2"><p>&nbsp;</p></div>
+    <div class="grid_8" id="subcontent">
+
+        <form action="{{ urlFor('.login') }}" method="post">
+            <h2>Password protect content</h2>
+            <ul>
+                <li>
+                    <label for="">User:</label>
+                    <input type="text" name="user" value="{{ user }}"/>
+                    {{ macro.form_error(errors.user) }}
+                </li>
+
+                <li>
+                    <label for="">Password:</label>
+                    <input type="" name="pass"/>
+                    {{ macro.form_error(errors.pass) }}
+                </li>
+                <li>
+                    <label for=""></label>
+                    <input type="hidden" value="{{ csrf }}" name="csrf">
+                    {{ macro.form_error(errors.csrf) }}
+                </li>
+                <li>
+                    <label for=""></label>
+                    <input type="submit" value="Iniciar sesión"/>
+                </li>
+            </ul>
+        </form>
+
+    </div>
+    <div class="grid_2"><p>&nbsp;</p></div>
+    <div class="h2 grid_12">&nbsp;</div>
+
+{% endblock %}

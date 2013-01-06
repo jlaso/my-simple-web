@@ -1,0 +1,74 @@
+{% extends 'backend/layout.html.twig' %}
+
+{% set iamhere = 'admin.list-' ~ entity %}
+
+{% block subcontent %}
+
+    <style type="text/css">
+        .center { text-align: center; }
+    </style>
+
+    <div class="row-fluid">
+        <div class="span12">
+            <div>
+                <legend class="span4">{{ entity ~ ' list'}}</legend>
+                {% if paginator.needPagination %}
+                    {{ paginator_backend_render(paginator) }}
+                {% endif %}
+            </div>
+            {% if searchable is not null and searchable %}
+            <div class="span11 accordion">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle btn" data-toggle="collapse"
+                           data-parent="#accordion2" href="#collapseFilter">
+                            <i class="icon-search"></i> Filter
+                        </a>
+                    </div>
+                    <div id="collapseFilter" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                            <form action="#" method="post" class="form-horizontal">
+                                {% for item in search.form %}
+                                    <div class="control-group">
+                                        {{ form_search_widget(item, search.data, search.errors) }}
+                                    </div>
+                                {% endfor %}
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <button type="submit" class="btn btn-primary">buscar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            <table class="table table-striped table-bordered table-condensed">
+                <thead>
+                    {{ form_table_head(form) }}
+                    <th><span></span></th>
+                </thead>
+                <tbody>
+                {% for item in items %}
+                    <tr>
+                        {{ form_table_row(form,item) }}
+                        <td>
+                            <a href="{{ urlFor('admin.edit-entity',{'entity':entity,'id':item.id}) }}"
+                               class="btn btn-primary">
+                                <i class="icon icon-edit icon-white icon-left"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr><td colspan="3">No se han encontrado registros para mostrar</td></tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="well well-small">
+                Total {{ paginator.nbRecords }} registro{{ paginator.nbRecords==1 ? '' : 's' }}{{ search.data|length > 0 ? ' con el filtro seleccionado' : ''}}.
+            </div>
+        </div>
+    </div>
+
+{% endblock subcontent %}

@@ -1,0 +1,25 @@
+{% extends 'backend/layout.html.twig' %}
+
+{% set iamhere = 'admin.index' %}
+
+
+{% block subcontent %}
+
+    <div class="hero-unit">
+        <h1>Backend administrativo</h1>
+        <p>Elige una opción de la izquierda para administrarla</p>
+    </div>
+    <div class="row-fluid">
+        <div class="span6">
+            <h2>Contactos pendientes de contestar</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div><!--/span-->
+        <div class="span6">
+            <h2>Últimas votaciones</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div><!--/span-->
+    </div><!--/row-->
+
+{% endblock %}

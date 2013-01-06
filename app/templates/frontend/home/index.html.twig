@@ -1,0 +1,27 @@
+{% extends 'frontend/layout.html.twig' %}
+
+
+
+{% block subcontent %}
+
+    <style type="text/css">
+
+        #subcontent{
+            background: url({{ asset('frontend/img/subcontent.png') }}) 0px 0px transparent no-repeat;
+            border: 1px solid #ddd;
+        }
+
+    </style>
+
+    <div class="h2 grid_12">&nbsp;</div>
+    <div class="clear"></div>
+    <div class="grid_2"><p>&nbsp;</p></div>
+    <div class="grid_8" id="subcontent">
+
+        &nbsp;
+
+    </div>
+    <div class="grid_2"><p>&nbsp;</p></div>
+    <div class="h2 grid_12">&nbsp;</div>
+
+{% endblock %}

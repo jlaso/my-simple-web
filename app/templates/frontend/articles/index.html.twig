@@ -1,0 +1,58 @@
+{% extends 'frontend/layout.html.twig' %}
+
+{% import 'frontend/macros.twig' as macro %}
+
+{% block subcontent %}
+
+    <style type="text/css">
+        .hr{
+            min-height: 10px;
+            background-color: #333;
+        }
+        .paginator ul{
+            list-style: none;
+            text-align: right;
+        }
+        .paginator li{
+            display: inline;
+            min-width: 20px;
+            border: 1px solid #666;
+            text-align: center;
+            margin: 0 2px;
+            padding: 0 4px;
+        }
+        .paginator a{
+            text-decoration: none;
+        }
+        .paginator a,
+        .paginator a:visited{
+            color: #999;
+        }
+        .paginator li.active{
+            color: black;
+            text-decoration: underline;
+        }
+    </style>
+
+    <div class="h2 grid_12">&nbsp;</div>
+    <div class="clear"></div>
+    <div class="grid_6"><h2>My articles</h2></div>
+    <div class="grid_6">
+        {{ macro.paginador(paginator) }}
+    </div>
+    <div class="clear"></div>
+    {% for article in articles %}
+    <div class="grid_4">
+        <h3>{{ article.title }}</h3>
+        {{ article.description }}<br/>
+        <iframe width="300" height="215" src="{{ article.video }}"
+                frameborder="0" allowfullscreen>
+        </iframe>
+        <div class="hr"></div>
+    </div>
+    {% endfor %}
+
+    <div class="grid_2"><p>&nbsp;</p></div>
+    <div class="h2 grid_12">&nbsp;</div>
+
+{% endblock %}
