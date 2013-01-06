@@ -3,6 +3,8 @@
 session_cache_limiter(false);
 session_start();
 
+date_default_timezone_set('Europe/Madrid');
+
 require_once '../vendor/autoload.php';
 Twig_Autoloader::register();
 
