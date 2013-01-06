@@ -1,5 +1,5 @@
 .idea
-app/config/dbcongig.php
+app/config/dbconfig.php
 MAMP_php_error_log_MAMP
 app/cache/*
 app/logs/*
