@@ -1,0 +1,33 @@
+{% extends 'backend/layout.html.twig' %}
+
+{% set iamhere = 'admin.get-all-routes' %}
+
+
+{% block subcontent %}
+
+    <div class="row-fluid">
+        <div class="span12">
+            <h2>Listado de todas las rutas</h2>
+
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <th>Name</th>
+                    <th>Path</th>
+                </thead>
+                <tbody>
+                {% for route in routes %}
+                    <tr>
+                        <td>
+                            <span>{{ route.getName }}</span>
+                        </td>
+                        <td>
+                            <a href="{{ urlFor(route.getName) }}">{{ route.pattern }}</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock subcontent %}

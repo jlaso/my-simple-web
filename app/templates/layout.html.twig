@@ -1,0 +1,30 @@
+<html>
+
+<head>
+
+    <title>My-simple-web: made it very simple</title>
+    <meta http-equiv="content-type" charset="utf-8" />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="webdesign,webdevelop,internet development,jaitec,web design, web development" />
+    <meta name="description" content="Can make the web development very very simple" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="jaitec.net">
+    <link rel="shortcut icon" href="{{ asset('favicon.gif') }}"/>
+    {% block stylesheets %}{% endblock %}
+
+</head>
+
+<body>
+
+
+{% block header %}{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block footer %}{% endblock %}
+
+</body>
+
+{% block javascripts %}{% endblock %}
+
+</html>

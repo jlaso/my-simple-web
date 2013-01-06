@@ -1,0 +1,65 @@
+{% extends 'frontend/layout.html.twig' %}
+
+{% import 'frontend/macros.twig' as macro %}
+
+{% block subcontent %}
+
+    {{ macro.form_styles() }}
+
+    <div class="h2 grid_12">&nbsp;</div>
+    <div class="clear"></div>
+    <div class="grid_12"><h2>Contact form</h2></div>
+    <div class="clear"></div>
+
+    <div class="grid_12" id="contact-form">
+        <form action="#" method="post">
+            <fieldset>
+                <ul>
+                    <li>
+                        <label for="">Name:</label>
+                        <input type="text" name="name" value="{{ contact.name }}"/>
+                        {{ macro.form_error(errors.name) }}
+                    </li>
+                    <li>
+                        <label for="">Email:</label>
+                        <input type="text" name="email" value="{{ contact.email }}"/>
+                        {{ macro.form_error(errors.email) }}
+                    </li>
+                    <li>
+                        <label for="">Phone:</label>
+                        <input type="text" name="telefono" value="{{ contact.phone }}"/>
+                        {{ macro.form_error(errors.phone) }}
+                    </li>
+                    <li>
+                        <label for="">Message: </label>
+                        <br/>
+                        <label for=""></label>
+                        <textarea name="descripcion" rows=10 cols=50>{{ contact.message }}</textarea>
+                        {{ macro.form_error(errors.message) }}
+                    </li>
+                    <li>
+                        <label for="">I'm human:</label>
+                        {{ sum.one }} and {{ sum.two }} are
+                        <input type="text" size="5" name="sum" value="{{ contact.sum }}"/>
+                        {{ macro.form_error(errors.sum) }}
+                    </li>
+                    <li>&nbsp;</li>
+                    <li>Remember to visit out
+                        <a href="{{ urlFor('home.staticpage',{'slug':'privacy-policy'}) }}">
+                            privacy policy
+                        </a>
+                        .
+                    </li>
+                    <li>
+                        <label for=""></label>
+                        <input type="submit" value="Send"/>
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="grid_2"><p>&nbsp;</p></div>
+    <div class="h2 grid_12">&nbsp;</div>
+
+{% endblock %}

@@ -1,0 +1,5 @@
+.idea
+app/config/dbcongig.php
+MAMP_php_error_log_MAMP
+app/cache/*
+app/logs/*

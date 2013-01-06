@@ -1,0 +1,53 @@
+{% macro paginador(paginator) %}
+    <div class="paginator">
+        <ul>
+            {% if paginator.numpages>0 %}
+                {% set pa = paginator.pa %}
+                {% for np in 1..paginator.numpages %}
+                   {% if np==pa %}
+                            <li class="active">{{np}}</li>
+                   {% else %}
+                          <li>
+                            <a href="?pa={{ np }}" class="btn {% if np==pa %}active{%endif%}">
+                                {{np}}
+                            </a>
+                          </li>
+                   {% endif %}
+                {% endfor %}
+            {% else %}
+                <li class="no-pag active" id="p-0" pag="0">1</li>
+            {% endif %}
+        </ul>
+    </div>
+{% endmacro %}
+
+
+
+{% macro form_styles() %}
+
+    <style type="text/css">
+        form ul{
+            list-style: none;
+        }
+        form label{
+            display: inline-block;
+            width: 100px;
+        }
+        .text-error{
+            color: red;
+            margin-left: 104px;
+            display: block;
+        }
+    </style>
+
+{% endmacro form_styles %}
+
+
+
+{% macro form_error(field) %}
+
+    {% if field is not null %}
+        <p class="text-error">{{ field }}</p>
+    {% endif %}
+
+{% endmacro form_error %}
