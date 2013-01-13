@@ -1,5 +1,7 @@
 <?php
 
+namespace app\models\core;
+
 class Sanitize
 {
 

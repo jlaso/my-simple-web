@@ -9,7 +9,7 @@ require_once '../vendor/autoload.php';
 Twig_Autoloader::register();
 
 // lib
-require_once '../lib/autoload.php';
+//require_once '../lib/autoload.php';
 
 // Prepare view
 \lib\TwigViewSlim::$twigOptions = array(
@@ -40,7 +40,7 @@ ORM::configure('username', DBUSER);
 ORM::configure('password', DBPASS);
 
 // access to models
-require_once '../app/models/autoload.php';
+//require_once '../app/models/autoload.php';
 
 // Define routes for controller
 require_once '../app/controller/autoload.php';

@@ -13,14 +13,14 @@
 $app->map('/admin/new/:entity/', function ($entity) use ($app) {
 
     $request     = $app->request();
-    $entity      = Sanitize::string(trim(strtolower($entity)));
-    $ent         = ucfirst($entity);
+    $entity      = \app\models\core\Sanitize::string(trim(strtolower($entity)));
+    $ent         = \lib\SlimFunctions::underscoredToCamelCaseEntityName($entity);
 
-    $frmLstClass = "\\app\\models\\{$ent}\\{$ent}FormType";
+    $frmLstClass = $ent."FormType";
     if (class_exists($frmLstClass)) {
         $formList    = new $frmLstClass;
 
-        $item  = BaseModel::factory(ucfirst($entity))->create();
+        $item  = BaseModel::factory(ucfirst($ent))->create();
         $errors= array();
 
         if ($request->isPost()) {
@@ -41,6 +41,7 @@ $app->map('/admin/new/:entity/', function ($entity) use ($app) {
             'item'      => $item,
             'entity'    => $entity,
             'errors'    => $errors,
+            'entityName'=> $ent::getEntityName(),
         ));
     } else {
         $app->pass();

@@ -45,7 +45,7 @@
                 <div class="nav-collapse collapse">
                     <p class="navbar-text pull-right">
                         You are logged as
-                        <a class="navbar-link" href="{{ urlFor('.logout') }}">
+                        <a class="navbar-link btn btn-primary" href="{{ urlFor('.logout') }}">
                             {{ session('user.name') }}
                         </a>
                     </p>
@@ -84,18 +84,21 @@
                             </li>
 
                             {% for entity in getAllEntities() %}
-                            <li class="nav-header">{{ entity.title }}</li>
-                            <li {{ (iamhere=='admin.list-' ~ entity.name) ? 'class="active"' : '' }}>
-                                <a href="{{ urlFor('admin.list-entity',{'entity':entity.name}) }}">
-                                    Show all
-                                </a>
-                            </li>
-                            <li {{ (iamhere=='admin.new-' ~ entity.name) ? 'class="active"' : '' }}>
-                                <a href="{{ urlFor('admin.new-entity',{'entity':entity.name}) }}">
-                                    Add new
-                                </a>
-                            </li>
+                                <li class="nav-header">{{ entity.title }}</li>
+                                <li {{ (iamhere=='admin.list-' ~ entity.name) ? 'class="active"' : '' }}>
+                                    <a href="{{ urlFor('admin.list-entity',{'entity':entity.name}) }}">
+                                        Show all
+                                    </a>
+                                </li>
+                                {% if entity.new %}
+                                    <li {{ (iamhere=='admin.new-' ~ entity.name) ? 'class="active"' : '' }}>
+                                        <a href="{{ urlFor('admin.new-entity',{'entity':entity.name}) }}">
+                                            Add new
+                                        </a>
+                                    </li>
+                                {% endif %}
                             {% endfor %}
+                            {#
                             <li class="nav-header">Contact</li>
                             <li {{ (iamhere=='admin.list-contact') ? 'class="active"' : '' }}>
                                 <a href="{{ urlFor('admin.list-entity',{'entity':'contact'}) }}">
@@ -107,6 +110,7 @@
                                     Pending
                                 </a>
                             </li>
+                            #}
                         </ul>
                     </div><!--/.well -->
                 </div><!--/span-->

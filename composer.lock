@@ -1,5 +1,5 @@
 {
-    "hash": "12eb8600a9590a438326c6f3af73c4bb",
+    "hash": "b8bae5892ac877115c726a3a0495cb8e",
     "packages": [
         {
             "name": "j4mie/idiorm",
@@ -123,24 +123,24 @@
         },
         {
             "name": "slim/extras",
-            "version": "2.0.1",
+            "version": "2.0.3",
             "target-dir": "Slim/Extras",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codeguy/Slim-Extras",
-                "reference": "2.0.1"
+                "reference": "2.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/codeguy/Slim-Extras/zipball/2.0.1",
-                "reference": "2.0.1",
+                "url": "https://github.com/codeguy/Slim-Extras/archive/2.0.3.zip",
+                "reference": "2.0.3",
                 "shasum": ""
             },
             "require": {
                 "slim/slim": ">=2.0.0",
                 "php": ">=5.3.0"
             },
-            "time": "2012-10-26 03:19:35",
+            "time": "2013-01-07 17:56:10",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -169,7 +169,8 @@
             "homepage": "http://github.com/codeguy/Slim-Extras",
             "keywords": [
                 "templating",
-                "extensions"
+                "extensions",
+                "middleware"
             ]
         },
         {
@@ -218,26 +219,26 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.11.1",
+            "version": "v1.12.0",
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Twig.git",
-                "reference": "v1.11.1"
+                "reference": "v1.12.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig/archive/v1.11.1.zip",
-                "reference": "v1.11.1",
+                "url": "https://github.com/fabpot/Twig/archive/v1.12.0.zip",
+                "reference": "v1.12.0",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2012-11-11 17:17:59",
+            "time": "2013-01-08 13:42:43",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.11-dev"
+                    "dev-master": "1.12-dev"
                 }
             },
             "installation-source": "dist",

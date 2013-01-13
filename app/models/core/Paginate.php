@@ -1,5 +1,7 @@
 <?php
 
+namespace app\models\core;
+
 class Paginate
 {
 
@@ -34,12 +36,11 @@ class Paginate
     private $pa;
 
     /**
-     * Tiene que devolver la colección con sólo los elementos que correspondan a la página solicitada
+     * Prepare paginate from $class Entity object
      *
      * @param \Slim\Http\Request $request
      * @param string             $class
      * @param int                $numElemPerPage
-     * @param string             $filter
      */
     public function __construct(\Slim\Http\Request $request, $class, $numElemPerPage)
     {
@@ -47,9 +48,9 @@ class Paginate
         $this->class          = $class;
         $this->numElemPerPage = $numElemPerPage;
 
-        $this->numRecords     = Model::factory($class)->count();
+        $this->numRecords     = \Model::factory($class)->count();
 
-        $this->pt             = 1+floor($this->numRecords / $numElemPerPage);
+        $this->pt             = ceil($this->numRecords / $numElemPerPage);
         $this->pa             = $request->get('pa');
         if(!$this->pa)
             $this->pa = 1;
