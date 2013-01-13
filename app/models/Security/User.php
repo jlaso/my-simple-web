@@ -1,11 +1,13 @@
 <?php
 
-namespace Entity;
+namespace Security;
 
 use app\models\core\BaseModel;
 
-class Entity extends BaseModel
+class User extends BaseModel
 {
+
+
 
     /**
      * Get the SQL creation sentece of this table
@@ -25,10 +27,9 @@ class Entity extends BaseModel
             <<<EOD
 
 CREATE TABLE IF NOT EXISTS `{$class}` (
-  `id`          bigint(11) NOT NULL AUTO_INCREMENT,
-  `name`        varchar(100) NOT NULL,
-  `title`       varchar(100) NOT NULL,
-  `new`         tinyint(1) NULL,
+  `id`      bigint(11) NOT NULL AUTO_INCREMENT,
+  `email`   varchar(100) NOT NULL,
+  `pass`    varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE={$options['engine']} DEFAULT CHARSET={$options['charset']} AUTO_INCREMENT=1 ;
 

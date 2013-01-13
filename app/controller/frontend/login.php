@@ -15,9 +15,9 @@ $app->map('/login/', function() use ($app) {
             $errors['csrf'] = 'Invalid form';
         } else {
             $_SESSION['csrf.expires'] += 60;
-            $user = Sanitize::email($request->post('user'));
-            $user = User::factory()->where('email',$user)->find_one();
-            if ($user instanceof User) {
+            $user = \app\models\core\Sanitize::email($request->post('user'));
+            $user = Security\User::factory()->where('email',$user)->find_one();
+            if ($user instanceof Security\User) {
                 if ($user->pass != md5($request->post('pass'))) {
                     $errors['pass'] = 'Invalid password';
                 } else {
