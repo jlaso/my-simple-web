@@ -1,0 +1,42 @@
+commit b31fe2c213252a39615b062d83010d146c13f41f
+Merge: a3919de 3eae788
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Tue Jan 15 22:57:36 2013 +0100
+
+    Merge branch 'feature/composer-autoload' into develop
+
+commit 3eae78843c96764184941b279a31cc8a1439e7b5
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Tue Jan 15 22:56:43 2013 +0100
+
+    - Update on models
+
+commit 18e40dfb2a616f9b6568a8068336f0feb8c943ff
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sun Jan 13 23:47:33 2013 +0100
+
+    - Refactorize core and entities
+
+commit a3919dea9ac647e8d11b2d84a70287c3572bbdc5
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sun Jan 6 20:32:09 2013 +0100
+
+    - set default_timezone
+
+commit 31c05148abdd6e48ddfb0131fa77b5fd3c7094db
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sun Jan 6 20:11:14 2013 +0100
+
+    - change dbconfig_sample.php db
+
+commit 18e1d30915027db20b4b959b7cc1e7f9f1b2c0e9
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sun Jan 6 20:03:16 2013 +0100
+
+    - ignore server dbconfig.php and remote it from the repo
+
+commit 5cea128385351cb7b383ae50f55851dec366fe3c
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sun Jan 6 19:37:29 2013 +0100
+
+    - initial commit
