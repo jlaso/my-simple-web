@@ -9,6 +9,22 @@ use \app\models\core\Registry;
 
 class UserFixture implements FixturableInterface
 {
+
+    /**
+     * Creates a new Item from $roleAssocArray and inserts into DB
+     *
+     * @param array $assocArray
+     */
+    public function addNewItem($assocArray)
+    {
+        $user = \Security\User::factory()->create();
+        foreach ($assocArray as $field=>$value) {
+            $user->set($field,$value);
+        }
+        $user->save();
+        return $user;
+    }
+
     /**
      * Generate fixtures
      *
@@ -16,11 +32,14 @@ class UserFixture implements FixturableInterface
      */
     public function generateFixtures(Registry $fixturesRegistry)
     {
-        $user = \Security\User::factory()->create();
-        $user->email = 'admin';
-        $user->pass = md5('admin');
-        $user->save();
-        $fixturesRegistry->set('user_admin',$user);
+        $fixturesRegistry->set('user_admin',$this->addNewItem(array(
+            'email' => 'admin',
+            'pass'  => md5('admin'),
+        )));
+        $fixturesRegistry->set('user_user',$this->addNewItem(array(
+            'email' => 'user',
+            'pass'  => md5('user'),
+        )));
 
     }
 

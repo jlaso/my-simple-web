@@ -34,22 +34,39 @@ class EntityFixture implements FixturableInterface
      */
     public function generateFixtures(Registry $fixturesRegistry)
     {
-        $this->addNewItem(array(
+        // declares the entities that are available for backend
+        $entities = array(
+            array(
                 'name'      => 'entity_config',
                 'title'     => 'Web page configuration',
                 'new'       => false,
-             ))
-             ->addNewItem(array(
+                'delete'    => false,
+                'list'      => true,
+                'show'      => true,
+            ),
+            array(
                 'name'      => 'entity_article',
                 'title'     => 'Articles',
                 'new'       => true,
-             ))
-             ->addNewItem(array(
+                'delete'    => true,
+                'list'      => true,
+                'show'      => true,
+            ),
+            array(
                 'name'      => 'entity_staticpage',
                 'title'     => 'Static pages of this web',
                 'new'       => false,
-             ))
-        ;
+                'delete'    => false,
+                'list'      => true,
+                'show'      => true,
+            )
+        );
+        // put info into fixtures registry, so are available for other fixture process
+        $fixturesRegistry->set('entities',$entities);
+        // put info into DB
+        foreach ($entities as $entity) {
+            $this->addNewItem($entity);
+        }
 
     }
 
@@ -60,7 +77,7 @@ class EntityFixture implements FixturableInterface
      */
     public static function getOrder()
     {
-        return 8;
+        return 0;
     }
 
 }

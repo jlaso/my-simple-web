@@ -9,7 +9,9 @@ use app\models\core\Registry;
 
 class RoleUserFixture implements FixturableInterface
 {
+    // alias para fixturesRegistry
     private $registry;
+
     /**
      * Creates a new Role from $roleAssocArray and inserts into DB
      *
@@ -35,9 +37,15 @@ class RoleUserFixture implements FixturableInterface
         $this->registry = $fixturesRegistry;
 
         $this->addNewRoleUser(array(
-                                'role_id'=>$fixturesRegistry->get('role_super_admin')->id,
-                                'user_id'=>$fixturesRegistry->get('user_admin')->id
+                                'user_id'=>$fixturesRegistry->get('user_admin')->id,
+                                'roles'  =>$fixturesRegistry->get('role_super_admin')->id,
                              )
+             )
+        ;
+        $this->addNewRoleUser(array(
+                                'user_id'=>$fixturesRegistry->get('user_user')->id,
+                                'roles'  =>$fixturesRegistry->get('role_user')->id,
+                            )
              )
         ;
     }

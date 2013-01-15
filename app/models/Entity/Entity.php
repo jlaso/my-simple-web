@@ -29,6 +29,9 @@ CREATE TABLE IF NOT EXISTS `{$class}` (
   `name`        varchar(100) NOT NULL,
   `title`       varchar(100) NOT NULL,
   `new`         tinyint(1) NULL,
+  `delete`      tinyint(1) NULL,
+  `show`        tinyint(1) NULL,
+  `list`        tinyint(1) NULL,
   PRIMARY KEY (`id`)
 ) ENGINE={$options['engine']} DEFAULT CHARSET={$options['charset']} AUTO_INCREMENT=1 ;
 
