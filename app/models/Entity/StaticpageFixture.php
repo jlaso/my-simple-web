@@ -37,9 +37,9 @@ class StaticpageFixture implements FixturableInterface
                     'title'     => 'About us'
                 ))
              ->addNewItem(array(
-                    'slug'      => 'private-policy',
-                    'content'   => 'This is our private policy',
-                    'title'     => 'Private policy'
+                    'slug'      => 'privacy-policy',
+                    'content'   => 'This is our privacy policy',
+                    'title'     => 'Privacy policy'
                 ))
         ;
 
