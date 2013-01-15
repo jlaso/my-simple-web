@@ -1,4 +1,4 @@
-joseluis laso (9):
+joseluis laso (7):
       - initial commit
       - ignore server dbconfig.php and remote it from the repo
       - change dbconfig_sample.php db
