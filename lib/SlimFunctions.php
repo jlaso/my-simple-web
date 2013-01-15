@@ -111,5 +111,31 @@ class SlimFunctions
 
     }
 
+    /**
+     * Converts underscored identifier to CamelCase
+     *
+     * @param string $str
+     * @return string
+     */
+    public static function underscoredToCamelCaseEntityName($str)
+    {
+        $array = explode("_",$str);
+        $result = "";
+        foreach ($array as $item) {
+            $result .= ucfirst($item) . ($result?'':'\\');
+        }
+        return $result;
+    }
+
+    /**
+     * Converts camelCase identifier to underscored
+     *
+     * @param $str
+     * @return string
+     */
+    public static function camelCaseToUnderscored($str)
+    {
+        return strtolower(preg_replace('/([a-zA-Z])(?=[A-Z])/', '$1_', $str));
+    }
 
 }

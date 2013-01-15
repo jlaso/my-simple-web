@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models\Contact;
+namespace Entity;
 
 use app\models\core\Form\FormListTypeInterface;
 use app\models\core\Form\FormListBase;

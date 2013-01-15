@@ -12,10 +12,10 @@ $app->get('/', function () use ($app) {
  */
 $app->get('/:slug', function ($slug) use ($app) {
 
-    $static = Staticpage::factory()
+    $static = Entity\Staticpage::factory()
         ->where('slug',$slug)
         ->find_one();
-    if (!$static instanceof Staticpage) {
+    if (!$static instanceof Entity\Staticpage) {
         return $app->pass();
     }
     $app->render('frontend/home/staticpage.html.twig',array(

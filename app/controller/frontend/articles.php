@@ -5,9 +5,9 @@
  */
 $app->get('/articles/', function () use ($app) {
 
-    $paginator = new Paginate($app->request(),'Article',3);
+    $paginator = new app\models\core\Paginate($app->request(),'Entity\Article',3);
 
-    $articles = Article::factory()
+    $articles = Entity\Article::factory()
                     ->offset($paginator->getOffset())
                     ->limit($paginator->getLimit())
                     ->find_many();

@@ -1,10 +1,10 @@
 <?php
 
-namespace Entity;
+namespace Security;
 
 use app\models\core\BaseModel;
 
-class Entity extends BaseModel
+class RoleUser extends BaseModel
 {
 
     /**
@@ -22,21 +22,18 @@ class Entity extends BaseModel
 
         return
 
-            <<<EOD
+<<<EOD
 
 CREATE TABLE IF NOT EXISTS `{$class}` (
-  `id`          bigint(11) NOT NULL AUTO_INCREMENT,
-  `name`        varchar(100) NOT NULL,
-  `title`       varchar(100) NOT NULL,
-  `new`         tinyint(1) NULL,
-  `delete`      tinyint(1) NULL,
-  `show`        tinyint(1) NULL,
-  `list`        tinyint(1) NULL,
+  `id`      bigint(11) NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(11) NOT NULL,
+  `roles`   tinytext NULL,
   PRIMARY KEY (`id`)
 ) ENGINE={$options['engine']} DEFAULT CHARSET={$options['charset']} AUTO_INCREMENT=1 ;
 
 EOD;
 
     }
+
 
 }

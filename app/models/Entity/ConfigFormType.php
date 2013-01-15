@@ -1,13 +1,13 @@
 <?php
 
-namespace app\models\Article;
+namespace Entity;
 
 use app\models\core\Form\FormListTypeInterface;
 use app\models\core\Form\FormListBase;
 use app\models\core\Form\FormBase;
 use app\models\core\Form\FormSearchTypeInterface;
 
-class ArticleFormType
+class ConfigFormType
     implements  FormListTypeInterface, FormSearchTypeInterface
 {
 
@@ -29,7 +29,7 @@ class ArticleFormType
                                                             ),
                                                 ))
                     ->add('slug', 'text')
-                    ->add('title', 'text', array('label'=>'Title'))
+                    ->add('value', 'text', array('label'=>'Value'))
                     ->end();
 
     }
@@ -52,14 +52,7 @@ class ArticleFormType
                                                  ))
                     )
                     ->add('slug',       'text', array('readonly'=>true))
-                    ->add('titulo',     'text', array('label'=>'Title'))
-                    ->add('description','textarea')
-                    ->add('video',      'textarea',array(
-                                                    'label'=>'Video (src atribute)',
-                                                    'attr' => array(
-                                                        'class' => 'span6',
-                                                    ),
-                                                ))
+                    ->add('value',      'text', array('label'=>'Value'))
                     ->end();
 
     }
@@ -76,9 +69,9 @@ class ArticleFormType
         $formBuilder = new FormBase();
 
         return $formBuilder
-                    ->add(array('title','description'),
+                    ->add(array('value','slug'),
                                   'text',         array(
-                                                    'label' => 'Text',
+                                                    'label' => 'Value',
                                                     'op'    => 'like',
                                                   )
                          )

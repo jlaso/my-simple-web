@@ -2,8 +2,8 @@
 
 namespace app\models\core;
 
-use Model;
-use BindableInterface;
+use \Model;
+use app\models\core\BindableInterface;
 
 abstract class BaseModel
     extends Model
@@ -28,9 +28,9 @@ abstract class BaseModel
     {
         if (!$class) {
             $class = get_called_class();
-            $class = explode("/",$class);
+            //$class = explode("/",$class);
 
-            return parent::factory($class[count($class)-1]);
+            return parent::factory($class/*[count($class)-1]*/);
         } else {
             return parent::factory($class);
         }
@@ -48,7 +48,7 @@ abstract class BaseModel
     {
 
         $ent         = get_called_class();
-        $frmLstClass = "\\app\\models\\{$ent}\\{$ent}FormType";
+        $frmLstClass = "\\{$ent}FormType";
         if (class_exists($frmLstClass)) {
             /** @var $formList \app\models\core\Form\FormListTypeInterface */
             $formList   = new $frmLstClass;
@@ -73,4 +73,43 @@ abstract class BaseModel
         }
     }
 
+    /**
+     * get default create options
+     *
+     * @return array
+     */
+    public static function getDefaultCreateOptions()
+    {
+        return array(
+            'engine'  => "InnoDB",
+            'charset' => "latin1"
+        );
+    }
+
+    /**
+     * Get the table name that corresponds to class name in the actual namespace system
+     *
+     * @param string $class
+     * @return string
+     */
+    public static function getTableNameForClass($class)
+    {
+        // CamelCase to undescore_case
+        $class = strtolower(preg_replace('/([a-zA-Z])(?=[A-Z])/', '$1_', $class));
+        // table name equals to PSR0 of class name
+        return str_replace("\\","_",strtolower($class));
+    }
+
+    /**
+     * Get the pretty name of the model
+     */
+    public static function getEntityName()
+    {
+
+        $class = \lib\SlimFunctions::camelCaseToUnderscored(get_called_class());
+        $array = explode("\\",$class);
+        array_shift($array);
+        return implode("",$array);
+
+    }
 }
