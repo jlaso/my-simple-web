@@ -27,14 +27,14 @@
                     </li>
                     <li>
                         <label for="">Phone:</label>
-                        <input type="text" name="telefono" value="{{ contact.phone }}"/>
+                        <input type="text" name="phone" value="{{ contact.phone }}"/>
                         {{ macro.form_error(errors.phone) }}
                     </li>
                     <li>
                         <label for="">Message: </label>
                         <br/>
                         <label for=""></label>
-                        <textarea name="descripcion" rows=10 cols=50>{{ contact.message }}</textarea>
+                        <textarea name="message" rows=10 cols=50>{{ contact.message }}</textarea>
                         {{ macro.form_error(errors.message) }}
                     </li>
                     <li>

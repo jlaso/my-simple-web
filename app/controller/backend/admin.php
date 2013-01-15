@@ -31,7 +31,7 @@ function redirectIfNotLogged(\Slim\Slim $app)
  */
 function getAllEntities()
 {
-    return BaseModel::factory('Entity')->find_many();
+    return BaseModel::factory('Entity\Entity')->find_many();
 }
 
 /**
