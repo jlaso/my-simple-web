@@ -41,6 +41,8 @@ class TwigViewSlim extends Twig
             )));
         $twigEnvironment->addFunction('getAllEntities',
             new Twig_Function_Function('getAllEntities'));
+        $twigEnvironment->addFunction('config',
+            new Twig_Function_Function('\Entity\Config::getConfig'));
     }
 
     public function getEnvironment()

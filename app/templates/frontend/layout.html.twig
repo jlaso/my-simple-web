@@ -71,23 +71,29 @@
 {% block header %}
     <div class="container_12" id="header">
         <div class="grid_2">
-            <img src="{{ asset('frontend/img/logo.png') }}"
-                 alt="logo mag-laso" width="238">
+            <img src="{{ asset('custom/frontend/img/logo.png') }}"
+                 alt="logo {{ config('web.title') }}" width="238">
         </div>
         <div class="grid_9 prefix_1">
-            <h1>My simple web</h1>
-            <p>We make the web development very, very easy</p>
+            <h1>{{ config('web.title') }}</h1>
+            <p>{{ config('web.description') }}</p>
         </div>
         <div class="clear"></div>
         <div class="grid_7 prefix_5" id="menu">
             <div class="grid_2">
-                <a href="{{ urlFor('home.staticpage', {'slug':'about'}) }}">About us</a>
+                <a href="{{ urlFor('home.staticpage', {'slug':'about'}) }}">
+                    About us
+                </a>
             </div>
             <div class="grid_2">
-                <a href="{{ urlFor('articles.index') }}">My articles</a>
+                <a href="{{ urlFor('articles.index') }}">
+                    My articles
+                </a>
             </div>
             <div class="grid_2">
-                <a href="{{ urlFor('contact.index') }}">Contact</a>
+                <a href="{{ urlFor('contact.index') }}">
+                    Contact
+                </a>
             </div>
         </div>
     </div>
@@ -138,7 +144,7 @@
             </ul>
         </div>
         <div class="grid_2">
-            <img src="{{ asset('frontend/img/logo.png') }}"
+            <img src="{{ asset('custom/frontend/img/logo.png') }}"
                  alt="logo" width="150">
         </div>
         {% endblock subfooter %}
