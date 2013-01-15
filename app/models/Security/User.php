@@ -7,6 +7,7 @@ use app\models\core\BaseModel;
 class User extends BaseModel
 {
 
+    private $roles = null;
 
 
     /**
@@ -35,6 +36,66 @@ CREATE TABLE IF NOT EXISTS `{$class}` (
 
 EOD;
 
+    }
+
+
+    /**
+     * Get the roles have the user
+     *
+     * @return array
+     */
+
+    public function getRoles()
+    {
+        if (null === $this->roles) {
+
+            $sql = sprintf("SELECT *
+                            FROM `security_role`
+                            WHERE `id` IN
+                                (SELECT `id`
+                                 FROM `security_role_user`
+                                 WHERE `user_id` = '%d'    )"
+                         ,$this->id);
+
+            $roles = RoleUser::factory()->raw_query($sql);
+
+            $this->roles = array();
+            foreach ($roles as $role) {
+                $this->roles[] = $role->name;
+            }
+
+        }
+
+        return $this->roles;
+    }
+
+
+    /**
+     * Test if user can ... $rol
+     *
+     * @param string $rol
+     *
+     * @return bool
+     */
+    public function can($rol)
+    {
+        // first, get user's roles
+        $roles = $this->getRoles();
+        // and test if can ... $rol
+        return Role::can($roles,$rol);
+
+    }
+
+    /**
+     * Goody for find_one
+     *
+     * @param int $id
+     *
+     * @return \ORM
+     */
+    public static function getUser($id)
+    {
+        return User::factory()->find_one($id);
     }
 
 }

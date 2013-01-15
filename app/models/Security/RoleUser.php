@@ -26,8 +26,8 @@ class RoleUser extends BaseModel
 
 CREATE TABLE IF NOT EXISTS `{$class}` (
   `id`      bigint(11) NOT NULL AUTO_INCREMENT,
-  `role_id` bigint(11) NOT NULL,
   `user_id` bigint(11) NOT NULL,
+  `roles`   tinytext NULL,
   PRIMARY KEY (`id`)
 ) ENGINE={$options['engine']} DEFAULT CHARSET={$options['charset']} AUTO_INCREMENT=1 ;
 

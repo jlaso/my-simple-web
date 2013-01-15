@@ -41,6 +41,19 @@ class RoleFixture implements FixturableInterface
              ->addNewRole(array( 'role'=>'user'         ))
              ->addNewRole(array( 'role'=>'anonymous'    ))
         ;
+
+        $entities = $fixturesRegistry->get('entities');
+
+        $roleBase = array('list','edit','show','delete');
+
+        foreach ($entities as $entity) {
+            foreach ($roleBase as $roleItem) {
+                if (isset($entity[$roleItem]) && $entity[$roleItem]) {
+                    $role = $entity['name'] . '_' . $roleItem;
+                    $this->addNewRole(array('role'=>$role));
+                }
+            }
+        }
     }
 
     /**
