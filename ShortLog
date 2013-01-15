@@ -1,0 +1,11 @@
+joseluis laso (9):
+      - initial commit
+      - ignore server dbconfig.php and remote it from the repo
+      - change dbconfig_sample.php db
+      - set default_timezone
+      - Refactorize core and entities
+      - Update on models
+      Merge branch 'feature/composer-autoload' into develop
+      - Repair the fixture that creates privacy policy.
+      Merge branch 'fix/privacy-policy' into develop
+
