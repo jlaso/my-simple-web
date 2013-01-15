@@ -11,7 +11,7 @@
     <div class="row-fluid">
         <div class="span12">
             <div>
-                <legend class="span4">{{ entity ~ ' list'}}</legend>
+                <legend class="span4">{{ entityName ~ ' list'}}</legend>
                 {% if paginator.needPagination %}
                     {{ paginator_backend_render(paginator) }}
                 {% endif %}

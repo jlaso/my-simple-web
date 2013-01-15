@@ -1,5 +1,6 @@
 <?php
 
+namespace Entity;
 
 use app\models\core\BaseModel;
 use app\models\core\ValidableInterface;

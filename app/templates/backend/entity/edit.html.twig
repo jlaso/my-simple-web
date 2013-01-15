@@ -7,7 +7,7 @@
     <div class="row-fluid">
         <div class="span12">
             <form action="#" class="form-horizontal" method="POST">
-                <legend>{{ action ~ ' ' ~ entity }}</legend>
+                <legend>{{ action ~ ' ' ~ entityName }}</legend>
                 {% for form_element in form %}
                     {% if form_element.field != 'id' or action == 'edit' %}
                     <div class="control-group">

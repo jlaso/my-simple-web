@@ -26,9 +26,9 @@ $app->get('/admin/list/:entity/', function ($entity) use ($app) {
  */
 $app->map('/admin/list/:entity/(:page)', function($entity,$page=1) use ($app) {
 
-    $entity      = Sanitize::string(trim(strtolower($entity)));
-    $ucEntity    = ucfirst($entity);
-    $frmLstClass = "\\app\\models\\{$ucEntity}\\{$ucEntity}FormType";
+    $entity      = \app\models\core\Sanitize::string(trim(strtolower($entity)));
+    $ucEntity    = \lib\SlimFunctions::underscoredToCamelCaseEntityName($entity);
+    $frmLstClass = $ucEntity."FormType";
     if (class_exists($frmLstClass)) {
 
         $formList     = new $frmLstClass; //var_dump($formList->getFormList());
@@ -80,6 +80,7 @@ $app->map('/admin/list/:entity/(:page)', function($entity,$page=1) use ($app) {
             'entity'    => $entity,
             'paginator' => $paginator,
             'searchable'=> ($formList instanceof FormSearchTypeInterface),
+            'entityName'=> $ucEntity::getEntityName(),
         ));
     } else {
         $app->notFound();

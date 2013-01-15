@@ -6,14 +6,14 @@
 $app->map('/contact/', function () use ($app) {
 
     $errors  = array();
-    $contact = Contact::factory()->create();
+    $contact = \Entity\Contact::factory()->create();
 
     if ($app->request()->isPost()) {
         $sum = $_SESSION['sum'];
         $contact->hydrate($app->request()->post());
         $errors = $contact->validate();
         if (count($errors)==0) {
-            if ($sum['one']+$sum['two']==$contact->suma) {
+            if ($sum['one']+$sum['two']==$contact->sum) {
                 $contact->save();
                 $app->redirect($app->urlFor('.contact.thanks'));
             } else {
