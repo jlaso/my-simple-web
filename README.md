@@ -1,7 +1,7 @@
 
 Clone the project in your disk
 ------------------------------
-git clone git@bitbucket.org:jlaso/my-simple-web.git
+git clone https://github.com/jlaso/my-simple-web.git
 
 Prepare correct permissions
 ---------------------------
