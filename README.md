@@ -1,4 +1,3 @@
-
 Clone the project in your disk
 ------------------------------
 git clone https://github.com/jlaso/my-simple-web.git
