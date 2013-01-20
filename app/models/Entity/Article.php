@@ -5,7 +5,7 @@ namespace Entity;
 use app\models\core\BaseModel;
 use app\models\core\SluggableInterface;
 use app\models\core\ValidableInterface;
-use lib\SlimFunctions;
+use lib\MyFunctions;
 
 /**
  * Class that stores articles of this web
@@ -41,22 +41,25 @@ class Article
      */
     public function validate()
     {
+        $cantLeftBlank = function($field) {
+            return sptrinf(_('%s field can\'t left blank'),$field);
+        };
         $result = array();
         if(empty($this->slug)) $this->slug = $this->title;
-        $this->slug = \lib\SlimFunctions::slug($this->slug);
+        $this->slug = \lib\MyFunctions::slug($this->slug);
         if (empty($this->slug)) {
-            $result['slug'] = 'Slug field can\'t left blank';
+            $result['slug'] = $cantLeftBlank(_('Slug'));
         } else {
             $slugExists = self::checkSlug($this->slug,$this->id);
             if ($slugExists) {
-                $result['slug'] = 'Repeated slug';
+                $result['slug'] = _('Repeated slug');
             }
         }
         if (empty($this->title)) {
-            $result['title'] = 'Title field can\'t left blank';
+            $result['title'] = $cantLeftBlank(_('Title'));
         }
         if (empty($this->description)) {
-            $result['description'] = 'Description field can\'t left blank';
+            $result['description'] = $cantLeftBlank(_('Description'));
         }
 
         return $result;
@@ -68,12 +71,12 @@ class Article
      * @param array $options
      * @return string
      */
-    public static function getCreationSchema(Array $options = array())
+    public static function _creationSchema(Array $options = array())
     {
-        $class = self::getTableNameForClass(get_called_class());
+        $class = self::_tableNameForClass(get_called_class());
 
         // default options
-        $options = array_merge(self::getDefaultCreateOptions(),$options);
+        $options = array_merge(self::_defaultCreateOptions(),$options);
 
         return
 
@@ -84,11 +87,42 @@ CREATE TABLE IF NOT EXISTS `{$class}` (
   `slug`        varchar(100) NOT NULL,
   `title`       varchar(100) NOT NULL,
   `description` text NOT NULL,
+  `description_id` bigint(11) NOT NULL,
+  `created_at`  datetime DEFAULT NULL,
+  `updated_at`  datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE={$options['engine']} DEFAULT CHARSET={$options['charset']} AUTO_INCREMENT=1 ;
 
 EOD;
 
+    }
+
+
+    /**
+     * Get descriptions throught intermediary table
+     *
+     * @return \ORM
+     */
+    public function getDescriptions() {
+        $sql = '`id` IN (
+                    SELECT `description_id`
+                    FROM `entity_article_description`
+                    WHERE `article_id` = ?
+                )';
+        $descriptions = Description::factory()->where_raw($sql,$this->id)->find_many();
+        return $descriptions;
+    }
+
+    /**
+     * Get relations with other entities
+     *
+     * @return array
+     */
+    public function _relations()
+    {
+        return array(
+          'one-to-many' => array('descriptions' => 'Entity\Description'),
+        );
     }
 
 }

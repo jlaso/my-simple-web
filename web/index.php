@@ -11,6 +11,12 @@ Twig_Autoloader::register();
 // lib
 //require_once '../lib/autoload.php';
 
+// DB access
+require_once '../app/config/dbconfig.php';
+ORM::configure('mysql:host='.DBHOST.';dbname='.DBNAME);
+ORM::configure('username', DBUSER);
+ORM::configure('password', DBPASS);
+
 // Prepare view
 \lib\TwigViewSlim::$twigOptions = array(
     'charset'           => 'utf-8',
@@ -21,7 +27,7 @@ Twig_Autoloader::register();
 );
 
 // Prepare app
-$app = new \Slim\Slim(array(
+$app = new \Router\SlimExt(array(
     'templates.path'    => '../app/templates',
     'log.level'         => 4,
     'log.enabled'       => true,
@@ -33,11 +39,10 @@ $app = new \Slim\Slim(array(
     )
 );
 
-// DB access
-require_once '../app/config/dbconfig.php';
-ORM::configure('mysql:host='.DBHOST.';dbname='.DBNAME);
-ORM::configure('username', DBUSER);
-ORM::configure('password', DBPASS);
+$languages = app\config\Config::getInstance()->getLanguageCodes();
+\Slim\Route::setDefaultConditions(array(
+    'lang' => implode('|',$languages)
+));
 
 // access to models
 //require_once '../app/models/autoload.php';

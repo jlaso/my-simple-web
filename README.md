@@ -19,4 +19,14 @@ php regenerateDBwithoutConfirmation.php
 Customization
 -------------
 customize logo and images on web/custom/frontend/img
+ - web/custom/frontend/img/favicon.gif
+ - web/custom/frontend/img/logo.png
+ - web/custom/frontend/img/subcontent.png
+
+* In backend (enter at /admin, user and pass admin), you can change trivial info of webpage,
+like at the moment: web.title, web.description and web.keywords
+
+
+See the issues if you want help to development.
+And see the wiki for last minute info.
 

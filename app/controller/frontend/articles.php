@@ -3,7 +3,7 @@
 /**
  * show articles list
  */
-$app->get('/articles/', function () use ($app) {
+$app->get('/:lang/articles(/)', function ($lang) use ($app) {
 
     $paginator = new app\models\core\Paginate($app->request(),'Entity\Article',3);
 
@@ -23,7 +23,7 @@ $app->get('/articles/', function () use ($app) {
 /**
  * Shows one article
  */
-$app->get('/articles/:slug', function ($slug) use ($app) {
+$app->get('/:lang/articles/:slug(/)', function ($lang, $slug) use ($app) {
 
     $slug    = Sanitize::string($slug);
     $article = Article::factory()
