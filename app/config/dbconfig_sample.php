@@ -4,3 +4,5 @@
     define('DBNAME', 'my-simple-web');
     define('DBUSER', 'root');
     define('DBPASS', 'root');
+
+    define('LANGUAGES', 'es,en');

@@ -50,4 +50,15 @@ class FormBase
         return $this->fields;
     }
 
+    /**
+     * Add SubForm
+     *
+     * @param $entity
+     */
+    public function addSubForm($entity)
+    {
+        $this->fields[] = new SubForm($entity);
+        return $this;
+    }
+
 }

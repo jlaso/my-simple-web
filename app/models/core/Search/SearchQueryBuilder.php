@@ -1,9 +1,9 @@
 <?php
 
 
-namespace app\models\core\Seach;
+namespace app\models\core\Search;
 
-class SearchQueryBuilder
+class SearchQueryBuilder implements SearchQueryBuilderInterface
 {
 
 

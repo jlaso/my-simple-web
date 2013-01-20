@@ -79,21 +79,34 @@
             <p>{{ config('web.description') }}</p>
         </div>
         <div class="clear"></div>
-        <div class="grid_7 prefix_5" id="menu">
+        <div class="grid_8 prefix_4" id="menu">
             <div class="grid_2">
                 <a href="{{ urlFor('home.staticpage', {'slug':'about'}) }}">
-                    About us
+                    {{ _('About us') }}
                 </a>
             </div>
             <div class="grid_2">
                 <a href="{{ urlFor('articles.index') }}">
-                    My articles
+                    {{ _('My articles') }}
                 </a>
             </div>
             <div class="grid_2">
                 <a href="{{ urlFor('contact.index') }}">
-                    Contact
+                    {{ _('Contact') }}
                 </a>
+            </div>
+            <div class="grid_1">
+                {% set lang = session('lang') %}
+                <select name="lang">
+                    {% for code,language in langConfig() %}
+                        <option value="{{ code }}"
+                            {{ lang == code ? 'selected="selected"' : '' }}
+                            href="{{ urlActual({ 'lang':code }) }}">
+                                {{ language|raw }}
+                            </a>
+                        </option>
+                    {% endfor %}
+                </select>
             </div>
         </div>
     </div>
@@ -151,3 +164,17 @@
 
     </div>
 {% endblock footer %}
+
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('common/js/jquery-1.8.3.min.js') }}"></script>
+    <script type="text/javascript">
+        $('select[name="lang"]').change(function(e){
+            //console.log('Entering in language change');
+            e.preventDefault();
+            var href = $('select[name="lang"] :selected').attr('href');
+            //console.log(href);
+            window.location = href /*+ '?cache={{ ''|date('U') }}'*/;
+        });
+    </script>
+{% endblock javascripts %}

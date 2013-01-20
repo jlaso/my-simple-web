@@ -13,12 +13,12 @@ class Entity extends BaseModel
      * @param array $options
      * @return string
      */
-    public static function getCreationSchema(Array $options = array())
+    public static function _creationSchema(Array $options = array())
     {
-        $class = self::getTableNameForClass(get_called_class());
+        $class = self::_tableNameForClass(get_called_class());
 
         // default options
-        $options = array_merge(self::getDefaultCreateOptions(),$options);
+        $options = array_merge(self::_defaultCreateOptions(),$options);
 
         return
 

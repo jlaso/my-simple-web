@@ -4,4 +4,4 @@
     require __DIR__."/TwigViewSlim.php";
 
     // utilidades
-    require __DIR__."/SlimFunctions.php";
+    require __DIR__."/MyFunctions.php";
