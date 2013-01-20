@@ -93,12 +93,12 @@
                             <li class="nav-header">Backend</li>
                             <li {{ (iamhere=='admin.index') ? 'class="active"' : '' }}>
                                 <a href="{{ urlFor('admin.index') }}">
-                                    Index
+                                    {{ _('Index') }}
                                 </a>
                             </li>
                             <li {{ (iamhere=='admin.get-all-routes') ? 'class="active"' : '' }}>
                                 <a href="{{ urlFor('admin.get-all-routes') }}">
-                                    All routes list
+                                    {{ _('All routes list') }}
                                 </a>
                             </li>
 
@@ -106,13 +106,13 @@
                                 <li class="nav-header">{{ entity.title }}</li>
                                 <li {{ (iamhere=='admin.list-' ~ entity.name) ? 'class="active"' : '' }}>
                                     <a href="{{ urlFor('admin.list-entity',{'entity':entity.name}) }}">
-                                        Show all
+                                        {{ _('Show all') }}
                                     </a>
                                 </li>
                                 {% if entity.new %}
                                     <li {{ (iamhere=='admin.new-' ~ entity.name) ? 'class="active"' : '' }}>
                                         <a href="{{ urlFor('admin.new-entity',{'entity':entity.name}) }}">
-                                            Add new
+                                            {{ _('Add new') }}
                                         </a>
                                     </li>
                                 {% endif %}

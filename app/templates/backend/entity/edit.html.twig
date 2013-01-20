@@ -35,15 +35,15 @@
                     <div class="controls">
                         <button type="submit" class="btn">
                             <i class="icon-left icon-ok-sign"></i>
-                            Grabar
+                            {{ _('Save') }}
                         </button>
                         <button type="reset" class="btn">
                             <i class="icon-left icon-fast-backward"></i>
-                            Reset
+                            {{ _('Reset') }}
                         </button>
                         <a href="{{ urlFor('admin.list-entity',{'entity':entity}) }}" class="btn">
                             <i class="icon-left icon-list"></i>
-                            Volver
+                            {{ _('Return') }}
                         </a>
                     </div>
                 </div>

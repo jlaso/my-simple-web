@@ -45,7 +45,7 @@ class Config
         if(empty($this->slug)) $this->slug = $this->titulo;
         $this->slug = \lib\MyFunctions::slug($this->slug);
         if (empty($this->slug)) {
-            $result['slug'] = 'Slug field can\'t left blank';
+            $result['slug'] = $this->cantLeaveBlank(_('Slug'));
         } else {
             $slugExists = self::checkSlug($this->slug,$this->id);
             if ($slugExists) {
@@ -53,7 +53,7 @@ class Config
             }
         }
         if (empty($this->value)) {
-            $result['value'] = 'Value field can\'t left blank';
+            $result['value'] = $this->cantLeaveBlank(_('Value'));
         }
 
         return $result;

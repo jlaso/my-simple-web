@@ -32,15 +32,25 @@ class StaticpageFixture implements FixturableInterface
     public function generateFixtures(Registry $fixturesRegistry)
     {
         $this->addNewItem(array(
-                    'slug'      => 'about',
+                    'slug'      => 'about.en',
                     'content'   => 'About us !',
-                    'title'     => 'About us'
+                    'title'     => 'About us',
                 ))
              ->addNewItem(array(
-                    'slug'      => 'privacy-policy',
+                    'slug'      => 'about.es',
+                    'content'   => '¡ Acerca de nosotros !',
+                    'title'     => 'Esto es lo que podemos contar sobre nosotros.',
+                ))
+             ->addNewItem(array(
+                    'slug'      => 'privacy-policy.es',
+                    'content'   => 'Esta es nuestra política de privacidad',
+                    'title'     => 'Política de privacidad'
+                ))
+             ->addNewItem(array(
+                    'slug'      => 'privacy-policy.en',
                     'content'   => 'This is our privacy policy',
                     'title'     => 'Privacy policy'
-                ))
+             ))
         ;
 
     }
