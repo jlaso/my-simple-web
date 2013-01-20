@@ -4,14 +4,19 @@
 
     <div class="h2 grid_12">&nbsp;</div>
     <div class="clear"></div>
-    <div class="grid_12"><h2>Thanks</h2></div>
+    <div class="grid_12"><h2>{{ _('Thanks') }}</h2></div>
     <div class="clear"></div>
 
     <div class="grid_12" id="form-contacta">
-        <p>Thanks for contact us.
+        <p>
+            {{ _('Thanks for contact us.') }}
         </p>
-        <p>Remember that you can show our <a href="{{ urlFor('home.staticpage', {'slug':'privacy-policy'}) }}">
-            privacy policy</a></p>
+        <p>
+            {{ _('Remember that you can see our') }}&nbsp;
+            <a href="{{ urlFor('home.staticpage', {'slug':'privacy-policy'}) }}">
+                {{ _('privacy policy') }}
+            </a>.
+        </p>
     </div>
 
     <div class="grid_2"><p>&nbsp;</p></div>
