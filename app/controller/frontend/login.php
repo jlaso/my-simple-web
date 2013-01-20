@@ -7,7 +7,7 @@ $app->map('/login/', function() use ($app) {
 
     $errors = array();
     $user   = '';
-    $csrf   = \lib\SlimFunctions::genKey(40,true);
+    $csrf   = \lib\MyFunctions::genKey(40,true);
     $request= $app->request();
 
     if ($request->isPost()) {

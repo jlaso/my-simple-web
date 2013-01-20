@@ -15,6 +15,22 @@
                     </div>
                     {% endif %}
                 {% endfor %}
+                {% if relations|length > 0  %}
+                    {% for relation in relations %}
+                        <div class="control-group">
+                            {{ relation.name }}
+                        </div>
+                        {%
+                            include 'backend/entity/embeded-list.html.twig'
+                            with
+                                {
+                                    'entity': relation.entity,
+                                    'items' : relation.data,
+                                    'form'  : relation.form
+                                }
+                        %}
+                    {% endfor %}
+                {% endif %}
                 <div class="control-group">
                     <div class="controls">
                         <button type="submit" class="btn">

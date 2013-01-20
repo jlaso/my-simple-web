@@ -139,12 +139,12 @@ class EntityManager
         foreach($classes as $class)
         {
             if (is_subclass_of($class,'app\\models\\core\\BaseModel')) {
-                if (method_exists($class,'getCreationSchema')) {
+                if (method_exists($class,'_creationSchema')) {
                     if ($this->dump) {
                         print $class.PHP_EOL;
                     }
-                    //$sql = $class.'::getCreationSchema';
-                    $sql = $class::getCreationSchema();
+                    //$sql = $class.'::_creationSchema';
+                    $sql = $class::_creationSchema();
                     $this->execute($sql);
                 }
             }

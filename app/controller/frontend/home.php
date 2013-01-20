@@ -3,14 +3,14 @@
 /**
  * ruta de la home (index)
  */
-$app->get('/', function () use ($app) {
+$app->get('/(:lang(/))', function ($lang='en') use ($app) {
     $app->render('frontend/home/index.html.twig');
 })->name('home.index');
 
 /**
  *
  */
-$app->get('/:slug', function ($slug) use ($app) {
+$app->get('/:lang/:slug(/)', function ($lang, $slug) use ($app) {
 
     $static = Entity\Staticpage::factory()
         ->where('slug',$slug)
@@ -27,7 +27,7 @@ $app->get('/:slug', function ($slug) use ($app) {
 /**
  * generates on-fly the sitemap.xml file
  */
-$app->get('/sitemap.xml', function () use ($app) {
+$app->get('/:lang/sitemap.xml', function () use ($app) {
 
     $entityConversion = array(
         'articles'      => 'Article',

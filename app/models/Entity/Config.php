@@ -5,7 +5,7 @@ namespace Entity;
 use \app\models\core\BaseModel;
 use \app\models\core\SluggableInterface;
 use \app\models\core\ValidableInterface;
-use \lib\SlimFunctions;
+use \lib\MyFunctions;
 use \ORM;
 
 class Config
@@ -43,7 +43,7 @@ class Config
     {
         $result = array();
         if(empty($this->slug)) $this->slug = $this->titulo;
-        $this->slug = \lib\SlimFunctions::slug($this->slug);
+        $this->slug = \lib\MyFunctions::slug($this->slug);
         if (empty($this->slug)) {
             $result['slug'] = 'Slug field can\'t left blank';
         } else {
@@ -60,17 +60,17 @@ class Config
     }
 
     /**
-     * Get the SQL creation sentece of this table
+     * Get the SQL creation sentence of this table
      *
      * @param array $options
      * @return string
      */
-    public static function getCreationSchema(Array $options = array())
+    public static function _creationSchema(Array $options = array())
     {
-        $class = self::getTableNameForClass(get_called_class());
+        $class = self::_tableNameForClass(get_called_class());
 
         // default options
-        $options = array_merge(self::getDefaultCreateOptions(),$options);
+        $options = array_merge(self::_defaultCreateOptions(),$options);
 
         return
 

@@ -140,16 +140,22 @@ class FormWidget
     /**
      * render the complete widget for a field, that is:  label + input + errors
      *
-     * @param array $item
+     * @param array|object $item
      * @param array $value
      * @param array $errors
      * @return html formatted string
      */
-    public static function form_widget(array $item, $value, array $errors)
+    public static function form_widget($item, $value, array $errors)
     {
-        return self::form_label($item).
-               self::form_field($item, $value).
-               self::form_error($item, $errors);
+        if ($item instanceof SubFormInterface) {
+            $form = $item->getForm();
+            return self::form_table_head($form);
+            //return self::form_table_row()
+        }else{
+            return self::form_label($item).
+                   self::form_field($item, $value).
+                   self::form_error($item, $errors);
+        }
     }
 
     /**
@@ -223,6 +229,11 @@ class FormWidget
             if ($type=='boolean' && $value) {
                 $class = "span12 center";
                 $value = '<i class="icon-check"></i>';
+            }
+            /** @var $filter FormFilterInterface */
+            $filter = isset($item['widget']['filter']) ? $item['widget']['filter'] : null;
+            if ($filter) {
+                $value = $filter->filter($value);
             }
             if($value==='') $value="&nbsp;";
             $result .= sprintf('<td><span class="%s">%s</span></td>',$class,$value);

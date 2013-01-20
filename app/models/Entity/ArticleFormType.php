@@ -45,6 +45,8 @@ class ArticleFormType
     public function getForm()
     {
 
+        $subForm = new FormListBase();
+
         $formBuilder = new FormBase();
 
         return $formBuilder
@@ -56,14 +58,14 @@ class ArticleFormType
                     )
                     ->add('slug',       'text', array('readonly'=>true))
                     ->add('title',      'text', array('label'=>'Title'))
-                    ->add('description','textarea')
+
         /*
-                    ->add('video',      'textarea',array(
-                                                    'label'=>'Video (src atribute)',
-                                                    'attr' => array(
-                                                        'class' => 'span6',
-                                                    ),
-                                                ))
+                    ->addSubForm(
+                                $subForm->add('id',     'text')
+                                        ->add('lang',   'text')
+                                        ->add('content','text')
+                                        ->end()
+                                )
         */
                     ->end();
 
