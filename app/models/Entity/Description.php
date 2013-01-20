@@ -23,10 +23,10 @@ class Description
     {
         $result = array();
         if (empty($this->lang)) {
-            $result['lang'] = _('Lang field can\'t left blank');
+            $result['lang'] = $this->cantLeaveBlank(_('Lang'));
         }
         if (empty($this->content)) {
-            $result['content'] = _('Content field can\'t left blank');
+            $result['content'] = $this->cantLeaveBlank(_('Content'));
         }
 
         return $result;

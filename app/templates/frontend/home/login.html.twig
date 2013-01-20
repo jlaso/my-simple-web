@@ -12,16 +12,16 @@
     <div class="grid_8" id="subcontent">
 
         <form action="{{ urlFor('.login') }}" method="post">
-            <h2>Password protect content</h2>
+            <h2>{{ _('Password protect content') }}</h2>
             <ul>
                 <li>
-                    <label for="">User:</label>
+                    <label for="">{{ _('User') }}:</label>
                     <input type="text" name="user" value="{{ user }}"/>
                     {{ macro.form_error(errors.user) }}
                 </li>
 
                 <li>
-                    <label for="">Password:</label>
+                    <label for="">{{ _('Password') }}:</label>
                     <input type="" name="pass"/>
                     {{ macro.form_error(errors.pass) }}
                 </li>
@@ -32,7 +32,7 @@
                 </li>
                 <li>
                     <label for=""></label>
-                    <input type="submit" value="Iniciar sesión"/>
+                    <input type="submit" value="{{ _('Login') }}"/>
                 </li>
             </ul>
         </form>

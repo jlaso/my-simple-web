@@ -76,7 +76,7 @@
         </div>
         <div class="grid_9 prefix_1">
             <h1>{{ config('web.title') }}</h1>
-            <p>{{ config('web.description') }}</p>
+            <p>{{ config('web.description.' ~ session('lang')) }}</p>
         </div>
         <div class="clear"></div>
         <div class="grid_8 prefix_4" id="menu">
@@ -139,20 +139,27 @@
         <div class="grid_5">
             <ul>
                 <li>
-                    <a href="{{ urlFor('home.index') }}">Home</a>
+                    <a href="{{ urlFor('home.index') }}">
+                        {{ _('Home') }}
+                    </a>
                 </li>
                 <li>
-                    <a href="{{ urlFor('home.staticpage',{'slug':'privacy-policy'}) }}">Privacy policy</a>
+                    <a href="{{ urlFor('home.staticpage',{'slug':'privacy-policy'}) }}">
+                        {{ _('Privacy policy') }}
+                    </a>
                 </li>
                 <li>
-                    Contact: <strong>info(@)jaitec.net</strong>
+                    {{ _('Contact') }}: <strong>{{ config('web.email.contact') }}</strong>
                 </li>
             </ul>
         </div>
         <div class="grid_5">
             <ul>
                 <li>
-                    Developed by: <a href="http://jaitec.net">Jaitec</a>
+                    {{ _('Developed by') }}:&nbsp;
+                    <a href="{{ config('web.developer.url') }}">
+                        {{ config('web.developer') }}
+                    </a>
                 </li>
             </ul>
         </div>

@@ -8,7 +8,7 @@
 
     <div class="h2 grid_12">&nbsp;</div>
     <div class="clear"></div>
-    <div class="grid_12"><h2>Contact form</h2></div>
+    <div class="grid_12"><h2>{{ _('Contact form') }}</h2></div>
     <div class="clear"></div>
 
     <div class="grid_12" id="contact-form">
@@ -16,43 +16,43 @@
             <fieldset>
                 <ul>
                     <li>
-                        <label for="">Name:</label>
+                        <label for="">{{ _('Name') }}:</label>
                         <input type="text" name="name" value="{{ contact.name }}"/>
                         {{ macro.form_error(errors.name) }}
                     </li>
                     <li>
-                        <label for="">Email:</label>
+                        <label for="">{{ _('Email') }}:</label>
                         <input type="text" name="email" value="{{ contact.email }}"/>
                         {{ macro.form_error(errors.email) }}
                     </li>
                     <li>
-                        <label for="">Phone:</label>
+                        <label for="">{{ _('Phone') }}:</label>
                         <input type="text" name="phone" value="{{ contact.phone }}"/>
                         {{ macro.form_error(errors.phone) }}
                     </li>
                     <li>
-                        <label for="">Message: </label>
+                        <label for="">{{ _('Message') }}: </label>
                         <br/>
                         <label for=""></label>
                         <textarea name="message" rows=10 cols=50>{{ contact.message }}</textarea>
                         {{ macro.form_error(errors.message) }}
                     </li>
                     <li>
-                        <label for="">I'm human:</label>
+                        <label for="">{{ _('I\'m human') }}:</label>
                         {{ sum.one }} and {{ sum.two }} are
                         <input type="text" size="5" name="sum" value="{{ contact.sum }}"/>
                         {{ macro.form_error(errors.sum) }}
                     </li>
                     <li>&nbsp;</li>
-                    <li>Remember to visit out
+                    <li>{{ _('Remember to visit our') }}&nbsp;
                         <a href="{{ urlFor('home.staticpage',{'slug':'privacy-policy'}) }}">
-                            privacy policy
+                            {{ _('privacy policy') }}
                         </a>
                         .
                     </li>
                     <li>
                         <label for=""></label>
-                        <input type="submit" value="Send"/>
+                        <input type="submit" value="{{ _('Send') }}"/>
                     </li>
                 </ul>
             </fieldset>
