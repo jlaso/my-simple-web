@@ -1,0 +1,170 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: my simple web\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-20 16:07+0100\n"
+"PO-Revision-Date: 2013-01-20 16:07+0100\n"
+"Last-Translator: joseluis laso <jlaso@jaitec.net>\n"
+"Language-Team: Joseluis Laso <info@joseluislaso.es>\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: s;\n"
+"X-Poedit-SourceCharset: iso-8859-1\n"
+"X-Poedit-KeywordsList: i18n;_\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: /Users/jl/php_projects/mios/my-simple-web\n"
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/cache/34/00/540519874b56c085c775a590f764.php:63
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/entity/embeded-list.html.twig:28
+msgid "Not found records to show."
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/cache/d0/a6/c1fac53a5903ffb7d2f4ad993ce3.php:102
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/layout.html.twig:47
+msgid "You are logged as"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/cache/d0/a6/c1fac53a5903ffb7d2f4ad993ce3.php:122
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/layout.html.twig:55
+#, fuzzy
+msgid "Frontend"
+msgstr "Contact"
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/cache/d0/a6/c1fac53a5903ffb7d2f4ad993ce3.php:137
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/layout.html.twig:63
+msgid "Language"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/cache/ea/be/1ef71282f5cfd4895980d3617c93.php:147
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/layout.html.twig:85
+msgid "About us"
+msgstr "About us"
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/cache/ea/be/1ef71282f5cfd4895980d3617c93.php:158
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/layout.html.twig:90
+msgid "My articles"
+msgstr "My articles"
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/cache/ea/be/1ef71282f5cfd4895980d3617c93.php:169
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/layout.html.twig:95
+msgid "Contact"
+msgstr "Contact"
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/config/Config.php:21
+#: /Users/jl/php_projects/mios/my-simple-web/app/config/dbconfig.php:9
+msgid "English"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/config/dbconfig.php:10
+msgid "Espa&ntilde;ol"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/core/BaseModel.php:140
+msgid "BaseModel"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/core/BaseModel.php:150
+msgid "BaseModels"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Article.php:45
+#, php-format
+msgid "%s field can't left blank"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Article.php:51
+msgid "Slug"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Article.php:55
+msgid "Repeated slug"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Article.php:59
+msgid "Title"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Article.php:62
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Description.php:69
+msgid "Description"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Description.php:26
+msgid "Lang field can't left blank"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Description.php:29
+msgid "Content field can't left blank"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Description.php:79
+msgid "Descriptions"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/DescriptionFormType.php:36
+#, fuzzy
+msgid "Content"
+msgstr "Contact"
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/DescriptionFormType.php:90
+msgid "Text"
+msgstr ""
+
+#~ msgid "Under construction"
+#~ msgstr "En construcción"
+
+#~ msgid "test"
+#~ msgstr "test"
+
+#~ msgid "MYCARDS"
+#~ msgstr "My KT's"
+
+#~ msgid "SEARCH"
+#~ msgstr "Search"
+
+#~ msgid "HELP"
+#~ msgstr "Help"
+
+#~ msgid "CREDITS"
+#~ msgstr "Credits"
+
+#~ msgid "SETTINGS"
+#~ msgstr "Settings"
+
+#~ msgid "LOGOUT"
+#~ msgstr "Logout"
+
+#~ msgid "THEME"
+#~ msgstr "Theme"
+
+#~ msgid "TRANSITION"
+#~ msgstr "Transition"
+
+#~ msgid "SAVE"
+#~ msgstr "Save"
+
+#~ msgid "ALL_CAT"
+#~ msgstr "All categories"
+
+#~ msgid "NO"
+#~ msgstr "No"
+
+#~ msgid "YES"
+#~ msgstr "Yes"
+
+#~ msgid "NOTFOUND"
+#~ msgstr "Not found"
+
+#~ msgid "NOTURNPHONE"
+#~ msgstr "No turn the phone"
+
+#~ msgid "Buscar"
+#~ msgstr "Search"

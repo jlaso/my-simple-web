@@ -34,10 +34,16 @@ function getAllEntities()
     return BaseModel::factory('Entity\Entity')->find_many();
 }
 
+$app->get('/admin/', function() use($app) {
+    return $app->redirect($app->urlFor('admin.index',array(
+        'lang'=> \lib\MyFunctions::session('lang'),
+    )));
+});
+
 /**
  * homepage for backend
  */
-$app->get('/admin/', function () use ($app) {
+$app->get('/:lang/admin/', function ($lang) use ($app) {
     redirectIfNotLogged($app);
     $app->render('backend/home/index.html.twig');
 })->name('admin.index');
@@ -45,7 +51,7 @@ $app->get('/admin/', function () use ($app) {
 /**
  * helper for list all slim routes
  */
-$app->get('/admin/get-all-routes/', function () use ($app) {
+$app->get('/:lang/admin/get-all-routes/', function ($lang) use ($app) {
     redirectIfNotLogged($app);
     $routes = $app->router()->getNamedRoutes();
     /*

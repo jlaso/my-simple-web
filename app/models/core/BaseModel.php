@@ -5,6 +5,13 @@ namespace app\models\core;
 use \Model;
 use app\models\core\BindableInterface;
 
+/**
+ * Extends Model from ORM
+ *
+ * The ORM uses magic __get and __set to map properties to table fields, for that
+ * I have named my other methods with underscore to permit use that names for fields
+ *
+ */
 abstract class BaseModel
     extends Model
     implements BindableInterface
@@ -78,7 +85,7 @@ abstract class BaseModel
      *
      * @return array
      */
-    public static function getDefaultCreateOptions()
+    public static function _defaultCreateOptions()
     {
         return array(
             'engine'  => "InnoDB",
@@ -92,7 +99,7 @@ abstract class BaseModel
      * @param string $class
      * @return string
      */
-    public static function getTableNameForClass($class)
+    public static function _tableNameForClass($class)
     {
         // CamelCase to undescore_case
         $class = strtolower(preg_replace('/([a-zA-Z])(?=[A-Z])/', '$1_', $class));
@@ -103,13 +110,55 @@ abstract class BaseModel
     /**
      * Get the pretty name of the model
      */
-    public static function getEntityName()
+    public static function _entityName()
     {
 
-        $class = \lib\SlimFunctions::camelCaseToUnderscored(get_called_class());
+        $class = \lib\MyFunctions::camelCaseToUnderscored(get_called_class());
         $array = explode("\\",$class);
         array_shift($array);
         return implode("",$array);
 
+    }
+
+    /**
+     * Get relations
+     *
+     * @return array
+     */
+    public function _relations()
+    {
+        return array();
+    }
+
+    /**
+     * Get name of entity in singular
+     *
+     * @return string
+     */
+    public static function _nameSingular()
+    {
+        return _('BaseModel');
+    }
+
+    /**
+     * Get name of entity in plural
+     *
+     * @return string
+     */
+    public static function _namePlural()
+    {
+        return _('BaseModels');
+    }
+
+
+    /**
+     * Get name of entity
+     *
+     * @return string
+     */
+    public static function _nameEntity()
+    {
+        $str = \lib\MyFunctions::camelCaseToUnderscored(get_called_class());
+        return str_replace('\\','_',$str);
     }
 }
