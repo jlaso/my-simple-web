@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: my simple web\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-20 16:07+0100\n"
-"PO-Revision-Date: 2013-01-20 16:07+0100\n"
+"POT-Creation-Date: 2013-01-20 21:38+0100\n"
+"PO-Revision-Date: 2013-01-20 21:38+0100\n"
 "Last-Translator: joseluis laso <jlaso@jaitec.net>\n"
 "Language-Team: Joseluis Laso <info@joseluislaso.es>\n"
 "Language: en_GB\n"
@@ -22,9 +22,25 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: /Users/jl/php_projects/mios/my-simple-web\n"
 
-#: /Users/jl/php_projects/mios/my-simple-web/app/cache/34/00/540519874b56c085c775a590f764.php:63
-#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/entity/embeded-list.html.twig:28
-msgid "Not found records to show."
+#: /Users/jl/php_projects/mios/my-simple-web/app/cache/9c/e5/408beb499f3340d13f8fa01fa111.php:153
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/entity/list.html.twig:64
+msgid "No records found."
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/cache/9c/e5/408beb499f3340d13f8fa01fa111.php:170
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/entity/list.html.twig:70
+msgid "Total one record found"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/cache/9c/e5/408beb499f3340d13f8fa01fa111.php:177
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/entity/list.html.twig:72
+#, python-format, php-format
+msgid "Total %d records found"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/cache/9c/e5/408beb499f3340d13f8fa01fa111.php:184
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/entity/list.html.twig:74
+msgid "with specified filter"
 msgstr ""
 
 #: /Users/jl/php_projects/mios/my-simple-web/app/cache/d0/a6/c1fac53a5903ffb7d2f4ad993ce3.php:102
@@ -43,6 +59,27 @@ msgstr "Contact"
 msgid "Language"
 msgstr ""
 
+#: /Users/jl/php_projects/mios/my-simple-web/app/cache/d0/a6/c1fac53a5903ffb7d2f4ad993ce3.php:205
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/layout.html.twig:96
+msgid "Index"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/cache/d0/a6/c1fac53a5903ffb7d2f4ad993ce3.php:220
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/layout.html.twig:101
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/helper/get-all-routes.html.twig:10
+msgid "All routes list"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/cache/d0/a6/c1fac53a5903ffb7d2f4ad993ce3.php:248
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/layout.html.twig:109
+msgid "Show all"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/cache/d0/a6/c1fac53a5903ffb7d2f4ad993ce3.php:269
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/layout.html.twig:115
+msgid "Add new"
+msgstr ""
+
 #: /Users/jl/php_projects/mios/my-simple-web/app/cache/ea/be/1ef71282f5cfd4895980d3617c93.php:147
 #: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/layout.html.twig:85
 msgid "About us"
@@ -50,13 +87,31 @@ msgstr "About us"
 
 #: /Users/jl/php_projects/mios/my-simple-web/app/cache/ea/be/1ef71282f5cfd4895980d3617c93.php:158
 #: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/layout.html.twig:90
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/articles/index.html.twig:39
 msgid "My articles"
 msgstr "My articles"
 
 #: /Users/jl/php_projects/mios/my-simple-web/app/cache/ea/be/1ef71282f5cfd4895980d3617c93.php:169
+#: /Users/jl/php_projects/mios/my-simple-web/app/cache/ea/be/1ef71282f5cfd4895980d3617c93.php:297
 #: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/layout.html.twig:95
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/layout.html.twig:152
 msgid "Contact"
 msgstr "Contact"
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/cache/ea/be/1ef71282f5cfd4895980d3617c93.php:279
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/layout.html.twig:143
+msgid "Home"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/cache/ea/be/1ef71282f5cfd4895980d3617c93.php:290
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/layout.html.twig:148
+msgid "Privacy policy"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/cache/ea/be/1ef71282f5cfd4895980d3617c93.php:309
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/layout.html.twig:159
+msgid "Developed by"
+msgstr ""
 
 #: /Users/jl/php_projects/mios/my-simple-web/app/config/Config.php:21
 #: /Users/jl/php_projects/mios/my-simple-web/app/config/dbconfig.php:9
@@ -67,55 +122,167 @@ msgstr ""
 msgid "Espa&ntilde;ol"
 msgstr ""
 
-#: /Users/jl/php_projects/mios/my-simple-web/app/models/core/BaseModel.php:140
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/core/BaseModel.php:136
 msgid "BaseModel"
 msgstr ""
 
-#: /Users/jl/php_projects/mios/my-simple-web/app/models/core/BaseModel.php:150
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/core/BaseModel.php:146
 msgid "BaseModels"
 msgstr ""
 
-#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Article.php:45
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/core/BaseModel.php:170
 #, php-format
-msgid "%s field can't left blank"
+msgid "%s can't leave blank"
 msgstr ""
 
-#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Article.php:51
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Article.php:48
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Config.php:48
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Staticpage.php:33
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Staticpage.php:37
 msgid "Slug"
 msgstr ""
 
-#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Article.php:55
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Article.php:52
 msgid "Repeated slug"
 msgstr ""
 
-#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Article.php:59
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Article.php:56
 msgid "Title"
 msgstr ""
 
-#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Article.php:62
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Article.php:59
 #: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Description.php:69
 msgid "Description"
 msgstr ""
 
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Config.php:56
+msgid "Value"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Contact.php:19
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/helper/get-all-routes.html.twig:14
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/contact/index.html.twig:19
+msgid "Name"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Contact.php:22
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/contact/index.html.twig:24
+msgid "Email"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Contact.php:25
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/contact/index.html.twig:29
+msgid "Phone"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Contact.php:28
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/contact/index.html.twig:34
+msgid "Message"
+msgstr ""
+
 #: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Description.php:26
-msgid "Lang field can't left blank"
+msgid "Lang"
 msgstr ""
 
 #: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Description.php:29
-msgid "Content field can't left blank"
-msgstr ""
-
-#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Description.php:79
-msgid "Descriptions"
-msgstr ""
-
 #: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/DescriptionFormType.php:36
 #, fuzzy
 msgid "Content"
 msgstr "Contact"
 
-#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/DescriptionFormType.php:90
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Description.php:79
+msgid "Descriptions"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/DescriptionFormType.php:94
 msgid "Text"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/models/Entity/Staticpage.php:37
+msgid "Repeated"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/entity/edit.html.twig:38
+msgid "Save"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/entity/edit.html.twig:42
+msgid "Reset"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/entity/edit.html.twig:46
+msgid "Return"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/entity/embeded-list.html.twig:28
+msgid "Not found records to show."
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/helper/get-all-routes.html.twig:15
+msgid "Path"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/home/index.html.twig:9
+msgid "Administrative backend"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/home/index.html.twig:10
+msgid "Select left option to administrate it"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/home/index.html.twig:14
+msgid "Answer pending contacts"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/home/index.html.twig:21
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/home/index.html.twig:31
+msgid "View details"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/backend/home/index.html.twig:24
+msgid "Latest votes"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/contact/index.html.twig:11
+#, fuzzy
+msgid "Contact form"
+msgstr "Contact"
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/contact/index.html.twig:41
+msgid "I'm human"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/contact/index.html.twig:47
+msgid "Remember to visit our"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/contact/index.html.twig:49
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/contact/thanks.html.twig:17
+msgid "privacy policy"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/contact/thanks.html.twig:7
+msgid "Thanks"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/contact/thanks.html.twig:12
+msgid "Thanks for contact us."
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/contact/thanks.html.twig:15
+msgid "Remember that you can see our"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/home/login.html.twig:15
+msgid "Password protect content"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/home/login.html.twig:18
+msgid "User"
+msgstr ""
+
+#: /Users/jl/php_projects/mios/my-simple-web/app/templates/frontend/home/login.html.twig:24
+msgid "Password"
 msgstr ""
 
 #~ msgid "Under construction"

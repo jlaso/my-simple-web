@@ -40,8 +40,24 @@ class ConfigFixture implements FixturableInterface
                 'value'     => 'webdesign,webdevelop,internet development,jaitec,web design, web development',
              ))
              ->addNewItem(array(
-                'slug'      => 'web.description',
-                'value'     => 'Can make the web development very very simple',
+                'slug'      => 'web.description.en',
+                'value'     => 'We make the web development very very simple',
+             ))
+             ->addNewItem(array(
+                'slug'      => 'web.description.es',
+                'value'     => 'Hacemos que el desarrollo web sea sencillo',
+             ))
+             ->addNewItem(array(
+                'slug'      => 'web.email.contact',
+                'value'     => 'info(@)jaitec.net',
+             ))
+             ->addNewItem(array(
+                'slug'      => 'web.developer',
+                'value'     => 'jaitec.net',
+             ))
+             ->addNewItem(array(
+                'slug'      => 'web.developer.url',
+                'value'     => 'http://jaitec.net',
              ))
         ;
 

@@ -30,11 +30,11 @@ class Staticpage
         if(empty($this->slug)) $this->slug = $this->titulo;
         $this->slug = \lib\SlimFunctions::slug($this->slug);
         if (empty($this->slug)) {
-            $result['slug'] = 'Slug field can\'t left blank';
+            $result['slug'] = $this->cantLeaveBlank(_('Slug'));
         } else {
             $slugExists = self::checkSlug($this->slug,$this->id);
             if ($slugExists) {
-                $result['slug'] = 'Slug repetido';
+                $result['slug'] = _('Repeated').' '._('Slug');
             }
         }
 

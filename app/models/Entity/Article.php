@@ -41,14 +41,11 @@ class Article
      */
     public function validate()
     {
-        $cantLeftBlank = function($field) {
-            return sptrinf(_('%s field can\'t left blank'),$field);
-        };
         $result = array();
         if(empty($this->slug)) $this->slug = $this->title;
         $this->slug = \lib\MyFunctions::slug($this->slug);
         if (empty($this->slug)) {
-            $result['slug'] = $cantLeftBlank(_('Slug'));
+            $result['slug'] = $this->cantLeaveBlank(_('Slug'));
         } else {
             $slugExists = self::checkSlug($this->slug,$this->id);
             if ($slugExists) {
@@ -56,10 +53,10 @@ class Article
             }
         }
         if (empty($this->title)) {
-            $result['title'] = $cantLeftBlank(_('Title'));
+            $result['title'] = $this->cantLeaveBlank(_('Title'));
         }
         if (empty($this->description)) {
-            $result['description'] = $cantLeftBlank(_('Description'));
+            $result['description'] = $this->cantLeaveBlank(_('Description'));
         }
 
         return $result;
