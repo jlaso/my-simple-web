@@ -18,13 +18,12 @@ abstract class BaseModel
 {
 
     /**
+     * Factory from extended class
      *
-     * Recrea la factoria desde el nombre de la clase hija,
-     *
-     * esto permite hacer un llamada como
-     * EntidadHija::factory()->...
-     * o
-     * BaseModel::factory('EntidadHija')->...
+     * that permits this
+     * Entity::factory()->...
+     * or
+     * BaseModel::factory('Entity')->...
      *
      * @param string $class
      *
@@ -44,12 +43,9 @@ abstract class BaseModel
     }
 
     /**
-     *
-     * Bind de los datos pasados con los de la entidad, por ejemplo
-     * cuando se reciben los parámetros por post de un formulario
+     * Bind entity data fields, post form for example
      *
      * @param assoc-array $array
-     *
      */
     public function bind(array $array)
     {
@@ -63,10 +59,10 @@ abstract class BaseModel
                 $field  = $formItem['field'];
                 $type   = strtolower($formItem['type']);
                 $ro     = isset($formItem['widget']['readonly']) && $formItem['widget']['readonly'];
-                // solo bind de aquellos input.. que no sean readonly
+                // only bind not readonly fields
                 if (!$ro && in_array($type,array('text','textarea','number','hidden',))) {
-                    $value = isset($array[$field]) ? $array[$field] : '';
-                    if ($value) {
+                    $value = isset($array[$field]) ? $array[$field] : null;
+                    if ( null !== $value ) {
                         $this->set($field,$value);
                     }
 
@@ -161,4 +157,17 @@ abstract class BaseModel
         $str = \lib\MyFunctions::camelCaseToUnderscored(get_called_class());
         return str_replace('\\','_',$str);
     }
+
+    /**
+     * Return message "$field can't leave blank", translated
+     *
+     * @param string $field
+     *
+     * @return string
+     */
+    public function cantLeaveBlank($field)
+    {
+        return sprintf(_('%s can\'t leave blank'),$field);
+    }
+
 }

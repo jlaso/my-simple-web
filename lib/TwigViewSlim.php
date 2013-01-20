@@ -11,6 +11,8 @@ class TwigViewSlim extends Twig
     {
         $twigEnvironment->addFunction('var_dump',
                 new Twig_Function_Function('var_dump'));
+        $twigEnvironment->addFunction('sprintf',
+            new Twig_Function_Function('sprintf'));
         $twigEnvironment->addFunction('urlFor',
                 new Twig_Function_Function('\Router\SlimExt::getInstance()->urlFor'));
         $twigEnvironment->addFunction('urlActual',

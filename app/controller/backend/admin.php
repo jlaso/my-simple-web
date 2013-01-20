@@ -34,6 +34,9 @@ function getAllEntities()
     return BaseModel::factory('Entity\Entity')->find_many();
 }
 
+/**
+ * homepage for backend, without language specified
+ */
 $app->get('/admin/', function() use($app) {
     return $app->redirect($app->urlFor('admin.index',array(
         'lang'=> \lib\MyFunctions::session('lang'),

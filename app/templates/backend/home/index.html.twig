@@ -6,19 +6,29 @@
 {% block subcontent %}
 
     <div class="hero-unit">
-        <h1>Backend administrativo</h1>
-        <p>Elige una opción de la izquierda para administrarla</p>
+        <h1>{{ _('Administrative backend') }}</h1>
+        <p>{{ _('Select left option to administrate it') }}</p>
     </div>
     <div class="row-fluid">
         <div class="span6">
-            <h2>Contactos pendientes de contestar</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
+            <h2>{{ _('Answer pending contacts') }}</h2>
+            <p>
+                Donec id elit non mi porta gravida at eget metus.
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                condimentum nibh, ut fermentum massa justo sit amet risus.
+                Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+            </p>
+            <p><a class="btn" href="#">{{ _('View details') }} &raquo;</a></p>
         </div><!--/span-->
         <div class="span6">
-            <h2>Últimas votaciones</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
+            <h2>{{ _('Latest votes') }}</h2>
+            <p>
+                Donec id elit non mi porta gravida at eget metus.
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                condimentum nibh, ut fermentum massa justo sit amet risus.
+                Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+            </p>
+            <p><a class="btn" href="#">{{ _('View details') }} &raquo;</a></p>
         </div><!--/span-->
     </div><!--/row-->
 

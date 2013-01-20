@@ -61,12 +61,17 @@
                         </td>
                     </tr>
                 {% else %}
-                    <tr><td colspan="3">No se han encontrado registros para mostrar</td></tr>
+                    <tr><td colspan="3">{{ _('No records found.') }}</td></tr>
                 {% endfor %}
                 </tbody>
             </table>
             <div class="well well-small">
-                Total {{ paginator.nbRecords }} registro{{ paginator.nbRecords==1 ? '' : 's' }}{{ search.data|length > 0 ? ' con el filtro seleccionado' : ''}}.
+                {% if paginator.nbRecords == 1 %}
+                    {{ _('Total one record found') }}
+                {% else %}
+                    {{ sprintf(_('Total %d records found'),paginator.nbRecords) }}
+                {% endif %}
+                {{ search.data|length > 0 ? ' ' ~ _('with specified filter') : ''}}.
             </div>
         </div>
     </div>
