@@ -1,11 +1,11 @@
 <?php
 
-    use lib\SlimFunctions;
+    use lib\MyFunctions;
     use app\models\core\BaseModel;
     use app\models\core\ValidableInterface;
     use app\models\core\Pagination\Paginable;
     use app\models\core\Form\FormSearchTypeInterface;
-    use app\models\core\Seach\SearchQueryBuilder;
+    use app\models\core\Search\SearchQueryBuilder;
 
 /**
  * lista entidades
@@ -27,7 +27,7 @@ $app->get('/admin/list/:entity/', function ($entity) use ($app) {
 $app->map('/admin/list/:entity/(:page)', function($entity,$page=1) use ($app) {
 
     $entity      = \app\models\core\Sanitize::string(trim(strtolower($entity)));
-    $ucEntity    = \lib\SlimFunctions::underscoredToCamelCaseEntityName($entity);
+    $ucEntity    = \lib\MyFunctions::underscoredToCamelCaseEntityName($entity);
     $frmLstClass = $ucEntity."FormType";
     if (class_exists($frmLstClass)) {
 
@@ -80,7 +80,7 @@ $app->map('/admin/list/:entity/(:page)', function($entity,$page=1) use ($app) {
             'entity'    => $entity,
             'paginator' => $paginator,
             'searchable'=> ($formList instanceof FormSearchTypeInterface),
-            'entityName'=> $ucEntity::getEntityName(),
+            'entityName'=> $ucEntity::_entityName(),
         ));
     } else {
         $app->notFound();

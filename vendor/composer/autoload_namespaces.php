@@ -15,10 +15,12 @@ return array(
     'app\\controller\\frontend' => $baseDir . '/',
     'app\\controller\\backend\\CRUD' => $baseDir . '/',
     'app\\controller\\backend' => $baseDir . '/',
+    'app\\config' => $baseDir . '/',
     'Twig_Extensions_' => $vendorDir . '/slim/extras/Views/Extension/',
     'Twig_' => $vendorDir . '/twig/twig/lib/',
     'Slim\\Extras' => $vendorDir . '/slim/extras/.',
     'Slim' => $vendorDir . '/slim/slim/.',
     'Security' => $baseDir . '/app/models/',
+    'Router' => $baseDir . '/app/controller/core/',
     'Entity' => $baseDir . '/app/models/',
 );

@@ -12,11 +12,13 @@ class TwigViewSlim extends Twig
         $twigEnvironment->addFunction('var_dump',
                 new Twig_Function_Function('var_dump'));
         $twigEnvironment->addFunction('urlFor',
-                new Twig_Function_Function('\Slim\Slim::getInstance()->urlFor'));
+                new Twig_Function_Function('\Router\SlimExt::getInstance()->urlFor'));
+        $twigEnvironment->addFunction('urlActual',
+            new Twig_Function_Function('\Router\SlimExt::getInstance()->urlActual'));
         $twigEnvironment->addFunction('asset',
-                new Twig_Function_Function('\lib\SlimFunctions::asset'));
+                new Twig_Function_Function('\lib\MyFunctions::asset'));
         $twigEnvironment->addFunction('session',
-            new Twig_Function_Function('\lib\SlimFunctions::session'));
+            new Twig_Function_Function('\lib\MyFunctions::session'));
 
         // form widgets
         $twigEnvironment->addFunction('form_table_head',
@@ -43,6 +45,14 @@ class TwigViewSlim extends Twig
             new Twig_Function_Function('getAllEntities'));
         $twigEnvironment->addFunction('config',
             new Twig_Function_Function('\Entity\Config::getConfig'));
+        $twigEnvironment->addFunction('langConfig',
+            new Twig_Function_Function('\app\config\Config::getInstance()->getLanguages'));
+        // i18n
+        $twigEnvironment->addFunction('_',
+            new Twig_Function_Function('_',array(
+                'is_safe' => array('html')
+            )));
+
     }
 
     public function getEnvironment()

@@ -44,17 +44,36 @@
                 <a class="brand" href="#">My simple web</a>
                 <div class="nav-collapse collapse">
                     <p class="navbar-text pull-right">
-                        You are logged as
+                        {{ _('You are logged as') }}&nbsp;
                         <a class="navbar-link btn btn-primary" href="{{ urlFor('.logout') }}">
                             {{ session('user.name') }}
                         </a>
                     </p>
                     <ul class="nav">
-                        <li class="active"><a href="{{ urlFor('home.index') }}">Frontend</a></li>
-                        {#
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        #}
+                        <li class="active">
+                            <a href="{{ urlFor('home.index') }}">
+                                {{ _('Frontend') }}
+                            </a>
+                        </li>
+                        <li class="btn-group">
+                            {% set lang = session('lang') %}
+                            <a class="btn btn-small btn-primary dropdown-toggle"
+                               data-toggle="dropdown"
+                               href="#">
+                                {{ _('Language') ~ ': ' ~ lang }}
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                {% for code,language in langConfig() %}
+                                    <li {{ lang == code ? 'class="active"' : '' }}>
+                                        <a href="{{ urlActual({ 'lang':code }) }}">
+                                            {{ language|raw }}
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>

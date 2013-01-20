@@ -4,7 +4,7 @@ namespace Entity;
 
 use app\models\core\BaseModel;
 use app\models\core\ValidableInterface;
-use lib\SlimFunctions;
+use lib\MyFunctions;
 
 class Contact
     extends BaseModel
