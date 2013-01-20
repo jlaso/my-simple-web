@@ -1,6 +1,6 @@
 <?php
 
-    use lib\SlimFunctions;
+    use lib\MyFunctions;
     use app\models\core\BaseModel;
     use app\models\core\ValidableInterface;
     use app\models\core\Pagination\Paginable;
@@ -10,12 +10,16 @@
 
 /**
  * crud - generic edit for entities
+ *
+ * New: now accept master-slave form
+ *
+ * @return
  */
-$app->map('/admin/edit/:entity/:id', function($entity,$id) use ($app) {
+$app->map('/:lang/admin/edit/:entity/:id', function($lang,$entity,$id) use ($app) {
 
     $request     = $app->request();
     $entity      = \app\models\core\Sanitize::string(trim(strtolower($entity)));
-    $ent         = \lib\SlimFunctions::underscoredToCamelCaseEntityName($entity);
+    $ent         = \lib\MyFunctions::underscoredToCamelCaseEntityName($entity);
     $id          = intval(trim($id));
     $frmLstClass = $ent."FormType";
     if (class_exists($frmLstClass)) {
@@ -23,6 +27,26 @@ $app->map('/admin/edit/:entity/:id', function($entity,$id) use ($app) {
 
         $item  = BaseModel::factory($ent)->find_one($id);
         $errors= array();
+
+        $relations = $item->_relations();
+        $slaves = isset($relations['one-to-many']) ? $relations['one-to-many'] : array();
+        $relations = array();
+        foreach ( $slaves as $slave => $entityRelation ) {
+            if ($slave) {
+                $formType = $entityRelation."FormType";
+                if (class_exists($formType)) {
+                    $slaveForm = new $formType();
+                    $getSlave  = 'get' . ucfirst($slave);
+                    $data      = $item->$getSlave();
+                    $relations[] = array(
+                        'name'  => $slaveForm->_namePlural(),
+                        'entity'=> $slaveForm->_nameEntity(),
+                        'form'  => $slaveForm->getFormList(),
+                        'data'  => $data,
+                    );
+                }
+            }
+        }
 
         if ($request->isPost()) {
             $item->bind($request->post());
@@ -42,7 +66,8 @@ $app->map('/admin/edit/:entity/:id', function($entity,$id) use ($app) {
             'item'      => $item,
             'entity'    => $entity,
             'errors'    => $errors,
-            'entityName'=> $ent::getEntityName(),
+            'entityName'=> $ent::_entityName(),
+            'relations' => $relations,
         ));
     } else {
         $app->pass();

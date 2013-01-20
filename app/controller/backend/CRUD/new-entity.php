@@ -1,6 +1,6 @@
 <?php
 
-    use lib\SlimFunctions;
+    use lib\MyFunctions;
     use app\models\core\BaseModel;
     use app\models\core\ValidableInterface;
     use app\models\core\Pagination\Paginable;
@@ -14,7 +14,7 @@ $app->map('/admin/new/:entity/', function ($entity) use ($app) {
 
     $request     = $app->request();
     $entity      = \app\models\core\Sanitize::string(trim(strtolower($entity)));
-    $ent         = \lib\SlimFunctions::underscoredToCamelCaseEntityName($entity);
+    $ent         = \lib\MyFunctions::underscoredToCamelCaseEntityName($entity);
 
     $frmLstClass = $ent."FormType";
     if (class_exists($frmLstClass)) {

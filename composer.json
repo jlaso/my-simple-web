@@ -14,6 +14,7 @@
 
             "lib": "",
 
+            "app\\config": "",
             "app\\models\\core":              "",
             "app\\models\\core\\Form":        "",
             "app\\models\\core\\Pagination":  "",
@@ -24,7 +25,8 @@
 
             "app\\controller\\backend":      "",
             "app\\controller\\backend\\CRUD":      "",
-            "app\\controller\\frontend":      ""
+            "app\\controller\\frontend":      "",
+            "Router": "app/controller/core/"
 
         }
     },

@@ -1,6 +1,6 @@
 <?php
 
-    use lib\SlimFunctions;
+    use lib\MyFunctions;
     use app\models\core\BaseModel;
     use app\models\core\ValidableInterface;
     use app\models\core\Pagination\Paginable;
@@ -18,7 +18,7 @@ $app->get('/admin/check-slug/:entity', function($entity) use ($app) {
         $result = $entity::checkSlug($slug,$id);
 
         return
-            SlimFunctions::jsonDataAnd200($app->response(),json_enconde(
+            MyFunctions::jsonDataAnd200($app->response(),json_enconde(
                 'slug'  => $slug,
                 'id'    => $id,
                 'result'=> $result,
