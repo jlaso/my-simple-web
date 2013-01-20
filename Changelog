@@ -1,3 +1,66 @@
+commit fe025078c15ffc05ca7367a2a6dba627adb7e7a9
+Merge: d79815b 0af2f74
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sun Jan 20 18:56:09 2013 +0100
+
+    Merge branch 'feature/role-user' into develop
+
+commit 0af2f748de51c241afce1c63caf77d6782f5be3e
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sun Jan 20 18:55:24 2013 +0100
+
+    - Various changes including role_user and master-detail form principles.
+
+commit d79815b7bee67ec293f6c8091b3299789400934e
+Merge: 74fd63e b47f978
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Tue Jan 15 23:47:28 2013 +0100
+
+    Merge branch 'master' into develop
+
+commit b47f9783f6d47a772773294b4b8b57e4b183d4ff
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Tue Jan 15 23:47:10 2013 +0100
+
+    - ChangeLog
+
+commit d49441879e6deb5fc177a3cd09baceca284d5621
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Tue Jan 15 23:41:06 2013 +0100
+
+    - Untrack custom image files
+
+commit 34f682d6cf84b9b4382424e30d6e3e79c6b55e63
+Merge: 97a4d58 74fd63e
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Tue Jan 15 23:36:46 2013 +0100
+
+    Merge branch 'develop'
+
+commit 97a4d580e596490fccfeeeaea5096584b8c8e5b7
+Merge: 2ae08e1 954f123
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Tue Jan 15 23:36:17 2013 +0100
+
+    Merge branch 'release/0.1.1'
+    
+    Conflicts:
+    	ShortLog
+    	VERSION
+
+commit 74fd63e3d2dd36f0a77265dd122ea80161b55321
+Merge: 494e05e 954f123
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Tue Jan 15 23:34:58 2013 +0100
+
+    Merge branch 'release/1.1.1' into develop
+
+commit 954f123e807b09dfea04580daa1a59807be23efd
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Tue Jan 15 23:34:43 2013 +0100
+
+    - Change to version 1.1.1.
+
 commit 494e05ea8b37fc73aff70546fe9e2179a0653185
 Merge: b31fe2c ba47382
 Author: joseluis laso <wld1373@gmail.com>
@@ -10,6 +73,19 @@ Author: joseluis laso <wld1373@gmail.com>
 Date:   Tue Jan 15 23:32:14 2013 +0100
 
     - Repair the fixture that creates privacy policy.
+
+commit 2ae08e13dcc8a2c5999ca7ab28415ba27648a857
+Merge: a3919de f1a017d
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Tue Jan 15 23:07:29 2013 +0100
+
+    Merge branch 'release/1.1'
+
+commit f1a017db75dd41bb8bf0c213e08da9ec8c700446
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Tue Jan 15 23:01:57 2013 +0100
+
+    - Cambio a version 1.1
 
 commit b31fe2c213252a39615b062d83010d146c13f41f
 Merge: a3919de 3eae788
