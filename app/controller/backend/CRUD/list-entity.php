@@ -7,22 +7,9 @@
     use app\models\core\Form\FormSearchTypeInterface;
     use app\models\core\Search\SearchQueryBuilder;
 
-/**
- * lista entidades
- */
-/*
-$app->get('/admin/list/:entity/', function ($entity) use ($app) {
-
-    $entity = Sanitize::string(trim(strtolower($entity)));
-    $items  = BaseModel::factory(ucfirst($entity))->find_many();
-    $app->render('backend/'.$entity.'/list.html.twig',array(
-        'items'   => $items,
-    ));
-})->name('admin.list-entity');
-*/
 
 /**
- * crud - list generico para entidades que tengan definido un Entity\EntityFormType
+ * crud - generic list for entities that have defined Entity\EntityFormType
  */
 $app->map('/admin/list/:entity/(:page)', function($entity,$page=1) use ($app) {
 

@@ -13,7 +13,7 @@ $app->get('/(:lang(/))', function ($lang='en') use ($app) {
 $app->get('/:lang/:slug(/)', function ($lang, $slug) use ($app) {
 
     $static = Entity\Staticpage::factory()
-        ->where('slug',$slug)
+        ->where('slug',$slug.'.'.$lang)
         ->find_one();
     if (!$static instanceof Entity\Staticpage) {
         return $app->pass();
