@@ -5,4 +5,9 @@
     define('DBUSER', 'root');
     define('DBPASS', 'root');
 
-    define('LANGUAGES', 'es,en');
+    $languages = array(
+        'en'    => _('English'),
+        'es'    => _('Espa&ntilde;ol'),
+    );
+
+    define('LANGUAGES', serialize($languages));
