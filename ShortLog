@@ -1,4 +1,7 @@
-joseluis laso (20):
+Joseluis Laso (1):
+      Initial commit
+
+joseluis laso (34):
       - initial commit
       - ignore server dbconfig.php and remote it from the repo
       - change dbconfig_sample.php db
@@ -19,4 +22,18 @@ joseluis laso (20):
       Merge branch 'master' into develop
       - Various changes including role_user and master-detail form principles.
       Merge branch 'feature/role-user' into develop
+      - Change to version 1.2.
+      Merge branch 'release/1.2' into develop
+      Merge branch 'release/1.2'
+      - Changed git repo info
+      Merge branch 'feature/fix-readme-info' into develop
+      Merge branch 'feature/fix-readme-info'
+      - Changes in entities,controllers and templates that permits use       i18n with gettext, close #2
+      Merge branch 'i18n' into develop
+      Merge branch 'develop'
+      - Merge branch 'master' of github.com:jlaso/my-simple-web
+      Merge branch 'master' into develop
+      - Correct dbconfig_sample.php
+      - Change style of frontend.
+      - Merge branch 'feature/bootstrap' into develop
 
