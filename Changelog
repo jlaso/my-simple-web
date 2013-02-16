@@ -1,3 +1,100 @@
+commit fcb23de7c73a2a38df4c5b4a2fdaaed565b6a580
+Merge: d42ec81 051c130
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sat Feb 16 21:25:29 2013 +0100
+
+    - Merge branch 'feature/bootstrap' into develop
+
+commit 051c13075164e7195b19471df42ebb8d05eb6f26
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sat Feb 16 21:24:59 2013 +0100
+
+    - Change style of frontend.
+
+commit d42ec810088f840233146590b71e2e3787523a29
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Tue Feb 5 22:02:28 2013 +0100
+
+    - Correct dbconfig_sample.php
+
+commit b4e346f768a96f0e868d66c5d36458ac8fbb712c
+Merge: b383be1 a7ee660
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sun Jan 20 21:57:19 2013 +0100
+
+    Merge branch 'master' into develop
+
+commit a7ee6602c7a286910ac40f01c2e47ae4e88bac75
+Merge: 829f3bb f1c8afb
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sun Jan 20 21:56:44 2013 +0100
+
+    - Merge branch 'master' of github.com:jlaso/my-simple-web
+    
+    Conflicts:
+    	README.md
+
+commit 829f3bb85ca1b36cc2a8ab657b8b09ee1f87a13f
+Merge: a3cf820 b383be1
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sun Jan 20 21:53:47 2013 +0100
+
+    Merge branch 'develop'
+
+commit b383be12248c0e929260080770d3e76cca41a370
+Merge: ddfbc1c 758a0cb
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sun Jan 20 21:52:37 2013 +0100
+
+    Merge branch 'i18n' into develop
+
+commit 758a0cb3fa90bce987afa41c12cf3ffe977e04e8
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sun Jan 20 21:49:16 2013 +0100
+
+    - Changes in entities,controllers and templates that permits use
+      i18n with gettext, close #2
+
+commit a3cf82042ce7d77d978252db2f9a74592cc9c028
+Merge: 7655b81 b234102
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sun Jan 20 19:49:54 2013 +0100
+
+    Merge branch 'feature/fix-readme-info'
+
+commit ddfbc1c3923b316ca6934a064fa8a338697d177f
+Merge: fd93e8f b234102
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sun Jan 20 19:49:47 2013 +0100
+
+    Merge branch 'feature/fix-readme-info' into develop
+
+commit b234102206e51bbf537880d3aa9eabaa60de7a3e
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sun Jan 20 19:49:00 2013 +0100
+
+    - Changed git repo info
+
+commit 7655b81a43f1cd4920b798f9182dde9038c16cfb
+Merge: b47f978 39846e6
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sun Jan 20 18:58:30 2013 +0100
+
+    Merge branch 'release/1.2'
+
+commit fd93e8fa63b795be3f1f307aff7554568b605efc
+Merge: fe02507 39846e6
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sun Jan 20 18:58:11 2013 +0100
+
+    Merge branch 'release/1.2' into develop
+
+commit 39846e6c9a7e8bc5c84ec3c8fc8df4cbd921b727
+Author: joseluis laso <wld1373@gmail.com>
+Date:   Sun Jan 20 18:57:43 2013 +0100
+
+    - Change to version 1.2.
+
 commit fe025078c15ffc05ca7367a2a6dba627adb7e7a9
 Merge: d79815b 0af2f74
 Author: joseluis laso <wld1373@gmail.com>
@@ -10,6 +107,12 @@ Author: joseluis laso <wld1373@gmail.com>
 Date:   Sun Jan 20 18:55:24 2013 +0100
 
     - Various changes including role_user and master-detail form principles.
+
+commit f1c8afbf0d932fbf0efd2532fdde1d4dee9df18f
+Author: Joseluis Laso <wld1373@gmail.com>
+Date:   Sun Jan 20 09:52:31 2013 -0800
+
+    Initial commit
 
 commit d79815b7bee67ec293f6c8091b3299789400934e
 Merge: 74fd63e b47f978
