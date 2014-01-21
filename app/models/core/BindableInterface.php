@@ -3,7 +3,7 @@
 namespace app\models\core;
 
 /**
- * Permite que una entidad pueda tomar directamente los valores de una array asociativo,
+ * Permite que una entidad pueda tomar directamente los valores de un array asociativo,
  * por ejemplo el request e hidratarse con esos valores, para hacer un bind de un formulario
  */
 interface BindableInterface
