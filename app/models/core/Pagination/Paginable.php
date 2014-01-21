@@ -43,12 +43,12 @@ class Paginable implements PaginableInterface
      */
     public function __construct($entity, $_options = array())
     {
+
         $options = array_merge(array(
             'query'     => null,
             'params'    => null,
             'recPerPage'=> 10,
         ),$_options);
-
         $this->entity     = $entity;
         $this->query      = $options['query'];
         $this->params     = $options['params'];

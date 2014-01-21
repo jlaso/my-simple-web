@@ -181,7 +181,8 @@ class RoutingCacheManager
      */
     protected function processCache($classFile)
     {
-        global $app;
+        /** @var SlimExt $app */
+        $app = SlimExt::getInstance();
         require_once($this->updateAndGetCacheFileName($classFile));
     }
 
