@@ -38,7 +38,7 @@ function getAllEntities()
  * homepage for backend, without language specified
  */
 $app->get('/admin/', function() use($app) {
-    return $app->redirect($app->urlFor('admin.index',array(
+    $app->redirect($app->urlFor('admin.index',array(
         'lang'=> \lib\MyFunctions::session('lang'),
     )));
 });
@@ -67,3 +67,13 @@ $app->get('/:lang/admin/get-all-routes/', function ($lang) use ($app) {
         'routes'   => $routes,
     ));
 })->name('admin.get-all-routes');
+
+
+$app->get('/test1/', function() use($app) {
+        $html = '<pre>';
+        $students = \Entity\Student::factory()->find_many();
+        foreach($students as $student){
+            $html .= sprintf('%06d| %30s'.PHP_EOL, $student->id, $student->name );
+        }
+        die($html);
+    });

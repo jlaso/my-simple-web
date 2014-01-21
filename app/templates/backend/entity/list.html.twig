@@ -2,12 +2,14 @@
 
 {% set iamhere = 'admin.list-' ~ entity %}
 
-{% block subcontent %}
-
+{% block stylesheets %}
+    {{ parent() }}
     <style type="text/css">
         .center { text-align: center; }
     </style>
+{% endblock stylesheets %}
 
+{% block subcontent %}
     <div class="row-fluid">
         <div class="span12">
             <div>
@@ -75,5 +77,4 @@
             </div>
         </div>
     </div>
-
 {% endblock subcontent %}

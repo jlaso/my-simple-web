@@ -16,7 +16,7 @@
             <ul>
                 <li>
                     <label for="">{{ _('User') }}:</label>
-                    <input type="text" name="user" value="{{ user }}"/>
+                    <input type="text" name="user" value="{{ user.email }}"/>
                     {{ macro.form_error(errors.user) }}
                 </li>
 

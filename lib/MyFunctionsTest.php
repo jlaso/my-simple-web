@@ -1,8 +1,11 @@
 <?php
 
-require_once 'MyFunctions.php';
+namespace lib;
 
-class MyFunctionsTest extends \PHPUnit_Framework_TestCase
+use lib\MyFunctions;
+use \PHPUnit_Framework_TestCase;
+
+class MyFunctionsTest extends PHPUnit_Framework_TestCase
 {
 
     /**
@@ -11,11 +14,11 @@ class MyFunctionsTest extends \PHPUnit_Framework_TestCase
     public function testCheckEmail()
     {
         // check_mail assertions
-        $this->assertTrue( lib\MyFunctions::check_email('email@email.com') );
+        $this->assertTrue( MyFunctions::check_email('email@email.com') );
         // email that is only word
-        $this->assertFalse( lib\MyFunctions::check_email('emailinvalid') );
+        $this->assertFalse( MyFunctions::check_email('emailinvalid') );
         // email that hasn't domain termination
-        $this->assertFalse( lib\MyFunctions::check_email('email@invalid') );
+        $this->assertFalse( MyFunctions::check_email('email@invalid') );
     }
 
     public function NotContains($str,$not)
@@ -32,27 +35,24 @@ class MyFunctionsTest extends \PHPUnit_Framework_TestCase
 
     public function testSlug()
     {
-        $text = "This a text with áéíóú"; //àèìòùÁÉÍÓÚñÑçÇ";
-        $slug = \lib\MyFunctions::slug($text);
-//die($slug);  FAILS
-        //$this->assertTrue( $this->NotContains($slug,'á| |é|í|ó|ú|à|è|ì|ò|ù|Á|É|Í|Ó|Ú|ñ|Ñ|ç|Ç') );
+        $text = 'This a text with áéíóúàèìòùÁÉÍÓÚñÑçÇ';
+        $slug = MyFunctions::slug($text);
+        $this->assertTrue( $this->NotContains($slug,'á| |é|í|ó|ú|à|è|ì|ò|ù|Á|É|Í|Ó|Ú|ñ|Ñ|ç|Ç') );
     }
 
     public function testGenkey()
     {
-        $test = \lib\MyFunctions::genKey(7);
+        $test = MyFunctions::genKey(7);
         // verifies lenght
         $this->assertTrue( 7 === strlen($test) );
 
-        // and is string
+        // and that is string
         $this->assertTrue( is_string($test) );
 
         // now verifies than matches in repeated generation is less than 10%
         $matches = 0;
-        for ($i=0;$i<1000;$i++)
-        {
-            if ($test == \lib\MyFunctions::genKey(7))
-            {
+        for ($i=0;$i<1000;$i++){
+            if ($test == MyFunctions::genKey(7)){
                 $matches++;
             }
         }
@@ -65,10 +65,10 @@ class MyFunctionsTest extends \PHPUnit_Framework_TestCase
     {
         $test = "ThisIsATestForKnow";
 
-        $this->assertTrue( 'this_is_a_test_for_know' == \lib\MyFunctions::camelCaseToUnderscored($test));
+        $this->assertTrue( 'this_is_a_test_for_know' == MyFunctions::camelCaseToUnderscored($test));
 
         $test = "entity_table_name";
-        $this->assertTrue("Entity\\TableName" == \lib\MyFunctions::underscoredToCamelCaseEntityName($test));
+        $this->assertTrue("Entity\\TableName" == MyFunctions::underscoredToCamelCaseEntityName($test));
 
     }
 

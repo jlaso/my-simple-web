@@ -2,16 +2,14 @@
 
 namespace app\models\core\Pagination;
 
-use ORMWrapper;
-
 interface PaginableInterface
 {
 
     /**
      * Generates a paginator from the ORMWrapper specified with ten records per page as default
      *
-     * @param \ORMWrapper $ormWrapper
-     * @param int $recPerPage
+     * @param string $entity
+     * @param array  $_options
      */
     public function __construct($entity, $_options = array());
 
@@ -66,14 +64,39 @@ interface PaginableInterface
      */
     public function getRouteForPage($num);
 
+    /**
+     * returns true if number of records is greater than recPerPage
+     *
+     * @return bool
+     */
     public function needPagination();
 
+    /**
+     * returns true if currentPage is not the first
+     *
+     * @return bool
+     */
     public function hasPreviousPage();
 
+    /**
+     * returns the number of previous page
+     *
+     * @return int
+     */
     public function getPreviousPage();
 
+    /**
+     * returns true if currentPage are not the last
+     *
+     * @return int
+     */
     public function hasNextPage();
 
+    /**
+     * returns the number of the next page
+     *
+     * @return int
+     */
     public function getNextPage();
 
 
