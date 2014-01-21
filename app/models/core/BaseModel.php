@@ -21,35 +21,48 @@ abstract class BaseModel
      * Factory from extended class
      *
      * that permits this
-     * Entity::factory()->...
+     *   Entity::factory()->...
      * or
-     * BaseModel::factory('Entity')->...
+     *   BaseModel::factory('Entity')->...
      *
      * @param string $class
      *
-     * @return \ORM|\ORMWrapper
+     * @return \ORMWrapper
      *
      */
     public static function factory($class="")
     {
         if (!$class) {
             $class = get_called_class();
-            //$class = explode("/",$class);
-
-            return parent::factory($class/*[count($class)-1]*/);
-        } else {
-            return parent::factory($class);
         }
+
+        return parent::factory($class);
+    }
+
+    /**
+     * @param string $class
+     *
+     * @return BaseModel
+     */
+    public static function create($class="")
+    {
+        if (!$class) {
+            $class = get_called_class();
+        }
+
+        return parent::factory($class)->create();
     }
 
     /**
      * Bind entity data fields, post form for example
      *
-     * @param assoc-array $array
+     * @param array $array
+     *
+     * @internal param $assoc -array $array
+     * @return mixed|void
      */
     public function bind(array $array)
     {
-
         $ent         = get_called_class();
         $frmLstClass = "\\{$ent}FormType";
         if (class_exists($frmLstClass)) {

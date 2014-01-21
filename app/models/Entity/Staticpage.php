@@ -28,7 +28,7 @@ class Staticpage
     {
         $result = array();
         if(empty($this->slug)) $this->slug = $this->titulo;
-        $this->slug = \lib\SlimFunctions::slug($this->slug);
+        $this->slug = \lib\MyFunctions::slug($this->slug);
         if (empty($this->slug)) {
             $result['slug'] = $this->cantLeaveBlank(_('Slug'));
         } else {

@@ -1,0 +1,39 @@
+Hubble is a clean responsive business and portfolio template built with Bootstrap. It was built for professional businesses and developers to have a clean slate to work from. Simply add your own styles to make it your own!
+
+The layout of the template would be considered sleek, basic and clean with a good use of white space that lets the user focus on the content.
+
+Using CSS3 we gave this template a subtle fading header and some awesome zoom effects on the portfolio and pricing pages to wow your users.
+
+Just add your own form processing elements and you're ready to use Hubble for your own projects!
+
+Code
+
+Compatible with Bootstrap 2.0.x
+Uses Bootstrap 2.0.1
+Written in valid HTML
+Includes jQuery 1.7.1
+Includes twitter.js to display recent twitter feeds
+CSS3 transitions and transforms
+
+Browsers
+
+Firefox 4+
+Latest Chrome
+Latest Safari
+Internet Explorer 7+
+Opera 11
+
+Assets
+
+Fonts:
+
+Google Web font - PT Sans
+http://www.google.com/webfonts#UsePlace:use/Collection:PT+Sans
+
+Creative commons photos by:
+http://www.flickr.com/photos/tufqi/
+http://www.flickr.com/photos/tufqi/2560939027
+http://www.flickr.com/photos/tufqi/2560938069
+http://www.flickr.com/photos/tufqi/2560918653
+
+These photos are free for commercial use but are not included in the template files. They are for display of the template only. 

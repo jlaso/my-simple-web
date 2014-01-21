@@ -2,13 +2,13 @@
     "authors": [
         {
             "name": "Joseluis Laso",
-            "email": "info@joseluislaso.es",
+            "email": "jlaso@joseluislaso.es",
             "homepage": "http://www.joseluislaso.es",
             "role": "Developer"
         }
     ],
     "name": "jaitec/my-simple-web",
-    "description": "My simple web by jaitec.net",
+    "description": "My simple web by joseluislaso.es",
     "autoload": {
         "psr-0": {
 
@@ -35,6 +35,11 @@
         "slim/slim":        "2.*",
         "slim/extras":      "2.*",
         "twig/twig":        "1.*",
-        "j4mie/paris" :     "1.2.0"
+        "j4mie/paris" :     "1.2.0",
+        "behat/behat":      "2.4.*@stable"
+    },
+
+    "config": {
+        "bin-dir": "bin/"
     }
 }

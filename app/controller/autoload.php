@@ -13,3 +13,7 @@
     require_once __DIR__."/backend/CRUD/edit-entity.php";
     require_once __DIR__."/backend/CRUD/new-entity.php";
     require_once __DIR__."/backend/crud.php";
+
+    $routingCacheManager = new \Router\RoutingCacheManager();
+
+    $routingCacheManager->loadRoute(__DIR__ . '/frontend/TestAnnotationController.php');
