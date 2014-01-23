@@ -90,7 +90,7 @@ class EntityManager
      */
     public function dropDatabase()
     {
-        $sql = 'DROP DATABASE IF EXISTS `'.$this->dbname.'`;';
+        $sql = sprintf('DROP DATABASE IF EXISTS `%s`;',$this->dbname);
         $this->execute($sql);
     }
 
@@ -99,7 +99,7 @@ class EntityManager
      */
     public function createDatabase()
     {
-        $sql = 'CREATE DATABASE IF NOT EXISTS `'.$this->dbname.'`;';
+        $sql = sprintf('CREATE DATABASE IF NOT EXISTS `%s`;', $this->dbname);
         $this->execute($sql);
     }
 
