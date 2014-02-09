@@ -1,0 +1,105 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>My-simple-web</title>
+  <meta name="description" content="My simple web, Slim+IdiORM+Twig+Bootstrap Twitter">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">My-simple-web</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">My simple web, Slim+IdiORM+Twig+Bootstrap Twitter</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/jlaso/my-simple-web/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/jlaso/my-simple-web/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/jlaso/my-simple-web" class="code">View My-simple-web on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h2>
+<a name="clone-the-project-in-your-disk" class="anchor" href="#clone-the-project-in-your-disk"><span class="octicon octicon-link"></span></a>Clone the project in your disk</h2>
+
+<p>git clone <a href="https://github.com/jlaso/my-simple-web.git">https://github.com/jlaso/my-simple-web.git</a></p>
+
+<h2>
+<a name="prepare-correct-permissions" class="anchor" href="#prepare-correct-permissions"><span class="octicon octicon-link"></span></a>Prepare correct permissions</h2>
+
+<p>mkdir app/cache and app/logs
+permissions +w on app/cache and app/logs</p>
+
+<h2>
+<a name="create-db" class="anchor" href="#create-db"><span class="octicon octicon-link"></span></a>Create db</h2>
+
+<p>introduce access to db in app/config/dbconfig.php, for that you can copy dbconfig_sample.php in
+the same folder.
+Next execute the script that creates the DB and fixtures for tables,</p>
+
+<p>php regenerateDBwithoutConfirmation.php</p>
+
+<h2>
+<a name="customization" class="anchor" href="#customization"><span class="octicon octicon-link"></span></a>Customization</h2>
+
+<p>customize logo and images on web/custom/frontend/img</p>
+
+<ul>
+<li>web/custom/frontend/img/favicon.gif</li>
+<li>web/custom/frontend/img/logo.png</li>
+<li>web/custom/frontend/img/subcontent.png</li>
+</ul><ul>
+<li>In backend (enter at /admin, user and pass admin), you can change trivial info of webpage,
+like at the moment: web.title, web.description and web.keywords</li>
+</ul><p>See the issues if you want help to development.
+And see the wiki for last minute info.</p>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/jlaso" class="avatar"><img src="https://1.gravatar.com/avatar/05294fb8badbde3c6999bae2c0024165?d=https%3A%2F%2Fidenticons.github.com%2Fce92b9ab89941caa47947924ac110d1f.png&amp;r=x&amp;s=60" width="48" height="48"/></a> <a href="https://github.com/jlaso">jlaso</a> maintains <a href="https://github.com/jlaso/my-simple-web">My-simple-web</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="http://pages.github.com/">GitHub Pages</a><br/>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/jlaso/my-simple-web/tarball/master" class="tar">tar</a><a href="https://github.com/jlaso/my-simple-web/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-47897099-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+</body>
+</html>
