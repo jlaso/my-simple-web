@@ -7,11 +7,6 @@
             "role": "Developer"
         }
     ],
-    "repositories": [{
-        "type": "vcs",
-        "url": "https://jlaso@bitbucket.org/jlaso/translations-apibundle.git"
-    }
-    ],
     "name": "jaitec/my-simple-web",
     "description": "My simple web by joseluislaso.es",
     "autoload": {
@@ -48,6 +43,9 @@
         "symfony/config":   "2.*",
         "symfony/yaml":     "2.*",
 
+        "paypal/rest-api-sdk-php": "dev-master",
+
+        "jlaso/ovh-domain-api": "*",
         "jlaso/translations-apibundle": "*"
     },
     "minimum-stability": "dev",

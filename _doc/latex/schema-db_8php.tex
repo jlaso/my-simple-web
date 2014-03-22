@@ -1,0 +1,157 @@
+\hypertarget{schema-db_8php}{\section{app/models/core/schema-\/db.php File Reference}
+\label{schema-db_8php}\index{app/models/core/schema-\/db.\-php@{app/models/core/schema-\/db.\-php}}
+}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+print Updating Creating D\-B schema \hyperlink{schema-db_8php_af94ea1bae0b857f181d247227c3a6871}{P\-H\-P\-\_\-\-E\-O\-L}
+\item 
+\hyperlink{schema-db_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\$conn} = mysqli\-\_\-connect(\hyperlink{dbconfig__sample_8php_a40edb9274f7711736cc3ee12d2e5ddba}{D\-B\-H\-O\-S\-T},\hyperlink{dbconfig__sample_8php_a221f39b0b526c043e3a1ade2dd56a70e}{D\-B\-U\-S\-E\-R},\hyperlink{dbconfig__sample_8php_add7bef9fbed1ad1fa386dcb65fd5d813}{D\-B\-P\-A\-S\-S},\hyperlink{dbconfig__sample_8php_af7d219badcc93cc3a13a604c769542bc}{D\-B\-N\-A\-M\-E})
+\item 
+\hyperlink{schema-db_8php_af10158dd74b75f1d337e83102d6b82ce}{\$charset} = \char`\"{}latin1\char`\"{}
+\item 
+\hyperlink{schema-db_8php_a8a3b012ad4844366d9207d8f0e174a00}{\$engine} = \char`\"{}Inno\-D\-B\char`\"{}
+\item 
+\hyperlink{schema-db_8php_acafba87ce83b03b84b50986f6b889af9}{\$id\-\_\-def} = \char`\"{}`id` bigint(11) N\-O\-T N\-U\-L\-L A\-U\-T\-O\-\_\-\-I\-N\-C\-R\-E\-M\-E\-N\-T\char`\"{}
+\item 
+\hyperlink{schema-db_8php_a4df5cfe5ef69919928b0b8eefb5b37bb}{\$sqls} = array()
+\item 
+\hyperlink{schema-db_8php_a4a6860ececc2f779397c3be91a511f04}{\$sqls} \mbox{[}'db\-\_\-version'\mbox{]}
+\item 
+\hyperlink{schema-db_8php_ac8a03077e71541ffe293d8340207465f}{E\-O\-D}
+\item 
+\hyperlink{schema-db_8php_a0fcc07ef2f0443f2b41511067727e19a}{\$sqls} \mbox{[}'usuario'\mbox{]}
+\item 
+\hyperlink{schema-db_8php_aa1f30e1a178cf31fbe7e6fe9a6dd6d27}{\$sqls} \mbox{[}'usuario.\-fixtures'\mbox{]}
+\item 
+\hyperlink{schema-db_8php_a46ad290dbf5309d00cdcb48a94b82462}{\$sqls} \mbox{[}'juego'\mbox{]}
+\item 
+\hyperlink{schema-db_8php_a70443004bdb9b59c8da0737364dbcde7}{\$sqls} \mbox{[}'estatica'\mbox{]}
+\item 
+\hyperlink{schema-db_8php_af4499fcdc0a562916d4f71c03e8e0e57}{\$sqls} \mbox{[}'estatica.\-fixtures'\mbox{]}
+\item 
+\hyperlink{schema-db_8php_a1c0e5cff264dd24282baf058999dcbf3}{\$sqls} \mbox{[}'contacto'\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\hypertarget{schema-db_8php_af10158dd74b75f1d337e83102d6b82ce}{\index{schema-\/db.\-php@{schema-\/db.\-php}!\$charset@{\$charset}}
+\index{\$charset@{\$charset}!schema-db.php@{schema-\/db.\-php}}
+\subsubsection[{\$charset}]{\setlength{\rightskip}{0pt plus 5cm}\$charset = \char`\"{}latin1\char`\"{}}}\label{schema-db_8php_af10158dd74b75f1d337e83102d6b82ce}
+\hypertarget{schema-db_8php_aa8a5a87b9c1a6a0819b88447cbe41877}{\index{schema-\/db.\-php@{schema-\/db.\-php}!\$conn@{\$conn}}
+\index{\$conn@{\$conn}!schema-db.php@{schema-\/db.\-php}}
+\subsubsection[{\$conn}]{\setlength{\rightskip}{0pt plus 5cm}\$conn = mysqli\-\_\-connect({\bf D\-B\-H\-O\-S\-T},{\bf D\-B\-U\-S\-E\-R},{\bf D\-B\-P\-A\-S\-S},{\bf D\-B\-N\-A\-M\-E})}}\label{schema-db_8php_aa8a5a87b9c1a6a0819b88447cbe41877}
+\hypertarget{schema-db_8php_a8a3b012ad4844366d9207d8f0e174a00}{\index{schema-\/db.\-php@{schema-\/db.\-php}!\$engine@{\$engine}}
+\index{\$engine@{\$engine}!schema-db.php@{schema-\/db.\-php}}
+\subsubsection[{\$engine}]{\setlength{\rightskip}{0pt plus 5cm}\$engine = \char`\"{}Inno\-D\-B\char`\"{}}}\label{schema-db_8php_a8a3b012ad4844366d9207d8f0e174a00}
+\hypertarget{schema-db_8php_acafba87ce83b03b84b50986f6b889af9}{\index{schema-\/db.\-php@{schema-\/db.\-php}!\$id\-\_\-def@{\$id\-\_\-def}}
+\index{\$id\-\_\-def@{\$id\-\_\-def}!schema-db.php@{schema-\/db.\-php}}
+\subsubsection[{\$id\-\_\-def}]{\setlength{\rightskip}{0pt plus 5cm}\$id\-\_\-def = \char`\"{}`id` bigint(11) N\-O\-T N\-U\-L\-L A\-U\-T\-O\-\_\-\-I\-N\-C\-R\-E\-M\-E\-N\-T\char`\"{}}}\label{schema-db_8php_acafba87ce83b03b84b50986f6b889af9}
+\hypertarget{schema-db_8php_a4df5cfe5ef69919928b0b8eefb5b37bb}{\index{schema-\/db.\-php@{schema-\/db.\-php}!\$sqls@{\$sqls}}
+\index{\$sqls@{\$sqls}!schema-db.php@{schema-\/db.\-php}}
+\subsubsection[{\$sqls}]{\setlength{\rightskip}{0pt plus 5cm}\$sqls = array()}}\label{schema-db_8php_a4df5cfe5ef69919928b0b8eefb5b37bb}
+\hypertarget{schema-db_8php_a4a6860ececc2f779397c3be91a511f04}{\index{schema-\/db.\-php@{schema-\/db.\-php}!\$sqls@{\$sqls}}
+\index{\$sqls@{\$sqls}!schema-db.php@{schema-\/db.\-php}}
+\subsubsection[{\$sqls}]{\setlength{\rightskip}{0pt plus 5cm}\$sqls\mbox{[}'db\-\_\-version'\mbox{]}}}\label{schema-db_8php_a4a6860ececc2f779397c3be91a511f04}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= <<<\hyperlink{schema-db_8php_ac8a03077e71541ffe293d8340207465f}{EOD}
+CREATE TABLE IF NOT EXISTS `db\_version` (
+  \{\hyperlink{schema-db_8php_acafba87ce83b03b84b50986f6b889af9}{$id\_def}\},
+  `version` int(3) NOT NULL,
+  PRIMARY KEY (`\textcolor{keywordtype}{id}`)
+) ENGINE=\{\hyperlink{schema-db_8php_a8a3b012ad4844366d9207d8f0e174a00}{$engine}\} DEFAULT CHARSET=\{\hyperlink{schema-db_8php_af10158dd74b75f1d337e83102d6b82ce}{$charset}\} AUTO\_INCREMENT=1
+\end{DoxyCode}
+\hypertarget{schema-db_8php_a0fcc07ef2f0443f2b41511067727e19a}{\index{schema-\/db.\-php@{schema-\/db.\-php}!\$sqls@{\$sqls}}
+\index{\$sqls@{\$sqls}!schema-db.php@{schema-\/db.\-php}}
+\subsubsection[{\$sqls}]{\setlength{\rightskip}{0pt plus 5cm}\$sqls\mbox{[}'usuario'\mbox{]}}}\label{schema-db_8php_a0fcc07ef2f0443f2b41511067727e19a}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= <<<\hyperlink{schema-db_8php_ac8a03077e71541ffe293d8340207465f}{EOD}
+CREATE TABLE IF NOT EXISTS `usuario` (
+  \{\hyperlink{schema-db_8php_acafba87ce83b03b84b50986f6b889af9}{$id\_def}\},
+  `email` varchar(100) NOT NULL,
+  `pass` varchar(100) NOT NULL,
+  PRIMARY KEY (`\textcolor{keywordtype}{id}`)
+) ENGINE=\{\hyperlink{schema-db_8php_a8a3b012ad4844366d9207d8f0e174a00}{$engine}\} DEFAULT CHARSET=\{\hyperlink{schema-db_8php_af10158dd74b75f1d337e83102d6b82ce}{$charset}\} AUTO\_INCREMENT=1
+\end{DoxyCode}
+\hypertarget{schema-db_8php_aa1f30e1a178cf31fbe7e6fe9a6dd6d27}{\index{schema-\/db.\-php@{schema-\/db.\-php}!\$sqls@{\$sqls}}
+\index{\$sqls@{\$sqls}!schema-db.php@{schema-\/db.\-php}}
+\subsubsection[{\$sqls}]{\setlength{\rightskip}{0pt plus 5cm}\$sqls\mbox{[}'usuario.\-fixtures'\mbox{]}}}\label{schema-db_8php_aa1f30e1a178cf31fbe7e6fe9a6dd6d27}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= <<<\hyperlink{schema-db_8php_ac8a03077e71541ffe293d8340207465f}{EOD}
+INSERT INTO  `usuario` (`email`, `pass`) VALUES
+(\textcolor{stringliteral}{'admin'},MD5(\textcolor{stringliteral}{'admin'}))
+\end{DoxyCode}
+\hypertarget{schema-db_8php_a46ad290dbf5309d00cdcb48a94b82462}{\index{schema-\/db.\-php@{schema-\/db.\-php}!\$sqls@{\$sqls}}
+\index{\$sqls@{\$sqls}!schema-db.php@{schema-\/db.\-php}}
+\subsubsection[{\$sqls}]{\setlength{\rightskip}{0pt plus 5cm}\$sqls\mbox{[}'juego'\mbox{]}}}\label{schema-db_8php_a46ad290dbf5309d00cdcb48a94b82462}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= <<<\hyperlink{schema-db_8php_ac8a03077e71541ffe293d8340207465f}{EOD}
+CREATE TABLE IF NOT EXISTS `juego` (
+  \{\hyperlink{schema-db_8php_acafba87ce83b03b84b50986f6b889af9}{$id\_def}\},
+  `titulo` varchar(100) NOT NULL,
+  `slug` varchar(100) NOT NULL,
+  `descripcion` text NOT NULL,
+  `video` varchar(255) DEFAULT NULL,
+  `edad` \textcolor{keywordtype}{int}(2) DEFAULT NULL,
+  `duracion` \textcolor{keywordtype}{int}(2) DEFAULT NULL,
+  PRIMARY KEY (`\textcolor{keywordtype}{id}`)
+) ENGINE=\{\hyperlink{schema-db_8php_a8a3b012ad4844366d9207d8f0e174a00}{$engine}\} DEFAULT CHARSET=\{\hyperlink{schema-db_8php_af10158dd74b75f1d337e83102d6b82ce}{$charset}\} AUTO\_INCREMENT=1
+\end{DoxyCode}
+\hypertarget{schema-db_8php_a70443004bdb9b59c8da0737364dbcde7}{\index{schema-\/db.\-php@{schema-\/db.\-php}!\$sqls@{\$sqls}}
+\index{\$sqls@{\$sqls}!schema-db.php@{schema-\/db.\-php}}
+\subsubsection[{\$sqls}]{\setlength{\rightskip}{0pt plus 5cm}\$sqls\mbox{[}'estatica'\mbox{]}}}\label{schema-db_8php_a70443004bdb9b59c8da0737364dbcde7}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= <<<\hyperlink{schema-db_8php_ac8a03077e71541ffe293d8340207465f}{EOD}
+CREATE TABLE IF NOT EXISTS `estatica` (
+  \{\hyperlink{schema-db_8php_acafba87ce83b03b84b50986f6b889af9}{$id\_def}\},
+  `slug` varchar(100) NOT NULL,
+  `contenido` text NOT NULL,
+  PRIMARY KEY (`\textcolor{keywordtype}{id}`)
+) ENGINE=\{\hyperlink{schema-db_8php_a8a3b012ad4844366d9207d8f0e174a00}{$engine}\} DEFAULT CHARSET=\{\hyperlink{schema-db_8php_af10158dd74b75f1d337e83102d6b82ce}{$charset}\} AUTO\_INCREMENT=1
+\end{DoxyCode}
+\hypertarget{schema-db_8php_af4499fcdc0a562916d4f71c03e8e0e57}{\index{schema-\/db.\-php@{schema-\/db.\-php}!\$sqls@{\$sqls}}
+\index{\$sqls@{\$sqls}!schema-db.php@{schema-\/db.\-php}}
+\subsubsection[{\$sqls}]{\setlength{\rightskip}{0pt plus 5cm}\$sqls\mbox{[}'estatica.\-fixtures'\mbox{]}}}\label{schema-db_8php_af4499fcdc0a562916d4f71c03e8e0e57}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= <<<\hyperlink{schema-db_8php_ac8a03077e71541ffe293d8340207465f}{EOD}
+INSERT INTO  `estatica` (`slug`, `contenido`) VALUES
+(\textcolor{stringliteral}{'sobre-mi'},\textcolor{stringliteral}{'No hay mucho que decir sobre mi'})
+\end{DoxyCode}
+\hypertarget{schema-db_8php_a1c0e5cff264dd24282baf058999dcbf3}{\index{schema-\/db.\-php@{schema-\/db.\-php}!\$sqls@{\$sqls}}
+\index{\$sqls@{\$sqls}!schema-db.php@{schema-\/db.\-php}}
+\subsubsection[{\$sqls}]{\setlength{\rightskip}{0pt plus 5cm}\$sqls\mbox{[}'contacto'\mbox{]}}}\label{schema-db_8php_a1c0e5cff264dd24282baf058999dcbf3}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= <<<\hyperlink{schema-db_8php_ac8a03077e71541ffe293d8340207465f}{EOD}
+CREATE TABLE IF NOT EXISTS `contacto` (
+  \{\hyperlink{schema-db_8php_acafba87ce83b03b84b50986f6b889af9}{$id\_def}\},
+  `fecha\_solicitud` datetime NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `telefono` varchar(15) NOT NULL,
+  `descripcion` text NOT NULL,
+  `fecha\_acto` datetime NOT NULL,
+  `desde` \textcolor{keywordtype}{int}(5) NOT NULL,
+  `hasta` \textcolor{keywordtype}{int}(5) NOT NULL,
+  `codigo\_postal` \textcolor{keywordtype}{int}(5) NOT NULL,
+  `edad\_media` \textcolor{keywordtype}{int}(3) NOT NULL,
+  `cantidad` \textcolor{keywordtype}{int}(4) NOT NULL,
+  `contestacion` text NULL,
+  `fecha\_contestacion` datetime NULL,
+  `precio` \textcolor{keywordtype}{float} NULL,
+  `suma` \textcolor{keywordtype}{int}(4) NULL,
+  PRIMARY KEY (`\textcolor{keywordtype}{id}`)
+) ENGINE=\{\hyperlink{schema-db_8php_a8a3b012ad4844366d9207d8f0e174a00}{$engine}\} DEFAULT CHARSET=\{\hyperlink{schema-db_8php_af10158dd74b75f1d337e83102d6b82ce}{$charset}\} AUTO\_INCREMENT=1
+\end{DoxyCode}
+\hypertarget{schema-db_8php_ac8a03077e71541ffe293d8340207465f}{\index{schema-\/db.\-php@{schema-\/db.\-php}!E\-O\-D@{E\-O\-D}}
+\index{E\-O\-D@{E\-O\-D}!schema-db.php@{schema-\/db.\-php}}
+\subsubsection[{E\-O\-D}]{\setlength{\rightskip}{0pt plus 5cm}E\-O\-D}}\label{schema-db_8php_ac8a03077e71541ffe293d8340207465f}
+\hypertarget{schema-db_8php_af94ea1bae0b857f181d247227c3a6871}{\index{schema-\/db.\-php@{schema-\/db.\-php}!P\-H\-P\-\_\-\-E\-O\-L@{P\-H\-P\-\_\-\-E\-O\-L}}
+\index{P\-H\-P\-\_\-\-E\-O\-L@{P\-H\-P\-\_\-\-E\-O\-L}!schema-db.php@{schema-\/db.\-php}}
+\subsubsection[{P\-H\-P\-\_\-\-E\-O\-L}]{\setlength{\rightskip}{0pt plus 5cm}print Updating Creating D\-B schema P\-H\-P\-\_\-\-E\-O\-L}}\label{schema-db_8php_af94ea1bae0b857f181d247227c3a6871}

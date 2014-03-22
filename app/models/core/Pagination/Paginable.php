@@ -70,23 +70,21 @@ class Paginable implements PaginableInterface
      */
     public function getResults()
     {
-        if ($this->page>0) {
+        if (($this->page>0) && ($this->recPerPage > 0)){
             $start  = ($this->page-1) * $this->recPerPage;
-            if (($start >= 0) && ($this->recPerPage > 0)){
-                if ($this->query && $this->params) {
-                    $result = BaseModel::factory($this->entity)
-                        ->where_raw($this->query,$this->params)
-                        ->offset($start)
-                        ->limit($this->recPerPage)
-                        ->find_many();
+            if ($this->query && $this->params) {
+                $result = BaseModel::factory($this->entity)
+                    ->where_raw($this->query,$this->params)
+                    ->offset($start)
+                    ->limit($this->recPerPage)
+                    ->find_many();
 
-                    return $result;
-                }else{
-                    return BaseModel::factory($this->entity)
-                        ->offset($start)
-                        ->limit($this->recPerPage)
-                        ->find_many();
-                }
+                return $result;
+            }else{
+                return BaseModel::factory($this->entity)
+                    ->offset($start)
+                    ->limit($this->recPerPage)
+                    ->find_many();
             }
         }
     }
@@ -163,8 +161,8 @@ class Paginable implements PaginableInterface
     {
         /** @var Slim $app */
         $app = Slim::getInstance();
-
         $params = array_merge(array('page'=>intval($num)),$this->routeParams);
+
         return $app->urlFor($this->route, $params);
     }
 

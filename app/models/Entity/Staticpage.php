@@ -6,6 +6,8 @@ use app\models\core\BaseModel;
 use app\models\core\SluggableInterface;
 use app\models\core\ValidableInterface;
 use lib\SlimFunctions;
+use Validate;
+
 
 class Staticpage
     extends BaseModel
@@ -30,7 +32,7 @@ class Staticpage
         if(empty($this->slug)) $this->slug = $this->titulo;
         $this->slug = \lib\MyFunctions::slug($this->slug);
         if (empty($this->slug)) {
-            $result['slug'] = $this->cantLeaveBlank(_('Slug'));
+            $result['slug'] = Validate::cantLeaveBlank(_('Slug'));
         } else {
             $slugExists = self::checkSlug($this->slug,$this->id);
             if ($slugExists) {

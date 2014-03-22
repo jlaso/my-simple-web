@@ -20,21 +20,24 @@ class PaginationRender implements PaginationRenderInterface
 
     public function setOptions(array $options = array())
     {
-        $this->options = array_merge(array(
-            'proximity' => 3,
-            'prev_message' => '&larr; Previous',
-            'prev_disabled_href' => '',
-            'next_message' => 'Next &rarr;',
-            'next_disabled_href' => '',
-            'dots_message' => '&hellip;',
-            'dots_href' => '',
-            'css_container_class' => 'pagination spain8 pagination-right',
-            'css_prev_class' => 'prev',
-            'css_next_class' => 'next',
-            'css_disabled_class' => 'disabled',
-            'css_dots_class' => 'disabled',
-            'css_active_class' => 'active',
-        ), $options);
+        $this->options = array_merge(
+            array(
+                'proximity'           => 3,
+                'prev_message'        => '&larr; Previous',
+                'prev_disabled_href'  => '',
+                'next_message'        => 'Next &rarr;',
+                'next_disabled_href'  => '',
+                'dots_message'        => '&hellip;',
+                'dots_href'           => '',
+                'css_container_class' => 'pagination spain8 pagination-right',
+                'css_prev_class'      => 'prev',
+                'css_next_class'      => 'next',
+                'css_disabled_class'  => 'disabled',
+                'css_dots_class'      => 'disabled',
+                'css_active_class'    => 'active',
+            ),
+            $options
+        );
     }
 
 

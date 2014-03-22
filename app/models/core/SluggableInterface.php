@@ -2,7 +2,8 @@
 
 namespace app\models\core;
 
-interface SluggableInterface
+interface
+SluggableInterface
 {
 
     public static function checkSlug($slug,$id=0);

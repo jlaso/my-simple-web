@@ -1,0 +1,214 @@
+\hypertarget{class_router_1_1_routing_cache_manager}{\section{Routing\-Cache\-Manager Class Reference}
+\label{class_router_1_1_routing_cache_manager}\index{Routing\-Cache\-Manager@{Routing\-Cache\-Manager}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_router_1_1_routing_cache_manager_a095c5d389db211932136b53f25f39685}{\-\_\-\-\_\-construct} ()
+\item 
+\hyperlink{class_router_1_1_routing_cache_manager_ab0bace56d1c55c21f8d3772b4cdb3bcc}{load\-Route} (\$php\-File)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_router_1_1_routing_cache_manager_acbcdfb5693f57bebd6c9d410697eb73a}{write\-Cache} (\$class, \$content)
+\item 
+\hyperlink{class_router_1_1_routing_cache_manager_a992eb7298b7974f836a8ff5a025ae645}{set\-Date\-From\-Class\-File} (\$class\-File)
+\item 
+\hyperlink{class_router_1_1_routing_cache_manager_a960917f79249e282ca5adc375248c387}{cache\-File} (\$class)
+\item 
+\hyperlink{class_router_1_1_routing_cache_manager_a95f3d2c5621ff3d1b5a8bc2f4190a419}{class\-Name} (\$class\-File)
+\item 
+\hyperlink{class_router_1_1_routing_cache_manager_a072c2deeedd99b635401d74e3394874b}{has\-Changed} (\$class\-File)
+\item 
+\hyperlink{class_router_1_1_routing_cache_manager_a82ab69a0b3b635e4d979c50a5fb0aa8f}{process\-Class} (\$class\-File)
+\item 
+\hyperlink{class_router_1_1_routing_cache_manager_a3d89f62b3d1de0329c1cdf076899c746}{update\-And\-Get\-Cache\-File\-Name} (\$class\-File)
+\item 
+\hyperlink{class_router_1_1_routing_cache_manager_a77acc1985e70069c2dd1950f1cb3326e}{get\-Cache} (\$class\-File)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_router_1_1_routing_cache_manager_ac9d27ec635bd451cdecc1d20135f0698}{\$cache\-Dir}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_router_1_1_routing_cache_manager_a095c5d389db211932136b53f25f39685}{\index{Router\-::\-Routing\-Cache\-Manager@{Router\-::\-Routing\-Cache\-Manager}!\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}}
+\index{\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}!Router::RoutingCacheManager@{Router\-::\-Routing\-Cache\-Manager}}
+\subsubsection[{\-\_\-\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_router_1_1_routing_cache_manager_a095c5d389db211932136b53f25f39685}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_router_1_1_routing_cache_manager_a960917f79249e282ca5adc375248c387}{\index{Router\-::\-Routing\-Cache\-Manager@{Router\-::\-Routing\-Cache\-Manager}!cache\-File@{cache\-File}}
+\index{cache\-File@{cache\-File}!Router::RoutingCacheManager@{Router\-::\-Routing\-Cache\-Manager}}
+\subsubsection[{cache\-File}]{\setlength{\rightskip}{0pt plus 5cm}cache\-File (
+\begin{DoxyParamCaption}
+\item[{}]{\$class}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_router_1_1_routing_cache_manager_a960917f79249e282ca5adc375248c387}
+gets the full path and the name of cache file
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$class} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_router_1_1_routing_cache_manager_a95f3d2c5621ff3d1b5a8bc2f4190a419}{\index{Router\-::\-Routing\-Cache\-Manager@{Router\-::\-Routing\-Cache\-Manager}!class\-Name@{class\-Name}}
+\index{class\-Name@{class\-Name}!Router::RoutingCacheManager@{Router\-::\-Routing\-Cache\-Manager}}
+\subsubsection[{class\-Name}]{\setlength{\rightskip}{0pt plus 5cm}class\-Name (
+\begin{DoxyParamCaption}
+\item[{}]{\$class\-File}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_router_1_1_routing_cache_manager_a95f3d2c5621ff3d1b5a8bc2f4190a419}
+Extracts the class\-Name through the classfile name
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$class\-File} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \textbackslash{}\-Exception} & \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{class_router_1_1_routing_cache_manager_a77acc1985e70069c2dd1950f1cb3326e}{\index{Router\-::\-Routing\-Cache\-Manager@{Router\-::\-Routing\-Cache\-Manager}!get\-Cache@{get\-Cache}}
+\index{get\-Cache@{get\-Cache}!Router::RoutingCacheManager@{Router\-::\-Routing\-Cache\-Manager}}
+\subsubsection[{get\-Cache}]{\setlength{\rightskip}{0pt plus 5cm}get\-Cache (
+\begin{DoxyParamCaption}
+\item[{}]{\$class\-File}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_router_1_1_routing_cache_manager_a77acc1985e70069c2dd1950f1cb3326e}
+Return cachefile contents
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$class\-File} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_router_1_1_routing_cache_manager_a072c2deeedd99b635401d74e3394874b}{\index{Router\-::\-Routing\-Cache\-Manager@{Router\-::\-Routing\-Cache\-Manager}!has\-Changed@{has\-Changed}}
+\index{has\-Changed@{has\-Changed}!Router::RoutingCacheManager@{Router\-::\-Routing\-Cache\-Manager}}
+\subsubsection[{has\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}has\-Changed (
+\begin{DoxyParamCaption}
+\item[{}]{\$class\-File}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_router_1_1_routing_cache_manager_a072c2deeedd99b635401d74e3394874b}
+Indicates if the classfile has a diferent modify time that cache file
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$class\-File} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{class_router_1_1_routing_cache_manager_ab0bace56d1c55c21f8d3772b4cdb3bcc}{\index{Router\-::\-Routing\-Cache\-Manager@{Router\-::\-Routing\-Cache\-Manager}!load\-Route@{load\-Route}}
+\index{load\-Route@{load\-Route}!Router::RoutingCacheManager@{Router\-::\-Routing\-Cache\-Manager}}
+\subsubsection[{load\-Route}]{\setlength{\rightskip}{0pt plus 5cm}load\-Route (
+\begin{DoxyParamCaption}
+\item[{}]{\$php\-File}
+\end{DoxyParamCaption}
+)}}\label{class_router_1_1_routing_cache_manager_ab0bace56d1c55c21f8d3772b4cdb3bcc}
+Main method to invoke the routing system
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$php\-File} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_router_1_1_routing_cache_manager_a82ab69a0b3b635e4d979c50a5fb0aa8f}{\index{Router\-::\-Routing\-Cache\-Manager@{Router\-::\-Routing\-Cache\-Manager}!process\-Class@{process\-Class}}
+\index{process\-Class@{process\-Class}!Router::RoutingCacheManager@{Router\-::\-Routing\-Cache\-Manager}}
+\subsubsection[{process\-Class}]{\setlength{\rightskip}{0pt plus 5cm}process\-Class (
+\begin{DoxyParamCaption}
+\item[{}]{\$class\-File}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_router_1_1_routing_cache_manager_a82ab69a0b3b635e4d979c50a5fb0aa8f}
+
+\begin{DoxyParams}{Parameters}
+{\em \$class\-File} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \textbackslash{}\-Exception} & \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{class_router_1_1_routing_cache_manager_a992eb7298b7974f836a8ff5a025ae645}{\index{Router\-::\-Routing\-Cache\-Manager@{Router\-::\-Routing\-Cache\-Manager}!set\-Date\-From\-Class\-File@{set\-Date\-From\-Class\-File}}
+\index{set\-Date\-From\-Class\-File@{set\-Date\-From\-Class\-File}!Router::RoutingCacheManager@{Router\-::\-Routing\-Cache\-Manager}}
+\subsubsection[{set\-Date\-From\-Class\-File}]{\setlength{\rightskip}{0pt plus 5cm}set\-Date\-From\-Class\-File (
+\begin{DoxyParamCaption}
+\item[{}]{\$class\-File}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_router_1_1_routing_cache_manager_a992eb7298b7974f836a8ff5a025ae645}
+Sets the modify time of cache file according to classfile
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$class\-File} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_router_1_1_routing_cache_manager_a3d89f62b3d1de0329c1cdf076899c746}{\index{Router\-::\-Routing\-Cache\-Manager@{Router\-::\-Routing\-Cache\-Manager}!update\-And\-Get\-Cache\-File\-Name@{update\-And\-Get\-Cache\-File\-Name}}
+\index{update\-And\-Get\-Cache\-File\-Name@{update\-And\-Get\-Cache\-File\-Name}!Router::RoutingCacheManager@{Router\-::\-Routing\-Cache\-Manager}}
+\subsubsection[{update\-And\-Get\-Cache\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}update\-And\-Get\-Cache\-File\-Name (
+\begin{DoxyParamCaption}
+\item[{}]{\$class\-File}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_router_1_1_routing_cache_manager_a3d89f62b3d1de0329c1cdf076899c746}
+Generates new file and return cachefile name 
+\begin{DoxyParams}{Parameters}
+{\em \$class\-File} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_router_1_1_routing_cache_manager_acbcdfb5693f57bebd6c9d410697eb73a}{\index{Router\-::\-Routing\-Cache\-Manager@{Router\-::\-Routing\-Cache\-Manager}!write\-Cache@{write\-Cache}}
+\index{write\-Cache@{write\-Cache}!Router::RoutingCacheManager@{Router\-::\-Routing\-Cache\-Manager}}
+\subsubsection[{write\-Cache}]{\setlength{\rightskip}{0pt plus 5cm}write\-Cache (
+\begin{DoxyParamCaption}
+\item[{}]{\$class, }
+\item[{}]{\$content}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_router_1_1_routing_cache_manager_acbcdfb5693f57bebd6c9d410697eb73a}
+This method writes the cache content into cache file
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$class} & \\
+\hline
+{\em \$content} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_router_1_1_routing_cache_manager_ac9d27ec635bd451cdecc1d20135f0698}{\index{Router\-::\-Routing\-Cache\-Manager@{Router\-::\-Routing\-Cache\-Manager}!\$cache\-Dir@{\$cache\-Dir}}
+\index{\$cache\-Dir@{\$cache\-Dir}!Router::RoutingCacheManager@{Router\-::\-Routing\-Cache\-Manager}}
+\subsubsection[{\$cache\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}\$cache\-Dir\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_router_1_1_routing_cache_manager_ac9d27ec635bd451cdecc1d20135f0698}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+app/controller/core/\-Router/\hyperlink{_routing_cache_manager_8php}{Routing\-Cache\-Manager.\-php}\end{DoxyCompactItemize}
