@@ -10,6 +10,8 @@ interface FixturableInterface
     /**
      * Generate fixtures
      *
+     * @param Registry $fixturesRegistry
+     *
      * @return void
      */
     public function generateFixtures(Registry $fixturesRegistry);

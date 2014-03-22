@@ -6,6 +6,7 @@ use app\models\core\BaseModel;
 use app\models\core\SluggableInterface;
 use app\models\core\ValidableInterface;
 use lib\MyFunctions;
+use Validate;
 
 /**
  * Class that stores articles of this web
@@ -29,8 +30,6 @@ class Article
                     ->where_not_equal('id',$id)
                     ->count();
 
-        $sql = \ORM::get_last_query();
-
         return $count > 0;
     }
 
@@ -45,7 +44,7 @@ class Article
         if(empty($this->slug)) $this->slug = $this->title;
         $this->slug = \lib\MyFunctions::slug($this->slug);
         if (empty($this->slug)) {
-            $result['slug'] = $this->cantLeaveBlank(_('Slug'));
+            $result['slug'] = Validate::cantLeaveBlank(_('Slug'));
         } else {
             $slugExists = self::checkSlug($this->slug,$this->id);
             if ($slugExists) {
@@ -53,10 +52,10 @@ class Article
             }
         }
         if (empty($this->title)) {
-            $result['title'] = $this->cantLeaveBlank(_('Title'));
+            $result['title'] = Validate::cantLeaveBlank(_('Title'));
         }
         if (empty($this->description)) {
-            $result['description'] = $this->cantLeaveBlank(_('Description'));
+            $result['description'] = Validate::cantLeaveBlank(_('Description'));
         }
 
         return $result;

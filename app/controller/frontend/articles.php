@@ -17,7 +17,7 @@ $app->get('/:lang/articles(/:page)', function ($lang, $page=1) use ($app) {
     */
     $paginator    = new Paginable('Entity\\Article', array('recPerPage' => 2));
     $paginator->setBaseRouteAndParams('articles.index');
-    if (($page > 1) && ($page > $paginator->getPages())) {
+    if (($page < 1) || ($page > $paginator->getPages())) {
         $app->notFound();
     }
     $paginator->setCurrentPage($page);
