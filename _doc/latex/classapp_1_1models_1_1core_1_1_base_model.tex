@@ -1,0 +1,197 @@
+\hypertarget{classapp_1_1models_1_1core_1_1_base_model}{\section{Base\-Model Class Reference}
+\label{classapp_1_1models_1_1core_1_1_base_model}\index{Base\-Model@{Base\-Model}}
+}
+
+
+Inheritance diagram for Base\-Model\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classapp_1_1models_1_1core_1_1_base_model__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Base\-Model\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classapp_1_1models_1_1core_1_1_base_model__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classapp_1_1models_1_1core_1_1_base_model_a55ae23613f7ee044582497c5d099dac6}{\-\_\-relations} ()
+\item 
+\hyperlink{classapp_1_1models_1_1core_1_1_base_model_a4f489106bd6c5140a51817fe14e28db3}{\-\_\-cant\-Leave\-Blank} (\$field)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classapp_1_1models_1_1core_1_1_base_model_a23d019365c40167af9d7bff43adaddfa}{factory} (\$class=\char`\"{}\char`\"{})
+\item 
+static \hyperlink{classapp_1_1models_1_1core_1_1_base_model_a2669a792d3d91d6a5e3e6fd8d8e75471}{create} (\$class=\char`\"{}\char`\"{})
+\item 
+static \hyperlink{classapp_1_1models_1_1core_1_1_base_model_adc7aafe368abef4801d85742f3b6a2d4}{\-\_\-default\-Create\-Options} ()
+\item 
+static \hyperlink{classapp_1_1models_1_1core_1_1_base_model_ac4e4c8235609c45c16b29dd95f88dc17}{\-\_\-table\-Name\-For\-Class} (\$class)
+\item 
+static \hyperlink{classapp_1_1models_1_1core_1_1_base_model_aad238b583605dc1eff7d0f73e642ca50}{\-\_\-entity\-Name} ()
+\item 
+static \hyperlink{classapp_1_1models_1_1core_1_1_base_model_a7216a25f596c6d039b6ad01cbfb8ccd6}{\-\_\-name\-Singular} ()
+\item 
+static \hyperlink{classapp_1_1models_1_1core_1_1_base_model_a43367662fc9b1f15c5bdb1409bba4597}{\-\_\-name\-Plural} ()
+\item 
+static \hyperlink{classapp_1_1models_1_1core_1_1_base_model_a7da33fb6848ab590373b028760b964ec}{\-\_\-name\-Entity} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Extends Model from O\-R\-M
+
+The O\-R\-M uses magic \-\_\-\-\_\-get and \-\_\-\-\_\-set to map properties to table fields, for that I have named my other methods with underscore to permit use that names for fields 
+
+\subsection{Member Function Documentation}
+\hypertarget{classapp_1_1models_1_1core_1_1_base_model_a4f489106bd6c5140a51817fe14e28db3}{\index{app\-::models\-::core\-::\-Base\-Model@{app\-::models\-::core\-::\-Base\-Model}!\-\_\-cant\-Leave\-Blank@{\-\_\-cant\-Leave\-Blank}}
+\index{\-\_\-cant\-Leave\-Blank@{\-\_\-cant\-Leave\-Blank}!app::models::core::BaseModel@{app\-::models\-::core\-::\-Base\-Model}}
+\subsubsection[{\-\_\-cant\-Leave\-Blank}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-cant\-Leave\-Blank (
+\begin{DoxyParamCaption}
+\item[{}]{\$field}
+\end{DoxyParamCaption}
+)}}\label{classapp_1_1models_1_1core_1_1_base_model_a4f489106bd6c5140a51817fe14e28db3}
+Return message \char`\"{}\$field can't leave blank\char`\"{}, translated
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$field} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{classapp_1_1models_1_1core_1_1_base_model_adc7aafe368abef4801d85742f3b6a2d4}{\index{app\-::models\-::core\-::\-Base\-Model@{app\-::models\-::core\-::\-Base\-Model}!\-\_\-default\-Create\-Options@{\-\_\-default\-Create\-Options}}
+\index{\-\_\-default\-Create\-Options@{\-\_\-default\-Create\-Options}!app::models::core::BaseModel@{app\-::models\-::core\-::\-Base\-Model}}
+\subsubsection[{\-\_\-default\-Create\-Options}]{\setlength{\rightskip}{0pt plus 5cm}static \-\_\-default\-Create\-Options (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classapp_1_1models_1_1core_1_1_base_model_adc7aafe368abef4801d85742f3b6a2d4}
+get default create options
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\hypertarget{classapp_1_1models_1_1core_1_1_base_model_aad238b583605dc1eff7d0f73e642ca50}{\index{app\-::models\-::core\-::\-Base\-Model@{app\-::models\-::core\-::\-Base\-Model}!\-\_\-entity\-Name@{\-\_\-entity\-Name}}
+\index{\-\_\-entity\-Name@{\-\_\-entity\-Name}!app::models::core::BaseModel@{app\-::models\-::core\-::\-Base\-Model}}
+\subsubsection[{\-\_\-entity\-Name}]{\setlength{\rightskip}{0pt plus 5cm}static \-\_\-entity\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classapp_1_1models_1_1core_1_1_base_model_aad238b583605dc1eff7d0f73e642ca50}
+Get the pretty name of the model \hypertarget{classapp_1_1models_1_1core_1_1_base_model_a7da33fb6848ab590373b028760b964ec}{\index{app\-::models\-::core\-::\-Base\-Model@{app\-::models\-::core\-::\-Base\-Model}!\-\_\-name\-Entity@{\-\_\-name\-Entity}}
+\index{\-\_\-name\-Entity@{\-\_\-name\-Entity}!app::models::core::BaseModel@{app\-::models\-::core\-::\-Base\-Model}}
+\subsubsection[{\-\_\-name\-Entity}]{\setlength{\rightskip}{0pt plus 5cm}static \-\_\-name\-Entity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classapp_1_1models_1_1core_1_1_base_model_a7da33fb6848ab590373b028760b964ec}
+Get name of entity
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{classapp_1_1models_1_1core_1_1_base_model_a43367662fc9b1f15c5bdb1409bba4597}{\index{app\-::models\-::core\-::\-Base\-Model@{app\-::models\-::core\-::\-Base\-Model}!\-\_\-name\-Plural@{\-\_\-name\-Plural}}
+\index{\-\_\-name\-Plural@{\-\_\-name\-Plural}!app::models::core::BaseModel@{app\-::models\-::core\-::\-Base\-Model}}
+\subsubsection[{\-\_\-name\-Plural}]{\setlength{\rightskip}{0pt plus 5cm}static \-\_\-name\-Plural (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classapp_1_1models_1_1core_1_1_base_model_a43367662fc9b1f15c5bdb1409bba4597}
+Get name of entity in plural
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{classapp_1_1models_1_1core_1_1_base_model_a7216a25f596c6d039b6ad01cbfb8ccd6}{\index{app\-::models\-::core\-::\-Base\-Model@{app\-::models\-::core\-::\-Base\-Model}!\-\_\-name\-Singular@{\-\_\-name\-Singular}}
+\index{\-\_\-name\-Singular@{\-\_\-name\-Singular}!app::models::core::BaseModel@{app\-::models\-::core\-::\-Base\-Model}}
+\subsubsection[{\-\_\-name\-Singular}]{\setlength{\rightskip}{0pt plus 5cm}static \-\_\-name\-Singular (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classapp_1_1models_1_1core_1_1_base_model_a7216a25f596c6d039b6ad01cbfb8ccd6}
+Get name of entity in singular
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{classapp_1_1models_1_1core_1_1_base_model_a55ae23613f7ee044582497c5d099dac6}{\index{app\-::models\-::core\-::\-Base\-Model@{app\-::models\-::core\-::\-Base\-Model}!\-\_\-relations@{\-\_\-relations}}
+\index{\-\_\-relations@{\-\_\-relations}!app::models::core::BaseModel@{app\-::models\-::core\-::\-Base\-Model}}
+\subsubsection[{\-\_\-relations}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-relations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classapp_1_1models_1_1core_1_1_base_model_a55ae23613f7ee044582497c5d099dac6}
+Get relations
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\hypertarget{classapp_1_1models_1_1core_1_1_base_model_ac4e4c8235609c45c16b29dd95f88dc17}{\index{app\-::models\-::core\-::\-Base\-Model@{app\-::models\-::core\-::\-Base\-Model}!\-\_\-table\-Name\-For\-Class@{\-\_\-table\-Name\-For\-Class}}
+\index{\-\_\-table\-Name\-For\-Class@{\-\_\-table\-Name\-For\-Class}!app::models::core::BaseModel@{app\-::models\-::core\-::\-Base\-Model}}
+\subsubsection[{\-\_\-table\-Name\-For\-Class}]{\setlength{\rightskip}{0pt plus 5cm}static \-\_\-table\-Name\-For\-Class (
+\begin{DoxyParamCaption}
+\item[{}]{\$class}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classapp_1_1models_1_1core_1_1_base_model_ac4e4c8235609c45c16b29dd95f88dc17}
+Get the table name that corresponds to class name in the actual namespace system
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$class} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{classapp_1_1models_1_1core_1_1_base_model_a2669a792d3d91d6a5e3e6fd8d8e75471}{\index{app\-::models\-::core\-::\-Base\-Model@{app\-::models\-::core\-::\-Base\-Model}!create@{create}}
+\index{create@{create}!app::models::core::BaseModel@{app\-::models\-::core\-::\-Base\-Model}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static create (
+\begin{DoxyParamCaption}
+\item[{}]{\$class = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classapp_1_1models_1_1core_1_1_base_model_a2669a792d3d91d6a5e3e6fd8d8e75471}
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$class} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classapp_1_1models_1_1core_1_1_base_model}{Base\-Model} 
+\end{DoxyReturn}
+\hypertarget{classapp_1_1models_1_1core_1_1_base_model_a23d019365c40167af9d7bff43adaddfa}{\index{app\-::models\-::core\-::\-Base\-Model@{app\-::models\-::core\-::\-Base\-Model}!factory@{factory}}
+\index{factory@{factory}!app::models::core::BaseModel@{app\-::models\-::core\-::\-Base\-Model}}
+\subsubsection[{factory}]{\setlength{\rightskip}{0pt plus 5cm}static factory (
+\begin{DoxyParamCaption}
+\item[{}]{\$class = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classapp_1_1models_1_1core_1_1_base_model_a23d019365c40167af9d7bff43adaddfa}
+Factory from extended class
+
+that permits this Entity\-::factory()-\/$>$... or \hyperlink{classapp_1_1models_1_1core_1_1_base_model_a23d019365c40167af9d7bff43adaddfa}{Base\-Model\-::factory}('\hyperlink{namespace_entity}{Entity}')-\/$>$...
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$class} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+app/models/core/\hyperlink{_base_model_8php}{Base\-Model.\-php}\end{DoxyCompactItemize}

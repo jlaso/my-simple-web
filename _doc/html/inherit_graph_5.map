@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interfaceapp_1_1models_1_1core_1_1_fixturable_interface.html" title="FixturableInterface" alt="" coords="6,129,138,154"/>
+<area shape="rect" id="node2" href="$class_entity_1_1_config_fixture.html" title="ConfigFixture" alt="" coords="199,5,300,30"/>
+<area shape="rect" id="node3" href="$class_entity_1_1_entity_fixture.html" title="EntityFixture" alt="" coords="202,54,297,79"/>
+<area shape="rect" id="node4" href="$class_entity_1_1_staticpage_fixture.html" title="StaticpageFixture" alt="" coords="187,103,312,129"/>
+<area shape="rect" id="node5" href="$class_security_1_1_role_fixture.html" title="RoleFixture" alt="" coords="205,153,294,178"/>
+<area shape="rect" id="node6" href="$class_security_1_1_role_user_fixture.html" title="RoleUserFixture" alt="" coords="191,202,308,227"/>
+<area shape="rect" id="node7" href="$class_security_1_1_user_fixture.html" title="UserFixture" alt="" coords="204,251,294,277"/>
+</map>

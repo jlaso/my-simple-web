@@ -1,0 +1,6 @@
+<map id="Article" name="Article">
+<area shape="rect" id="node2" href="$classapp_1_1models_1_1core_1_1_base_model.html" title="BaseModel" alt="" coords="47,81,135,106"/>
+<area shape="rect" id="node4" href="$interfaceapp_1_1models_1_1core_1_1_bindable_interface.html" title="BindableInterface" alt="" coords="87,6,211,31"/>
+<area shape="rect" id="node5" href="$interfaceapp_1_1models_1_1core_1_1_sluggable_interface.html" title="SluggableInterface" alt="" coords="159,81,291,106"/>
+<area shape="rect" id="node6" href="$interfaceapp_1_1models_1_1core_1_1_validable_interface.html" title="ValidableInterface" alt="" coords="315,81,441,106"/>
+</map>

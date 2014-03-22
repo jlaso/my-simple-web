@@ -7,6 +7,8 @@ use \app\models\core\SluggableInterface;
 use \app\models\core\ValidableInterface;
 use \lib\MyFunctions;
 use \ORM;
+use Validate;
+
 
 class Config
     extends BaseModel
@@ -45,7 +47,7 @@ class Config
         if(empty($this->slug)) $this->slug = $this->titulo;
         $this->slug = \lib\MyFunctions::slug($this->slug);
         if (empty($this->slug)) {
-            $result['slug'] = $this->cantLeaveBlank(_('Slug'));
+            $result['slug'] = Validate::cantLeaveBlank(_('Slug'));
         } else {
             $slugExists = self::checkSlug($this->slug,$this->id);
             if ($slugExists) {
@@ -53,7 +55,7 @@ class Config
             }
         }
         if (empty($this->value)) {
-            $result['value'] = $this->cantLeaveBlank(_('Value'));
+            $result['value'] = Validate::cantLeaveBlank(_('Value'));
         }
 
         return $result;

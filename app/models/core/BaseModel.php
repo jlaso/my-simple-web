@@ -4,6 +4,7 @@ namespace app\models\core;
 
 use \Model;
 use app\models\core\BindableInterface;
+use app\models\core\Form\FormListTypeInterface;
 
 /**
  * Extends Model from ORM
@@ -66,7 +67,7 @@ abstract class BaseModel
         $ent         = get_called_class();
         $frmLstClass = "\\{$ent}FormType";
         if (class_exists($frmLstClass)) {
-            /** @var $formList \app\models\core\Form\FormListTypeInterface */
+            /** @var FormListTypeInterface $formList */
             $formList   = new $frmLstClass;
             foreach ($formList->getForm() as $formItem) {
                 $field  = $formItem['field'];
@@ -78,9 +79,7 @@ abstract class BaseModel
                     if ( null !== $value ) {
                         $this->set($field,$value);
                     }
-
                 }
-
             }
         } else {
             foreach ($array as $key=>$value) {
@@ -169,18 +168,6 @@ abstract class BaseModel
     {
         $str = \lib\MyFunctions::camelCaseToUnderscored(get_called_class());
         return str_replace('\\','_',$str);
-    }
-
-    /**
-     * Return message "$field can't leave blank", translated
-     *
-     * @param string $field
-     *
-     * @return string
-     */
-    public function cantLeaveBlank($field)
-    {
-        return sprintf(_('%s can\'t leave blank'),$field);
     }
 
 }
