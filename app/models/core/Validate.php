@@ -13,4 +13,16 @@ class Validate
         return ((string) intval($int) == $int);
     }
 
+    /**
+     * Return message "$field can't leave blank", translated
+     *
+     * @param string $field
+     *
+     * @return string
+     */
+    public static function cantLeaveBlank($field)
+    {
+        return sprintf(_('%s can\'t leave blank'),$field);
+    }
+
 }

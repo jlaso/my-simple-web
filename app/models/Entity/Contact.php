@@ -5,6 +5,8 @@ namespace Entity;
 use app\models\core\BaseModel;
 use app\models\core\ValidableInterface;
 use lib\MyFunctions;
+use Validate;
+
 
 class Contact
     extends BaseModel
@@ -16,16 +18,16 @@ class Contact
         $result = array();
         // validar los contenidos de los campos
         if (empty($this->name)) {
-            $result['name'] = $this->cantLeaveBlank(_('Name'));
+            $result['name'] = Validate::cantLeaveBlank(_('Name'));
         }
         if (empty($this->email)) {
-            $result['email'] = $this->cantLeaveBlank(_('Email'));
+            $result['email'] = Validate::cantLeaveBlank(_('Email'));
         }
         if (empty($this->phone)) {
-            $result['phone'] = $this->cantLeaveBlank(_('Phone'));
+            $result['phone'] = Validate::cantLeaveBlank(_('Phone'));
         }
         if (empty($this->message)) {
-            $result['message'] = $this->cantLeaveBlank(_('Message'));
+            $result['message'] = Validate::cantLeaveBlank(_('Message'));
         }
 
         return $result;

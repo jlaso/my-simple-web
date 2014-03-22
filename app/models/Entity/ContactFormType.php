@@ -6,6 +6,8 @@ use app\models\core\Form\FormListTypeInterface;
 use app\models\core\Form\FormListBase;
 use app\models\core\Form\FormBase;
 use app\models\core\Form\FormSearchTypeInterface;
+use Validate;
+
 
 class ContactFormType
     implements  FormListTypeInterface, FormSearchTypeInterface
@@ -60,6 +62,9 @@ class ContactFormType
                 ))
             )
             ->add('message','textarea')
+            ->add('name','text')
+            ->add('phone','text')
+            ->add('email','text')
             ->end();
 
     }

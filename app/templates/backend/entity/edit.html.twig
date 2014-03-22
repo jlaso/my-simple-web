@@ -20,8 +20,9 @@
                         <div class="control-group">
                             {{ relation.name }}
                         </div>
+                        <h1>prueba</h1>
                         {%
-                            include 'backend/entity/embeded-list.html.twig'
+                            include ['caca','backend/entity/embeded-list.html.twig']
                             with
                                 {
                                     'entity': relation.entity,
