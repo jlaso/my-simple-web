@@ -43,8 +43,6 @@
         "symfony/config":   "2.*",
         "symfony/yaml":     "2.*",
 
-        "paypal/rest-api-sdk-php": "dev-master",
-
         "jlaso/ovh-domain-api": "*",
         "jlaso/translations-apibundle": "*"
     },

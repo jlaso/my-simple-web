@@ -10,3 +10,4 @@ app/logs/*
 web/custom/*
 templates/custom/*
 vendor
+vendor/*
