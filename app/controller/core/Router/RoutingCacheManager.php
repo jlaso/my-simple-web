@@ -70,11 +70,10 @@ class RoutingCacheManager
     protected function className($classFile)
     {
         $parts = explode('/', $classFile);
-        if(count($parts)){
-            $className = str_replace(".php", "", $parts[count($parts)-1]);
-        }else{
+        if(!count($parts)){
             throw new \Exception(sprintf('classFile "%s" passed has problems', $classFile));
-        };
+        }
+        $className = str_replace(".php", "", $parts[count($parts)-1]);
 
         return $className;
     }

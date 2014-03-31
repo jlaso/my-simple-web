@@ -78,6 +78,8 @@ class EntityManager
                 // only the php files that has the first letter capitalized
                 if ($file != '.' && $file != '..' && preg_match('/\.php$/i', $file)) {
                     if ($file == ucfirst($file)) {
+                    // only process folders that are capitalized first letter,
+                    // that indicates entity class folder
                         require_once $subdir . '/' . $file;
                     }
                 }
@@ -90,7 +92,7 @@ class EntityManager
      */
     public function dropDatabase()
     {
-        $sql = 'DROP DATABASE IF EXISTS `'.$this->dbname.'`;';
+        $sql = sprintf('DROP DATABASE IF EXISTS `%s`;',$this->dbname);
         $this->execute($sql);
     }
 
@@ -99,7 +101,7 @@ class EntityManager
      */
     public function createDatabase()
     {
-        $sql = 'CREATE DATABASE IF NOT EXISTS `'.$this->dbname.'`;';
+        $sql = sprintf('CREATE DATABASE IF NOT EXISTS `%s`;', $this->dbname);
         $this->execute($sql);
     }
 

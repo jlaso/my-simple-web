@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>\Entity\Article</OriginalElement>
+  <nodes>
+    <node x="176.66666666666669" y="158.0">\Entity\Article</node>
+    <node x="80.66666666666669" y="0.0">\app\models\core\BindableInterface</node>
+    <node x="282.0" y="79.0">\app\models\core\SluggableInterface</node>
+    <node x="240.66666666666669" y="0.0">\Model</node>
+    <node x="0.0" y="79.0">\app\models\core\ValidableInterface</node>
+    <node x="164.0" y="79.0">\app\models\core\BaseModel</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="\app\models\core\BaseModel" target="\app\models\core\BindableInterface">
+      <point x="-24.5" y="-14.5" />
+      <point x="188.5" y="54.0" />
+      <point x="150.66666666666669" y="54.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="\app\models\core\BaseModel" target="\Model">
+      <point x="24.5" y="-14.5" />
+      <point x="237.5" y="54.0" />
+      <point x="275.6666666666667" y="54.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="\Entity\Article" target="\app\models\core\SluggableInterface">
+      <point x="24.333333333333343" y="-14.5" />
+      <point x="237.5" y="133.0" />
+      <point x="356.0" y="133.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="\Entity\Article" target="\app\models\core\ValidableInterface">
+      <point x="-24.333333333333314" y="-14.5" />
+      <point x="188.83333333333337" y="133.0" />
+      <point x="72.0" y="133.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="\Entity\Article" target="\app\models\core\BaseModel">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.6000000000000005" x="216.0" y="94.00000000000003" />
+  <SelectedNodes />
+  <Categories />
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

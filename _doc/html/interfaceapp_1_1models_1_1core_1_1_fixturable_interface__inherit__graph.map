@@ -1,0 +1,8 @@
+<map id="FixturableInterface" name="FixturableInterface">
+<area shape="rect" id="node2" href="$class_entity_1_1_config_fixture.html" title="ConfigFixture" alt="" coords="4,81,104,106"/>
+<area shape="rect" id="node3" href="$class_entity_1_1_entity_fixture.html" title="EntityFixture" alt="" coords="130,81,224,106"/>
+<area shape="rect" id="node4" href="$class_entity_1_1_staticpage_fixture.html" title="StaticpageFixture" alt="" coords="249,81,373,106"/>
+<area shape="rect" id="node5" href="$class_security_1_1_role_fixture.html" title="RoleFixture" alt="" coords="398,81,487,106"/>
+<area shape="rect" id="node6" href="$class_security_1_1_role_user_fixture.html" title="RoleUserFixture" alt="" coords="512,81,629,106"/>
+<area shape="rect" id="node7" href="$class_security_1_1_user_fixture.html" title="UserFixture" alt="" coords="654,81,743,106"/>
+</map>

@@ -1,0 +1,75 @@
+{% extends 'frontend/layout.html.twig' %}
+
+{%
+
+set sliders =
+        [
+
+            {
+                'head': 'Example headline.',
+                'lead': 'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.',
+                'image':'frontend/img/slides/slide-01.jpg'
+            },
+            {
+                'head': 'Example headline.',
+                'lead': 'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.',
+                'image':'frontend/img/slides/slide-02.jpg'
+            },
+            {
+                'head': 'Example headline.',
+                'lead': 'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.',
+                'image':'frontend/img/slides/slide-03.jpg'
+            }
+
+        ]
+
+
+%}
+
+
+{% block content %}
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="content" class="carousel slide">
+        <ol class="carousel-indicators">
+            {% for slider in sliders %}
+            <li data-target="#content" data-slide-to="{{ loop.index0 }}" {{ (loop.index0 == 0) ? 'class="active"' : ''  }}></li>
+            {% endfor %}
+            {#<li data-target="#content" data-slide-to="1"></li>
+            <li data-target="#content" data-slide-to="2"></li>#}
+        </ol>
+        <div class="carousel-inner">
+            {% for slider in sliders %}
+            <div class="item {{ (loop.index0 == 0) ? 'active' : '' }}">
+                <img src="{{ asset(slider.image) }}" alt="">
+                <div class="carousel-caption">
+                    <h2{{ slider.head }}></h2>
+                    <p class="lead">{{ slider.lead }}</p>
+                    {#<a class="btn btn-large btn-primary" href="#">Sign up today</a>#}
+                </div>
+            </div>
+            {% endfor %}
+            {#<div class="item">
+                <img src="{{ asset('frontend/img/slides/slide-02.jpg') }}" alt="">
+                <div class="carousel-caption">
+                    <h2>Another example headline.</h2>
+                    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    &#123;&#35;<a class="btn btn-large btn-primary" href="#">Learn more</a>&#35;&#125;
+                </div>
+            </div>
+            <div class="item">
+                <img src="{{ asset('frontend/img/slides/slide-03.jpg') }}" alt="">
+                <div class="carousel-caption">
+                    <h2>One more for good measure.</h2>
+                    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    &#123;&#35;<a class="btn btn-large btn-primary" href="#">Browse gallery</a>&#35;&#125;
+                </div>
+            </div>#}
+        </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div><!-- /.carousel -->
+
+{% endblock content %}
+

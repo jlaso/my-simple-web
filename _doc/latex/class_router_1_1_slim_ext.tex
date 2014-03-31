@@ -1,0 +1,123 @@
+\hypertarget{class_router_1_1_slim_ext}{\section{Slim\-Ext Class Reference}
+\label{class_router_1_1_slim_ext}\index{Slim\-Ext@{Slim\-Ext}}
+}
+
+
+Inheritance diagram for Slim\-Ext\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=128pt]{class_router_1_1_slim_ext__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Slim\-Ext\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=128pt]{class_router_1_1_slim_ext__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_router_1_1_slim_ext_ac3e8140313d6ca2f974dca16673a9e7b}{url\-For} (\$name, \$params=array())
+\item 
+\hyperlink{class_router_1_1_slim_ext_a5cf6ca60d920790f99ee5ad30cbba23e}{url\-Actual} (\$params=array())
+\item 
+\hyperlink{class_router_1_1_slim_ext_aef8fe9d8caf6fcc5524e65e0842e4db5}{render} (\$template, \$data=array(), \$status=null)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_router_1_1_slim_ext_a8bcd3fcd923ef9ae16762ca0a3c4d9ed}{map\-Route} (\$args)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_router_1_1_slim_ext_a8bcd3fcd923ef9ae16762ca0a3c4d9ed}{\index{Router\-::\-Slim\-Ext@{Router\-::\-Slim\-Ext}!map\-Route@{map\-Route}}
+\index{map\-Route@{map\-Route}!Router::SlimExt@{Router\-::\-Slim\-Ext}}
+\subsubsection[{map\-Route}]{\setlength{\rightskip}{0pt plus 5cm}map\-Route (
+\begin{DoxyParamCaption}
+\item[{}]{\$args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_router_1_1_slim_ext_a8bcd3fcd923ef9ae16762ca0a3c4d9ed}
+Intercepts Slim map\-Route to establish the language if case
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$args} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_router_1_1_slim_ext_aef8fe9d8caf6fcc5524e65e0842e4db5}{\index{Router\-::\-Slim\-Ext@{Router\-::\-Slim\-Ext}!render@{render}}
+\index{render@{render}!Router::SlimExt@{Router\-::\-Slim\-Ext}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}render (
+\begin{DoxyParamCaption}
+\item[{}]{\$template, }
+\item[{}]{\$data = {\ttfamily array()}, }
+\item[{}]{\$status = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}\label{class_router_1_1_slim_ext_aef8fe9d8caf6fcc5524e65e0842e4db5}
+Render a template
+
+Call this method within a G\-E\-T, P\-O\-S\-T, P\-U\-T, D\-E\-L\-E\-T\-E, N\-O\-T F\-O\-U\-N\-D, or E\-R\-R\-O\-R callable to render a template whose output is appended to the current H\-T\-T\-P response body. How the template is rendered is delegated to the current View.
+
+This hook permits to have one folder to custom templates that isn't in repository
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$template} & The name of the template passed into the view's \hyperlink{class_router_1_1_slim_ext_aef8fe9d8caf6fcc5524e65e0842e4db5}{render()} method \\
+\hline
+array & {\em \$data} & Associative array of data made available to the view \\
+\hline
+int & {\em \$status} & The H\-T\-T\-P response status code to use (optional) \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_router_1_1_slim_ext_a5cf6ca60d920790f99ee5ad30cbba23e}{\index{Router\-::\-Slim\-Ext@{Router\-::\-Slim\-Ext}!url\-Actual@{url\-Actual}}
+\index{url\-Actual@{url\-Actual}!Router::SlimExt@{Router\-::\-Slim\-Ext}}
+\subsubsection[{url\-Actual}]{\setlength{\rightskip}{0pt plus 5cm}url\-Actual (
+\begin{DoxyParamCaption}
+\item[{}]{\$params = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}}\label{class_router_1_1_slim_ext_a5cf6ca60d920790f99ee5ad30cbba23e}
+Recall current route with params
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$params} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_router_1_1_slim_ext_ac3e8140313d6ca2f974dca16673a9e7b}{\index{Router\-::\-Slim\-Ext@{Router\-::\-Slim\-Ext}!url\-For@{url\-For}}
+\index{url\-For@{url\-For}!Router::SlimExt@{Router\-::\-Slim\-Ext}}
+\subsubsection[{url\-For}]{\setlength{\rightskip}{0pt plus 5cm}url\-For (
+\begin{DoxyParamCaption}
+\item[{}]{\$name, }
+\item[{}]{\$params = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}}\label{class_router_1_1_slim_ext_ac3e8140313d6ca2f974dca16673a9e7b}
+Intercept Slim url\-For to inject language if case
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & \\
+\hline
+array & {\em \$params} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+app/controller/core/\-Router/\hyperlink{_slim_ext_8php}{Slim\-Ext.\-php}\end{DoxyCompactItemize}

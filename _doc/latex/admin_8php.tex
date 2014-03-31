@@ -1,0 +1,53 @@
+\hypertarget{admin_8php}{\section{app/controller/backend/admin.php File Reference}
+\label{admin_8php}\index{app/controller/backend/admin.\-php@{app/controller/backend/admin.\-php}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{admin_8php_a2e5051c30251e26c6da72ea9cfbe864f}{is\-Logged} ()
+\item 
+\hyperlink{admin_8php_aaf6020614a197af2f2c4b8d508191d9c}{redirect\-If\-Not\-Logged} (\textbackslash{}Slim\textbackslash{}\-Slim \$app)
+\item 
+\hyperlink{admin_8php_a670015f4a752d6f0b2298872a01fd074}{get\-All\-Entities} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{admin_8php_a670015f4a752d6f0b2298872a01fd074}{\index{admin.\-php@{admin.\-php}!get\-All\-Entities@{get\-All\-Entities}}
+\index{get\-All\-Entities@{get\-All\-Entities}!admin.php@{admin.\-php}}
+\subsubsection[{get\-All\-Entities}]{\setlength{\rightskip}{0pt plus 5cm}get\-All\-Entities (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{admin_8php_a670015f4a752d6f0b2298872a01fd074}
+retrieves all the entities
+
+\begin{DoxyReturn}{Returns}
+O\-R\-M array 
+\end{DoxyReturn}
+\hypertarget{admin_8php_a2e5051c30251e26c6da72ea9cfbe864f}{\index{admin.\-php@{admin.\-php}!is\-Logged@{is\-Logged}}
+\index{is\-Logged@{is\-Logged}!admin.php@{admin.\-php}}
+\subsubsection[{is\-Logged}]{\setlength{\rightskip}{0pt plus 5cm}is\-Logged (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{admin_8php_a2e5051c30251e26c6da72ea9cfbe864f}
+checks if user has logged in
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{admin_8php_aaf6020614a197af2f2c4b8d508191d9c}{\index{admin.\-php@{admin.\-php}!redirect\-If\-Not\-Logged@{redirect\-If\-Not\-Logged}}
+\index{redirect\-If\-Not\-Logged@{redirect\-If\-Not\-Logged}!admin.php@{admin.\-php}}
+\subsubsection[{redirect\-If\-Not\-Logged}]{\setlength{\rightskip}{0pt plus 5cm}redirect\-If\-Not\-Logged (
+\begin{DoxyParamCaption}
+\item[{\textbackslash{}Slim\textbackslash{}\-Slim}]{\$app}
+\end{DoxyParamCaption}
+)}}\label{admin_8php_aaf6020614a197af2f2c4b8d508191d9c}
+check if user was logged in and if not redirects to login page
+
+
+\begin{DoxyParams}[1]{Parameters}
+Slim\textbackslash{}\-Slim & {\em \$app} & \\
+\hline
+\end{DoxyParams}

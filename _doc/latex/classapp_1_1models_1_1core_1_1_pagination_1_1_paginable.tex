@@ -1,0 +1,242 @@
+\hypertarget{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable}{\section{Paginable Class Reference}
+\label{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable}\index{Paginable@{Paginable}}
+}
+
+
+Inheritance diagram for Paginable\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Paginable\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a30665d666343b7d0bc4205bbdd17a9a6}{\-\_\-\-\_\-construct} (\$entity, \$\-\_\-options=array())
+\item 
+\hyperlink{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a3813247f2eae6ac65a8a021daf05bae4}{get\-Results} ()
+\item 
+\hyperlink{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a729c58915f85c0640170ecd38bbbfbde}{set\-Num\-Rec\-Per\-Page} (\$num)
+\item 
+\hyperlink{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a3d3907e74263fd57a5f8e42826a41741}{set\-Current\-Page} (\$page)
+\item 
+\hyperlink{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a9613a9ee3ec2d3c253b6cacde84fb992}{get\-Pages} ()
+\item 
+\hyperlink{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a1162a00ab3a7146680cf51a76bf60c78}{get\-Current\-Page} ()
+\item 
+\hyperlink{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_ac9a7c4f8a9092109368193a19ba027d5}{set\-Base\-Route\-And\-Params} (\$route, \$params=array())
+\item 
+\hyperlink{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a3613a2a45ce883e2fae841ab26611473}{need\-Pagination} ()
+\item 
+\hyperlink{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_acb7ae38947e4e7f6f703ac7dcaea543e}{has\-Previous\-Page} ()
+\item 
+\hyperlink{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a2ae421a6d6302fa4b340dce8127cad42}{get\-Previous\-Page} ()
+\item 
+\hyperlink{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a5cbe0d19e29e1e5461e810ceeacc8f5a}{has\-Next\-Page} ()
+\item 
+\hyperlink{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a6c0ee4e21328f53e8bea5675924f2d26}{get\-Next\-Page} ()
+\item 
+\hyperlink{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a496821fe216b5e65c39f14f25e09855f}{get\-Nb\-Records} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsection*{show sample in twig template}
+
+ 
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}\% for page in 1..paginator.\-pages \%\}  \href{{{ paginator.routeForPage(page) }}}{\tt \{\{ page \}\}}  \{\% endfor \%\}   
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a30665d666343b7d0bc4205bbdd17a9a6}{\index{app\-::models\-::core\-::\-Pagination\-::\-Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}!\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}}
+\index{\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}!app::models::core::Pagination::Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}}
+\subsubsection[{\-\_\-\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{}]{\$entity, }
+\item[{}]{\$\-\_\-options = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}}\label{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a30665d666343b7d0bc4205bbdd17a9a6}
+Generates a paginator from the O\-R\-M\-Wrapper specified with ten records per page as default
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$entity} & \\
+\hline
+array & {\em \$\-\_\-options} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a1162a00ab3a7146680cf51a76bf60c78}{\index{app\-::models\-::core\-::\-Pagination\-::\-Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}!get\-Current\-Page@{get\-Current\-Page}}
+\index{get\-Current\-Page@{get\-Current\-Page}!app::models::core::Pagination::Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}}
+\subsubsection[{get\-Current\-Page}]{\setlength{\rightskip}{0pt plus 5cm}get\-Current\-Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a1162a00ab3a7146680cf51a76bf60c78}
+obtains the current page \begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\hypertarget{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a496821fe216b5e65c39f14f25e09855f}{\index{app\-::models\-::core\-::\-Pagination\-::\-Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}!get\-Nb\-Records@{get\-Nb\-Records}}
+\index{get\-Nb\-Records@{get\-Nb\-Records}!app::models::core::Pagination::Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}}
+\subsubsection[{get\-Nb\-Records}]{\setlength{\rightskip}{0pt plus 5cm}get\-Nb\-Records (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a496821fe216b5e65c39f14f25e09855f}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\hypertarget{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a6c0ee4e21328f53e8bea5675924f2d26}{\index{app\-::models\-::core\-::\-Pagination\-::\-Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}!get\-Next\-Page@{get\-Next\-Page}}
+\index{get\-Next\-Page@{get\-Next\-Page}!app::models::core::Pagination::Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}}
+\subsubsection[{get\-Next\-Page}]{\setlength{\rightskip}{0pt plus 5cm}get\-Next\-Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a6c0ee4e21328f53e8bea5675924f2d26}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Logic\-Exception} & \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a9613a9ee3ec2d3c253b6cacde84fb992}{\index{app\-::models\-::core\-::\-Pagination\-::\-Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}!get\-Pages@{get\-Pages}}
+\index{get\-Pages@{get\-Pages}!app::models::core::Pagination::Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}}
+\subsubsection[{get\-Pages}]{\setlength{\rightskip}{0pt plus 5cm}get\-Pages (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a9613a9ee3ec2d3c253b6cacde84fb992}
+obtains total page number
+
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+\hypertarget{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a2ae421a6d6302fa4b340dce8127cad42}{\index{app\-::models\-::core\-::\-Pagination\-::\-Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}!get\-Previous\-Page@{get\-Previous\-Page}}
+\index{get\-Previous\-Page@{get\-Previous\-Page}!app::models::core::Pagination::Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}}
+\subsubsection[{get\-Previous\-Page}]{\setlength{\rightskip}{0pt plus 5cm}get\-Previous\-Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a2ae421a6d6302fa4b340dce8127cad42}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Logic\-Exception} & \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a3813247f2eae6ac65a8a021daf05bae4}{\index{app\-::models\-::core\-::\-Pagination\-::\-Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}!get\-Results@{get\-Results}}
+\index{get\-Results@{get\-Results}!app::models::core::Pagination::Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}}
+\subsubsection[{get\-Results}]{\setlength{\rightskip}{0pt plus 5cm}get\-Results (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a3813247f2eae6ac65a8a021daf05bae4}
+Returns the items for the page selected
+
+\begin{DoxyReturn}{Returns}
+O\-R\-M Array\-Collection 
+\end{DoxyReturn}
+\hypertarget{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a5cbe0d19e29e1e5461e810ceeacc8f5a}{\index{app\-::models\-::core\-::\-Pagination\-::\-Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}!has\-Next\-Page@{has\-Next\-Page}}
+\index{has\-Next\-Page@{has\-Next\-Page}!app::models::core::Pagination::Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}}
+\subsubsection[{has\-Next\-Page}]{\setlength{\rightskip}{0pt plus 5cm}has\-Next\-Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a5cbe0d19e29e1e5461e810ceeacc8f5a}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_acb7ae38947e4e7f6f703ac7dcaea543e}{\index{app\-::models\-::core\-::\-Pagination\-::\-Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}!has\-Previous\-Page@{has\-Previous\-Page}}
+\index{has\-Previous\-Page@{has\-Previous\-Page}!app::models::core::Pagination::Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}}
+\subsubsection[{has\-Previous\-Page}]{\setlength{\rightskip}{0pt plus 5cm}has\-Previous\-Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_acb7ae38947e4e7f6f703ac7dcaea543e}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a3613a2a45ce883e2fae841ab26611473}{\index{app\-::models\-::core\-::\-Pagination\-::\-Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}!need\-Pagination@{need\-Pagination}}
+\index{need\-Pagination@{need\-Pagination}!app::models::core::Pagination::Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}}
+\subsubsection[{need\-Pagination}]{\setlength{\rightskip}{0pt plus 5cm}need\-Pagination (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a3613a2a45ce883e2fae841ab26611473}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_ac9a7c4f8a9092109368193a19ba027d5}{\index{app\-::models\-::core\-::\-Pagination\-::\-Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}!set\-Base\-Route\-And\-Params@{set\-Base\-Route\-And\-Params}}
+\index{set\-Base\-Route\-And\-Params@{set\-Base\-Route\-And\-Params}!app::models::core::Pagination::Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}}
+\subsubsection[{set\-Base\-Route\-And\-Params}]{\setlength{\rightskip}{0pt plus 5cm}set\-Base\-Route\-And\-Params (
+\begin{DoxyParamCaption}
+\item[{}]{\$route, }
+\item[{}]{\$params = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}}\label{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_ac9a7c4f8a9092109368193a19ba027d5}
+Set the base route and params to generate route for each page
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$route} & \\
+\hline
+{\em \$params} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a3d3907e74263fd57a5f8e42826a41741}{\index{app\-::models\-::core\-::\-Pagination\-::\-Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}!set\-Current\-Page@{set\-Current\-Page}}
+\index{set\-Current\-Page@{set\-Current\-Page}!app::models::core::Pagination::Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}}
+\subsubsection[{set\-Current\-Page}]{\setlength{\rightskip}{0pt plus 5cm}set\-Current\-Page (
+\begin{DoxyParamCaption}
+\item[{}]{\$page}
+\end{DoxyParamCaption}
+)}}\label{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a3d3907e74263fd57a5f8e42826a41741}
+sets the current page
+
+
+\begin{DoxyParams}{Parameters}
+{\em \$page} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \textbackslash{}\-Exception} & \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a729c58915f85c0640170ecd38bbbfbde}{\index{app\-::models\-::core\-::\-Pagination\-::\-Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}!set\-Num\-Rec\-Per\-Page@{set\-Num\-Rec\-Per\-Page}}
+\index{set\-Num\-Rec\-Per\-Page@{set\-Num\-Rec\-Per\-Page}!app::models::core::Pagination::Paginable@{app\-::models\-::core\-::\-Pagination\-::\-Paginable}}
+\subsubsection[{set\-Num\-Rec\-Per\-Page}]{\setlength{\rightskip}{0pt plus 5cm}set\-Num\-Rec\-Per\-Page (
+\begin{DoxyParamCaption}
+\item[{}]{\$num}
+\end{DoxyParamCaption}
+)}}\label{classapp_1_1models_1_1core_1_1_pagination_1_1_paginable_a729c58915f85c0640170ecd38bbbfbde}
+Set the records per page desired
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$num} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+app/models/core/\-Pagination/\hyperlink{_paginable_8php}{Paginable.\-php}\end{DoxyCompactItemize}

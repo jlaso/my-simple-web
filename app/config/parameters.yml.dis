@@ -1,0 +1,10 @@
+parameters:
+
+    ###############################
+    ##   TRANSLATIONS API REST   ##
+    ###############################
+    jlaso_translations_api_access:
+        project_id: x      # the number that correspond to the project created
+        key:  my-key       # the key that systems assigns
+        secret: my-secret  # the password that you choose when init project in server
+        url: https://translations.com.es/api/
