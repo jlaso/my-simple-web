@@ -1,11 +1,34 @@
-{% extends 'frontend/home/index.html.twig' %}
+{% extends 'frontend/home/base/index.html.twig' %}
 
 
+{% block content %}
 
-{% block subcontent %}
+ {%
 
-    <h2>CUSTOMIZED</h2>
+ set sliders =
+     [
 
-    {{ parent() }}
+         {
+             'head': 'Example 1.',
+             'lead': 'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.',
+             'image':'custom/frontend/home/slides/bg-1.jpg'
+         },
+         {
+             'head': 'Example 2.',
+             'lead': 'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.',
+             'image':'custom/frontend/home/slides/bg-2.jpg'
+         },
+         {
+             'head': 'Example 2.',
+             'lead': 'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.',
+             'image':'custom/frontend/home/slides/bg-3.jpg'
+         }
 
-{% endblock %}
+     ]
+
+
+ %}
+
+{{ parent() }}
+
+{% endblock content %}
