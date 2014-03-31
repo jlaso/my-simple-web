@@ -6,7 +6,8 @@ interface PaginableInterface
 {
 
     /**
-     * Generates a paginator from the ORMWrapper specified with ten records per page as default
+     * Generates a paginator from the ORMWrapper specified with ten records
+     * per page as default
      *
      * @param string $entity
      * @param array  $_options

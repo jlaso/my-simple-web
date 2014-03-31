@@ -1,7 +1,9 @@
 .idea
 app/config/dbconfig.php
+app/config/parameters.yml
 MAMP_php_error_log_MAMP
 app/cache/*
 app/logs/*
 web/custom/*
 templates/custom/*
+vendor/*

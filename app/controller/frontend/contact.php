@@ -6,11 +6,13 @@
 $app->map('/contact/', function () use ($app) {
 
     $errors  = array();
+    /** @var \Entity\Contact $contact */
     $contact = \Entity\Contact::factory()->create();
 
     if ($app->request()->isPost()) {
         $sum = $_SESSION['sum'];
-        $contact->hydrate($app->request()->post());
+        $contact->bind($app->request()->post());
+        var_dump($contact); //die;
         $errors = $contact->validate();
         if (count($errors)==0) {
             if ($sum['one']+$sum['two']==$contact->sum) {

@@ -5,6 +5,8 @@ namespace Entity;
 use app\models\core\BaseModel;
 use app\models\core\ValidableInterface;
 use lib\MyFunctions;
+use Validate;
+
 
 /**
  * Class that stores articles of this web
@@ -23,10 +25,10 @@ class Description
     {
         $result = array();
         if (empty($this->lang)) {
-            $result['lang'] = $this->cantLeaveBlank(_('Lang'));
+            $result['lang'] = Validate::cantLeaveBlank(_('Lang'));
         }
         if (empty($this->content)) {
-            $result['content'] = $this->cantLeaveBlank(_('Content'));
+            $result['content'] = Validate::cantLeaveBlank(_('Content'));
         }
 
         return $result;

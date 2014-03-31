@@ -4,7 +4,7 @@ namespace Router;
 
 use \Slim\Slim;
 
-class Controller
+abstract class Controller
 {
     /** @var SlimExt */
     protected $slimInstance;

@@ -12,21 +12,22 @@
     "autoload": {
         "psr-0": {
 
-            "lib": "",
+            "lib":                            "",
 
-            "app\\config": "",
+            "app\\config":                    "",
+            "app\\command":                   "",
             "app\\models\\core":              "",
             "app\\models\\core\\Form":        "",
             "app\\models\\core\\Pagination":  "",
             "app\\models\\core\\Search":      "",
             "app\\models\\Entity":            "",
-            "Entity": "app/models/",
-            "Security": "app/models/",
+            "Entity":                         "app/models/",
+            "Security":                       "app/models/",
 
-            "app\\controller\\backend":      "",
-            "app\\controller\\backend\\CRUD":      "",
+            "app\\controller\\backend":       "",
+            "app\\controller\\backend\\CRUD": "",
             "app\\controller\\frontend":      "",
-            "Router": "app/controller/core/"
+            "Router":                         "app/controller/core/"
 
         }
     },
@@ -36,9 +37,16 @@
         "slim/extras":      "2.*",
         "twig/twig":        "1.*",
         "j4mie/paris" :     "1.2.0",
-        "behat/behat":      "2.4.*@stable"
-    },
+        "behat/behat":      "2.4.*@stable",
+        "symfony/console":  "2.*",
+        "symfony/finder" :  "2.*",
+        "symfony/config":   "2.*",
+        "symfony/yaml":     "2.*",
 
+        "jlaso/ovh-domain-api": "*",
+        "jlaso/translations-apibundle": "*"
+    },
+    "minimum-stability": "dev",
     "config": {
         "bin-dir": "bin/"
     }
