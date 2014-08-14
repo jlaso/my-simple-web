@@ -11,7 +11,7 @@ Create db
 ---------
 introduce access to db in app/config/dbconfig.php, for that you can copy dbconfig_sample.php in
 the same folder.
-Next execute the script that creates the DB and fixtures for tables,
+Then execute the script that creates the DB and fixtures for tables (you need almost PHP >= 5.3.7),
 
 php regenerateDBwithoutConfirmation.php
 
