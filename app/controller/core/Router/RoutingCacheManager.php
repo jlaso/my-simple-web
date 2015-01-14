@@ -181,6 +181,7 @@ class RoutingCacheManager
      */
     protected function processCache($classFile)
     {
+        global $app;
         require_once($this->updateAndGetCacheFileName($classFile));
     }
 
