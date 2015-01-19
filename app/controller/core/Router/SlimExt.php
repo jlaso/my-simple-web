@@ -7,6 +7,36 @@ use \Slim\Slim;
 
 class SlimExt extends Slim
 {
+    protected $namespacesMap;
+    protected $rootDir;
+
+    /**
+     * @param array $userSettings
+     */
+    public function __construct(array $userSettings = array())
+    {
+        $this->rootDir = dirname(dirname(dirname(dirname(__DIR__))));
+        $this->namespacesMap = require ($this->rootDir . '/vendor/composer/autoload_namespaces.php');
+
+        return parent::__construct($userSettings);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNamespacesMap()
+    {
+        return $this->namespacesMap;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRootDir()
+    {
+        return $this->rootDir;
+    }
+
 
     /**
      * Intercepts Slim mapRoute to establish the language if case
@@ -78,11 +108,11 @@ class SlimExt extends Slim
             $this->response->status($status);
         }
 
-        $rootDir = dirname(dirname(dirname(dirname(__DIR__))));
+        $rootDir = $this->getRootDir();
         $templates = self::config('templates.path');
 
         if(preg_match('/^@(?<name>[^:]*?):(?<path>.*?)$/', $template, $matches)){
-            $map = require ($rootDir . '/vendor/composer/autoload_namespaces.php');
+            $map = $this->getNamespacesMap();
             $name = str_replace('/', '\\', $matches['name']);
             if(isset($map[$name])){
                 $prefix = (is_array($map[$name]) ? $map[$name][0] : $map[$name]) . '/' . $matches['name'] . '/templates/';
