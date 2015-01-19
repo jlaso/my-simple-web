@@ -17,3 +17,6 @@
     $routingCacheManager = new \Router\RoutingCacheManager();
 
     $routingCacheManager->loadRoute(__DIR__ . '/frontend/TestAnnotationController.php');
+
+    // Load third part
+    $routingCacheManager->loadRoute('@JLaso/Blog:frontend/BlogHomeController.php');
