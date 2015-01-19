@@ -195,7 +195,10 @@ class RoutingCacheManager
     {
         $prefix = '';
         if(preg_match('/^@(?<name>[^:]*?):(?<path>.*?)$/', $phpFile, $matches)){
-            $map = require (ROOT_DIR . '/vendor/composer/autoload_namespaces.php');
+            /** @var SlimExt $app */
+            $app = Slim::getInstance();
+            $rootDir = $app->getRootDir();
+            $map = $app->getNamespacesMap();
             $name = str_replace('/', '\\', $matches['name']);
             if(isset($map[$name])){
                 $prefix = (is_array($map[$name]) ? $map[$name][0] : $map[$name]) . '/' . $matches['name'] . '/app/controller/';
