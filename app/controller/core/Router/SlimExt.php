@@ -74,13 +74,42 @@ class SlimExt extends Slim
      */
     public function render($template, $data = array(), $status = null)
     {
-        $templates = self::config('templates.path');
-        $custom = 'custom/'.$template;
-        $file =  dirname(dirname(dirname(dirname(__DIR__)))).'/web/'.$templates.'/'.$custom;
-        if (file_exists($file)) {
-            $template = $custom;
+        if (!is_null($status)) {
+            $this->response->status($status);
         }
-        parent::render($template,$data,$status);
+
+        $rootDir = dirname(dirname(dirname(dirname(__DIR__))));
+        $templates = self::config('templates.path');
+
+        if(preg_match('/^@(?<name>[^:]*?):(?<path>.*?)$/', $template, $matches)){
+            $map = require ($rootDir . '/vendor/composer/autoload_namespaces.php');
+            $name = str_replace('/', '\\', $matches['name']);
+            if(isset($map[$name])){
+                $prefix = (is_array($map[$name]) ? $map[$name][0] : $map[$name]) . '/' . $matches['name'] . '/templates/';
+                $path = $matches['path'];
+                if(file_exists($rootDir . '/web/custom/' . $matches['name'] . '/' . $path)){
+                    $templateDir = $rootDir . '/web/custom/' . $matches['name'] . '/';
+                    $template = $path;
+                }elseif(file_exists($prefix . $path)){
+                    $templateDir = $prefix;
+                    $template = $path;
+                }else{
+                    $templateDir = $templates;
+                }
+            }
+        }else{
+
+            $file =  $rootDir . '/web/custom/' . $template;
+            if (file_exists($file)) {
+                $templateDir = $rootDir . '/web/custom/';
+            }else{
+                $templateDir = $templates;
+            }
+        }
+        $this->view->setTemplatesDirectory($templateDir);
+
+        $this->view->appendData($data);
+        $this->view->display($template);
     }
 
 }
