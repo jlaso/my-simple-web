@@ -193,8 +193,17 @@ class RoutingCacheManager
      */
     public function loadRoute($phpFile)
     {
-        require_once $phpFile;
-        $this->processCache($phpFile);
+        $prefix = '';
+        if(preg_match('/^@(?<name>[^:]*?):(?<path>.*?)$/', $phpFile, $matches)){
+            $map = require (ROOT_DIR . '/vendor/composer/autoload_namespaces.php');
+            $name = str_replace('/', '\\', $matches['name']);
+            if(isset($map[$name])){
+                $prefix = (is_array($map[$name]) ? $map[$name][0] : $map[$name]) . '/' . $matches['name'] . '/app/controller/';
+                $phpFile = $matches['path'];
+            }
+        }
+        require_once $prefix . $phpFile;
+        $this->processCache($prefix . $phpFile);
     }
 
 }
