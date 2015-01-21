@@ -21,7 +21,7 @@ class EntityFixture implements FixturableInterface
     {
         $item = \Entity\Entity::factory()->create();
         foreach ($assocArray as $field=>$value) {
-            $item->set($field,$value);
+            $item->set($field,is_bool($value) ? (int) $value : $value);
         }
         $item->save();
         return $this;

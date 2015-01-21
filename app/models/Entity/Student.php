@@ -10,7 +10,7 @@ use app\models\core\BaseModel;
 class Student extends BaseModel
 {
 
-    protected static $_table = 'test.student';
+    public static $_table = 'test.student';
 
     /**
      * Get the SQL creation sentece of this table
