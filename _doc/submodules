@@ -1,0 +1,4 @@
+-> git submodule add -b master -f --name adminlte https://github.com/almasaeed2010/AdminLTE.git web/custom/adminlte
+
+git submodule init
+git submodule update
