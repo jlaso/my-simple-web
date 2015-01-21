@@ -111,12 +111,19 @@ class SlimExt extends Slim
         $rootDir = $this->getRootDir();
         $templates = self::config('templates.path');
 
+        $loader = new \Twig_Loader_Filesystem($templates);
+        foreach($this->getNamespacesMap() as $namespace=>$path){
+            $loader->addPath($path, $namespace);
+        }
+        $twig = new Twig_Environment($loader);
+
         if(preg_match('/^@(?<name>[^:]*?):(?<path>.*?)$/', $template, $matches)){
             $map = $this->getNamespacesMap();
             $name = str_replace('/', '\\', $matches['name']);
             if(isset($map[$name])){
                 $prefix = (is_array($map[$name]) ? $map[$name][0] : $map[$name]) . '/' . $matches['name'] . '/templates/';
                 $path = $matches['path'];
+                var_dump($rootDir . '/web/custom/' . $matches['name'] . '/' . $path, $prefix . $path); die;
                 if(file_exists($rootDir . '/web/custom/' . $matches['name'] . '/' . $path)){
                     $templateDir = $rootDir . '/web/custom/' . $matches['name'] . '/';
                     $template = $path;

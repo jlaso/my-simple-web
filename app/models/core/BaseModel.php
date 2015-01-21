@@ -18,6 +18,9 @@ abstract class BaseModel
     implements BindableInterface
 {
 
+    public static $_table_use_short_name = false;
+    public static $_table;
+
     /**
      * Factory from extended class
      *
@@ -36,6 +39,7 @@ abstract class BaseModel
         if (!$class) {
             $class = get_called_class();
         }
+        static::$_table = static::_tableNameForClass($class);
 
         return parent::factory($class);
     }
@@ -107,8 +111,11 @@ abstract class BaseModel
      * @param string $class
      * @return string
      */
-    public static function _tableNameForClass($class)
+    public static function _tableNameForClass($class = null)
     {
+        if(!$class){
+            $class = get_called_class();
+        }
         // CamelCase to undescore_case
         $class = strtolower(preg_replace('/([a-zA-Z])(?=[A-Z])/', '$1_', $class));
         // table name equals to PSR0 of class name

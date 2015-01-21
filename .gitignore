@@ -4,6 +4,7 @@
 _doc
 app/config/dbconfig.php
 app/config/parameters.yml
+app/config/orm.yml
 MAMP_php_error_log_MAMP
 app/cache/*
 app/logs/*

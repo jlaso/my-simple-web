@@ -5,12 +5,16 @@ namespace app\models;
 use \ORM;
 use \app\models\core\Registry;
 use \app\models\core\FixturableInterface;
+use Symfony\Component\Yaml\Yaml;
 
 class EntityManager
 {
     private $conn;
     private $dbname;
     private $dump;
+    private $classes = null;
+
+    const ORM_YML = '/app/config/orm.yml';
 
     public function __construct($dump = false)
     {
@@ -87,6 +91,20 @@ class EntityManager
         }
     }
 
+    public function getNameSpaceClasses()
+    {
+        if($this->classes){
+            return $this->classes;
+        }
+        $rootDir = dirname(dirname(__DIR__));
+        if(!file_exists($rootDir . self::ORM_YML)){
+            return $this->classes = array();
+        }
+        $orm = Yaml::parse(file_get_contents($rootDir . self::ORM_YML));
+
+        return $this->classes = $orm['entities'];
+    }
+
     /**
      * Drops database
      */
@@ -134,6 +152,15 @@ class EntityManager
                 }
             }
         }
+        $classes = $this->getNameSpaceClasses();
+        foreach($classes as $class){
+            if ($this->dump) {
+                print $class.PHP_EOL;
+            }
+            $sql = $class::_creationSchema();
+            $this->execute($sql);
+        }
+
     }
 
     /**
@@ -150,6 +177,13 @@ class EntityManager
             if (is_subclass_of($class,'app\\models\\core\\FixturableInterface')) {
                 //print 'order '.$class::getOrder().' ';
                 $ordered[sprintf("%05d-%s",$class::getOrder(),$class)] = $class;
+            }
+        }
+        $classes = $this->getNameSpaceClasses();
+        foreach($classes as $class){
+            $fixtureClass = sprintf("%sFixture", $class);
+            if(class_exists($fixtureClass)){
+                $ordered[sprintf("%05d-%s",$fixtureClass::getOrder(),$fixtureClass)] = $fixtureClass;
             }
         }
         $this->selectDb();
