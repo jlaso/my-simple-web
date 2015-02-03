@@ -8,5 +8,3 @@ php:
 before_install:
   - composer self-update
 
-script:
-  - phpunit
