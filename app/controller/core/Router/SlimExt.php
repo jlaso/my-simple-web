@@ -7,34 +7,35 @@ use \Slim\Slim;
 
 class SlimExt extends Slim
 {
-    protected $namespacesMap;
-    protected $rootDir;
+    protected static $namespacesMap = null;
 
     /**
      * @param array $userSettings
      */
     public function __construct(array $userSettings = array())
     {
-        $this->rootDir = dirname(dirname(dirname(dirname(__DIR__))));
-        $this->namespacesMap = require ($this->rootDir . '/vendor/composer/autoload_namespaces.php');
-
+        self::getNamespacesMap();
         return parent::__construct($userSettings);
     }
 
     /**
      * @return mixed
      */
-    public function getNamespacesMap()
+    public static function getNamespacesMap()
     {
-        return $this->namespacesMap;
+        if(!static::$namespacesMap){
+            static::$namespacesMap = require (static::getRootDir() . '/vendor/composer/autoload_namespaces.php');
+        };
+
+        return static::$namespacesMap;
     }
 
     /**
      * @return string
      */
-    public function getRootDir()
+    public static function getRootDir()
     {
-        return $this->rootDir;
+        return dirname(dirname(dirname(dirname(__DIR__))));
     }
 
 
@@ -104,26 +105,30 @@ class SlimExt extends Slim
      */
     public function render($template, $data = array(), $status = null)
     {
+        $templates = self::config('templates.path');
+        $custom = 'custom/'.$template;
+        $file = dirname(dirname(dirname(dirname(__DIR__)))).'/web/'.$templates.'/'.$custom;
+        if (file_exists($file)) {
+            $template = $custom;
+        }
+        parent::render($template,$data,$status);
+
+        return;
+
         if (!is_null($status)) {
             $this->response->status($status);
         }
 
-        $rootDir = $this->getRootDir();
-        $templates = self::config('templates.path');
-
-        $loader = new \Twig_Loader_Filesystem($templates);
-        foreach($this->getNamespacesMap() as $namespace=>$path){
-            $loader->addPath($path, $namespace);
-        }
-        $twig = new Twig_Environment($loader);
+        $rootDir = static::getRootDir();
+        $templateDir = $templates = self::config('templates.path');
 
         if(preg_match('/^@(?<name>[^:]*?):(?<path>.*?)$/', $template, $matches)){
-            $map = $this->getNamespacesMap();
+            $map = static::getNamespacesMap();
             $name = str_replace('/', '\\', $matches['name']);
             if(isset($map[$name])){
                 $prefix = (is_array($map[$name]) ? $map[$name][0] : $map[$name]) . '/' . $matches['name'] . '/templates/';
                 $path = $matches['path'];
-                var_dump($rootDir . '/web/custom/' . $matches['name'] . '/' . $path, $prefix . $path); die;
+                //var_dump($rootDir . '/web/custom/' . $matches['name'] . '/' . $path, $prefix . $path); die;
                 if(file_exists($rootDir . '/web/custom/' . $matches['name'] . '/' . $path)){
                     $templateDir = $rootDir . '/web/custom/' . $matches['name'] . '/';
                     $template = $path;
@@ -139,8 +144,6 @@ class SlimExt extends Slim
             $file =  $rootDir . '/web/custom/' . $template;
             if (file_exists($file)) {
                 $templateDir = $rootDir . '/web/custom/';
-            }else{
-                $templateDir = $templates;
             }
         }
         $this->view->setTemplatesDirectory($templateDir);

@@ -2,68 +2,52 @@
 
 namespace lib;
 
-use \Slim\Extras\Views\Twig;
+//use \Slim\Views\TwigExtension;
 use Twig_Function_Function;
 
-class TwigViewSlim extends Twig
+class TwigViewSlim extends \Twig_Extension
 {
-    private function addFunctions(\Twig_Environment $twigEnvironment)
+    public function getName()
     {
-        $twigEnvironment->addFunction('var_dump',
-                new Twig_Function_Function('var_dump'));
-        $twigEnvironment->addFunction('sprintf',
-            new Twig_Function_Function('sprintf'));
-        $twigEnvironment->addFunction('urlFor',
-                new Twig_Function_Function('\Router\SlimExt::getInstance()->urlFor'));
-        $twigEnvironment->addFunction('urlActual',
-            new Twig_Function_Function('\Router\SlimExt::getInstance()->urlActual'));
-        $twigEnvironment->addFunction('asset',
-                new Twig_Function_Function('\lib\MyFunctions::asset'));
-        $twigEnvironment->addFunction('session',
-            new Twig_Function_Function('\lib\MyFunctions::session'));
-
-        // form widgets
-        $twigEnvironment->addFunction('form_table_head',
-            new Twig_Function_Function('\app\models\core\Form\FormWidget::form_table_head', array(
-                'is_safe' => array('html')
-            )));
-        $twigEnvironment->addFunction('form_table_row',
-            new Twig_Function_Function('\app\models\core\Form\FormWidget::form_table_row', array(
-                'is_safe' => array('html')
-            )));
-        $twigEnvironment->addFunction('form_widget',
-            new Twig_Function_Function('\app\models\core\Form\FormWidget::form_widget', array(
-                'is_safe' => array('html')
-            )));
-        $twigEnvironment->addFunction('form_search_widget',
-            new Twig_Function_Function('\app\models\core\Form\FormWidget::form_search_widget', array(
-                'is_safe' => array('html')
-            )));
-        $twigEnvironment->addFunction('paginator_backend_render',
-            new Twig_Function_Function('\app\models\core\Pagination\PaginatorViewExtension::render', array(
-                'is_safe' => array('html')
-            )));
-        $twigEnvironment->addFunction('getAllEntities',
-            new Twig_Function_Function('getAllEntities'));
-        $twigEnvironment->addFunction('config',
-            new Twig_Function_Function('\Entity\Config::getConfig'));
-        $twigEnvironment->addFunction('langConfig',
-            new Twig_Function_Function('\app\config\Config::getInstance()->getLanguages'));
-        // i18n
-        $twigEnvironment->addFunction('_',
-            new Twig_Function_Function('_',array(
-                'is_safe' => array('html')
-            )));
-
+        return 'slim';
     }
 
-    public function getEnvironment()
+    public function getFunctions()
     {
-        $twigEnvironment = parent::getEnvironment();
-        $this->addFunctions($twigEnvironment);
-
-        return $twigEnvironment;
+        return array(
+            new \Twig_SimpleFunction('var_dump', 'var_dump'),
+            new \Twig_SimpleFunction('sprintf','sprintf'),
+            new \Twig_SimpleFunction('urlFor',array($this, 'urlFor')),
+            new \Twig_SimpleFunction('urlActual',array($this, 'urlActual')),
+            new \Twig_SimpleFunction('asset',array('\lib\MyFunctions','asset')),
+            new \Twig_SimpleFunction('session',array('\lib\MyFunctions','session')),
+            // form widgets
+            new \Twig_SimpleFunction('form_table_head',array('\app\models\core\Form\FormWidget','form_table_head')),
+            new \Twig_SimpleFunction('form_table_row',array('\app\models\core\Form\FormWidget','form_table_row')),
+            new \Twig_SimpleFunction('form_widget',array('\app\models\core\Form\FormWidget','form_widget')),
+            new \Twig_SimpleFunction('form_search_widget',array('\app\models\core\Form\FormWidget','form_search_widget')),
+            new \Twig_SimpleFunction('paginator_backend_render',array('\app\models\core\Pagination\PaginatorViewExtension','render')),
+            new \Twig_SimpleFunction('getAllEntities','getAllEntities'),
+            new \Twig_SimpleFunction('config',array('\Entity\Config','getConfig')),
+            new \Twig_SimpleFunction('langConfig',array($this, 'langConfig')),
+            // i18n
+            new \Twig_SimpleFunction('_','_'),
+        );
     }
 
+    public function urlFor($name, $params = array(), $appName = 'default')
+    {
+        return \Slim\Slim::getInstance($appName)->urlFor($name, $params);
+    }
+
+    public function urlActual($name, $params = array(), $appName = 'default')
+    {
+        return \Slim\Slim::getInstance($appName)->urlActual($name, $params);
+    }
+
+    public function langConfig()
+    {
+        return \app\config\Config::getInstance()->getLanguages();
+    }
 
 }
