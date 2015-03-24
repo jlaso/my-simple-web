@@ -2,6 +2,9 @@ Clone the project in your disk
 ------------------------------
 git clone https://github.com/jlaso/my-simple-web.git
 
+install requirements:
+composer install
+
 Prepare correct permissions
 ---------------------------
 mkdir app/cache and app/logs
