@@ -1,0 +1,8 @@
+database:
+    name: my-simple-web
+    user: user
+    pass: pass
+    bind_address: 0.0.0.0
+    host:
+        - localhost
+        - '%'

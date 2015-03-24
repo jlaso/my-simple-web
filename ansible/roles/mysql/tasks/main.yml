@@ -1,0 +1,25 @@
+---
+- name: mysql | Install MySQL Packages
+  sudo: yes
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - mysql-server
+    - mysql-client
+    - python-mysqldb
+
+- name: ensure listen all ips
+  notify: restart mysql
+  lineinfile: dest=/etc/mysql/my.cnf
+              regexp='bind-address'
+              line='bind-address = {{ database.bind_address }}'
+
+- name: mysql | Create databases
+  sudo: yes
+  mysql_db: name={{ database.name }} state=present
+  with_items: mysql
+
+- name: mysql | Create users
+  sudo: yes
+  notify: restart mysql
+  mysql_user: name={{ database.user }} password={{ database.pass }} priv=*.*:ALL host={{ item }} state=present
+  with_items: database.host

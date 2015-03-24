@@ -1,0 +1,40 @@
+---
+- name: Update apt
+  sudo: yes
+  apt: update_cache=yes
+
+- name: Install System Packages
+  sudo: yes
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - curl
+    - wget
+    - python-software-properties
+    - ruby-dev
+
+- name: Add ppa Repository
+  sudo: yes
+  apt_repository: repo=ppa:ondrej/{{ php_ppa }}
+
+- name: Update apt
+  sudo: yes
+  apt: update_cache=yes
+
+- name: Install Extra Packages
+  sudo: yes
+  apt: pkg={{ item }} state=latest
+  with_items: sys_packages
+
+- copy: src=~/.gitconfig dest=/home/vagrant/.gitconfig
+- copy: src=~/.ssh/id_rsa dest=/home/vagrant/.ssh/id_rsa
+
+- name: Configure the timezone
+  sudo: yes
+  template: src=timezone.tpl dest=/etc/timezone
+
+- name: More Configure the timezone
+  sudo: yes
+  file: src=/usr/share/zoneinfo/{{timezone}} dest=/etc/localtime state=link force=yes backup=yes
+
+- name: extra bash configurations
+  template: src=bash_aliases.tpl dest=/home/vagrant/.bash_aliases
