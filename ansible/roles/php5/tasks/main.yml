@@ -1,0 +1,47 @@
+- name: Install php5
+  sudo: yes
+  notify: restart apache
+  apt: pkg={{ item }} state=latest
+  with_items: php_packages
+
+- name: ensure timezone
+  sudo: yes
+  notify: restart apache
+  lineinfile: dest={{ item }}
+              regexp='date.timezone ='
+              line='date.timezone = {{ timezone }}'
+  with_items: php_ini
+
+- name: increase memory_limit
+  sudo: yes
+  notify: restart apache
+  lineinfile: dest={{ item }}
+              regexp='memory_limit ='
+              line='memory_limit = 512M'
+  with_items: php_ini
+
+- name: increase uploads size
+  sudo: yes
+  notify: restart apache
+  lineinfile: dest={{ item }}
+              regexp='upload_max_filesize ='
+              line='upload_max_filesize = 20M'
+  with_items: php_ini
+
+- name: increase post size
+  sudo: yes
+  notify: restart apache
+  lineinfile: dest={{ item }}
+              regexp='post_max_size ='
+              line='post_max_size = 20M'
+  with_items: php_ini
+
+- name: install xdebug template
+  sudo: yes
+  notify: restart apache
+  template: src=xdebug.ini.tpl dest=/etc/php5/mods-available/xdebug.ini
+
+- name: Install Apache php Module
+  sudo: yes
+  apache2_module: state=present name=php5
+  notify: restart apache

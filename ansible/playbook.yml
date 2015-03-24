@@ -1,0 +1,21 @@
+---
+- hosts: all
+  sudo: true
+
+  vars:
+    web_server: apachephp
+    servername: 10.10.10.38
+    timezone: Europe/Madrid
+
+  vars_files:
+    - vars/mysql.yml
+    - vars/common.yml
+    - [ "vars/apachephp.yml", "vars/ws_defaults.yml" ]
+
+  roles:
+    - init
+    - apache
+    - mysql
+    - php5
+    - composer
+    - app

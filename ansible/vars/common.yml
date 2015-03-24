@@ -1,0 +1,22 @@
+---
+    php_ppa: php5
+    doc_root: /vagrant/web
+    apache_user: vagrant
+    dist: trusty
+    sys_packages:
+        - vim
+        - git
+        - htop
+    php_packages:
+        - php5
+        - php5-cli
+        - php5-common
+        - php5-curl
+        - php5-intl
+        - php5-mcrypt
+        - php5-mysql
+        - php5-sqlite
+        - php5-xdebug
+    php_ini:
+        - /etc/php5/apache2/php.ini
+        - /etc/php5/cli/php.ini
