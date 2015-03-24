@@ -22,7 +22,11 @@ class EntityManager
         $this->dump = $dump;
         require_once dirname(dirname(__FILE__)).'/config/dbconfig.php';
         $this->dbname = DBNAME; //.'_dev';
-        $this->conn = mysql_connect(DBHOST,DBUSER,DBPASS,$this->dbname);
+        $this->conn = mysqli_connect(DBHOST,DBUSER,DBPASS,$this->dbname);
+
+        if(false === $this->conn){
+            throw new \Exception(mysqli_connect_error());
+        }
 
         ORM::configure('mysql:host='.DBHOST.';dbname='.$this->dbname);
         ORM::configure('username', DBUSER);
@@ -33,15 +37,17 @@ class EntityManager
      * Execs the sql statement passed
      *
      * @param $sql
+     * @return resource
+     * @throws \Exception
      */
     public function execute($sql)
     {
         if ($this->dump) {
             print $sql.PHP_EOL;
         }
-        $result = mysql_query($sql,$this->conn);
-        if (mysql_errno($this->conn)) {
-           die($sql.PHP_EOL.mysql_error($this->conn).PHP_EOL);
+        $result = mysqli_query($this->conn, $sql);
+        if (mysqli_errno($this->conn)) {
+           throw new \Exception($sql.PHP_EOL.mysqli_error($this->conn).PHP_EOL);
         }
         return $result;
     }
@@ -123,7 +129,7 @@ class EntityManager
      */
     public function selectDb()
     {
-        mysql_select_db($this->dbname);
+        mysqli_select_db($this->conn, $this->dbname);
     }
 
     /**
