@@ -12,3 +12,4 @@ web/custom/*
 templates/custom/*
 vendor
 vendor/*
+composer.lock
