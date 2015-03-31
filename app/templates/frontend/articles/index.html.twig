@@ -38,7 +38,10 @@
     <div class="clear"></div>
     <div class="grid_6"><h2>{{ _('My articles') }}</h2></div>
     <div class="grid_6">
-        {{ macro.paginador(paginator) }}
+        {# {{ macro.paginador(paginator) }} #}
+        {% if paginator.needPagination %}
+            {{ paginator_backend_render(paginator) }}
+        {% endif %}
     </div>
     <div class="clear"></div>
     {% for article in articles %}

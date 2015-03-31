@@ -33,11 +33,11 @@ class ConfigFixture implements FixturableInterface
     {
         $this->addNewItem(array(
                 'slug'      => 'web.title',
-                'value'     => 'My simple page',
+                'value'     => 'My simple web',
              ))
              ->addNewItem(array(
                 'slug'      => 'web.keywords',
-                'value'     => 'webdesign,webdevelop,internet development,jaitec,web design, web development',
+                'value'     => 'webdesign,webdevelop,internet development,jlaso,joseluislaso,web design, web development',
              ))
              ->addNewItem(array(
                 'slug'      => 'web.description.en',
@@ -49,15 +49,15 @@ class ConfigFixture implements FixturableInterface
              ))
              ->addNewItem(array(
                 'slug'      => 'web.email.contact',
-                'value'     => 'info(@)jaitec.net',
+                'value'     => 'jlaso(@)joseluislaso.es',
              ))
              ->addNewItem(array(
                 'slug'      => 'web.developer',
-                'value'     => 'jaitec.net',
+                'value'     => 'joseluislaso',
              ))
              ->addNewItem(array(
                 'slug'      => 'web.developer.url',
-                'value'     => 'http://jaitec.net',
+                'value'     => 'http://www.joseluislaso.es',
              ))
         ;
 

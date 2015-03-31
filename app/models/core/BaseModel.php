@@ -4,6 +4,7 @@ namespace app\models\core;
 
 use \Model;
 use app\models\core\BindableInterface;
+use app\models\core\Form\FormListTypeInterface;
 
 /**
  * Extends Model from ORM
@@ -17,43 +18,60 @@ abstract class BaseModel
     implements BindableInterface
 {
 
+    public static $_table_use_short_name = false;
+    public static $_table;
+
     /**
      * Factory from extended class
      *
      * that permits this
-     * Entity::factory()->...
+     *   Entity::factory()->...
      * or
-     * BaseModel::factory('Entity')->...
+     *   BaseModel::factory('Entity')->...
      *
      * @param string $class
      *
-     * @return \ORM|\ORMWrapper
+     * @return \ORMWrapper
      *
      */
     public static function factory($class="")
     {
         if (!$class) {
             $class = get_called_class();
-            //$class = explode("/",$class);
-
-            return parent::factory($class/*[count($class)-1]*/);
-        } else {
-            return parent::factory($class);
         }
+        static::$_table = static::_tableNameForClass($class);
+
+        return parent::factory($class);
+    }
+
+    /**
+     * @param string $class
+     *
+     * @return BaseModel
+     */
+    public static function create($class="")
+    {
+        if (!$class) {
+            $class = get_called_class();
+        }
+
+        return parent::factory($class)->create();
     }
 
     /**
      * Bind entity data fields, post form for example
      *
-     * @param assoc-array $array
+     * @param array $array
+     *
+     * @internal param $assoc -array $array
+     * @return mixed|void
      */
     public function bind(array $array)
     {
-
         $ent         = get_called_class();
         $frmLstClass = "\\{$ent}FormType";
         if (class_exists($frmLstClass)) {
-            /** @var $formList \app\models\core\Form\FormListTypeInterface */
+            /** @var FormListTypeInterface $formList */
             $formList   = new $frmLstClass;
             foreach ($formList->getForm() as $formItem) {
                 $field  = $formItem['field'];
@@ -65,9 +83,7 @@ abstract class BaseModel
                     if ( null !== $value ) {
                         $this->set($field,$value);
                     }
-
                 }
-
             }
         } else {
             foreach ($array as $key=>$value) {
@@ -95,8 +111,11 @@ abstract class BaseModel
      * @param string $class
      * @return string
      */
-    public static function _tableNameForClass($class)
+    public static function _tableNameForClass($class = null)
     {
+        if(!$class){
+            $class = get_called_class();
+        }
         // CamelCase to undescore_case
         $class = strtolower(preg_replace('/([a-zA-Z])(?=[A-Z])/', '$1_', $class));
         // table name equals to PSR0 of class name
@@ -156,18 +175,6 @@ abstract class BaseModel
     {
         $str = \lib\MyFunctions::camelCaseToUnderscored(get_called_class());
         return str_replace('\\','_',$str);
-    }
-
-    /**
-     * Return message "$field can't leave blank", translated
-     *
-     * @param string $field
-     *
-     * @return string
-     */
-    public function cantLeaveBlank($field)
-    {
-        return sprintf(_('%s can\'t leave blank'),$field);
     }
 
 }

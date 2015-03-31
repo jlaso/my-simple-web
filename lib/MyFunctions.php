@@ -37,22 +37,29 @@ class MyFunctions
      */
     public static function slug($text)
     {
-        $text = trim(strtolower($text));
-        $ret = str_replace(array(
-                            ' ','_','(',')','*',
-                            'ñ','ç',
+        $str = trim($text);
+        $str = str_replace(array(
+                            'ñ','Ñ','ç','Ç',
                             'á','é','í','ó','ú',
                             'à','è','ì','ò','ù',
                             'ä','ë','ï','ö','ü',
+                            'Á','É','Í','Ó','Ú',
+                            'À','È','Ì','Ò','Ù',
+                            'Ä','Ë','Ï','Ö','Ü',
                            ),array(
-                            '-','-','-','-','-',
-                            'n','c',
+                            'n','N','c','C',
                             'a','e','i','o','u',
                             'a','e','i','o','u',
-                            'a','e','i','o','u',
-                           ),$text);
+                            'A','E','I','O','U',
+                            'A','E','I','O','U',
+                            'A','E','I','O','U',
+                           ),$str);
 
-        return $ret;
+        $str = preg_replace('/[^A-Za-z0-9-]/', '-', $str);
+        $str = preg_replace('/-+/', "-", $str);
+        $str = preg_replace('/-$/', '', $str);
+
+        return $str;
     }
 
     /**

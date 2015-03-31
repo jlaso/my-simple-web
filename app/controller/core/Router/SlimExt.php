@@ -7,6 +7,39 @@ use \Slim\Slim;
 
 class SlimExt extends Slim
 {
+    protected static $namespacesMap = null;
+    protected $rootDir;
+
+    /**
+     * @param array $userSettings
+     */
+    public function __construct(array $userSettings = array())
+    {
+        self::getNamespacesMap();
+
+        return parent::__construct($userSettings);
+    }
+
+    /**
+     * @return mixed
+     */
+    public static function getNamespacesMap()
+    {
+        if(!static::$namespacesMap){
+            static::$namespacesMap = require (static::getRootDir() . '/vendor/composer/autoload_namespaces.php');
+        };
+
+        return static::$namespacesMap;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getRootDir()
+    {
+        return dirname(dirname(dirname(dirname(__DIR__))));
+    }
+
 
     /**
      * Intercepts Slim mapRoute to establish the language if case
@@ -74,13 +107,18 @@ class SlimExt extends Slim
      */
     public function render($template, $data = array(), $status = null)
     {
+        if (!is_null($status)) {
+            $this->response->status($status);
+        }
+
+        $rootDir = $this->getRootDir();
         $templates = self::config('templates.path');
         $custom = 'custom/'.$template;
-        $file =  dirname(dirname(dirname(dirname(__DIR__)))).'/web/'.$templates.'/'.$custom;
+        $file = dirname(dirname(dirname(dirname(__DIR__)))).'/web/'.$templates.'/'.$custom;
         if (file_exists($file)) {
             $template = $custom;
         }
-        parent::render($template,$data,$status);
+        parent::render($template, $data, $status);
     }
 
 }

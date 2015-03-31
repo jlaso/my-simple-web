@@ -2,39 +2,57 @@
     "authors": [
         {
             "name": "Joseluis Laso",
-            "email": "info@joseluislaso.es",
+            "email": "jlaso@joseluislaso.es",
             "homepage": "http://www.joseluislaso.es",
             "role": "Developer"
         }
     ],
     "name": "jaitec/my-simple-web",
-    "description": "My simple web by jaitec.net",
+    "description": "My simple web by joseluislaso.es",
     "autoload": {
         "psr-0": {
 
-            "lib": "",
+            "lib":                            "",
 
-            "app\\config": "",
+            "app\\config":                    "",
+            "app\\command":                   "",
             "app\\models\\core":              "",
             "app\\models\\core\\Form":        "",
             "app\\models\\core\\Pagination":  "",
             "app\\models\\core\\Search":      "",
             "app\\models\\Entity":            "",
-            "Entity": "app/models/",
-            "Security": "app/models/",
+            "Entity":                         "app/models/",
+            "Security":                       "app/models/",
 
-            "app\\controller\\backend":      "",
-            "app\\controller\\backend\\CRUD":      "",
+            "app\\controller\\backend":       "",
+            "app\\controller\\backend\\CRUD": "",
             "app\\controller\\frontend":      "",
-            "Router": "app/controller/core/"
+            "Router":                         "app/controller/core/"
 
         }
     },
     "require": {
-        "php":              ">=5.3.0",
-        "slim/slim":        "2.2.0",
+        "php":              ">=5.3.7",
+        "slim/slim":        "2.4.0",
+        "slim/views":       "0.1.3",
         "slim/extras":      "2.0.3",
-        "twig/twig":        "1.*",
-        "j4mie/paris" :     "1.2.0"
+        "twig/twig":        "1.12.0",
+        "j4mie/paris" :     "1.2.0",
+        "behat/behat":      "2.4.*@stable",
+        "symfony/console":  "2.4.1",
+        "symfony/finder" :  "2.3.x-dev",
+        "symfony/config":   "2.*",
+        "symfony/yaml":     "2.*",
+
+        "jlaso/ovh-domain-api": "dev-develop",
+        "jlaso/translations-apibundle": "dev-develop",
+        "jlaso/msw-blog": "dev-develop",
+
+        "helios-ag/fm-elfinder-php-connector": "2.1.1",
+        "ckeditor/ckeditor": "4.4.6"
+    },
+    "minimum-stability": "dev",
+    "config": {
+        "bin-dir": "bin/"
     }
 }

@@ -1,0 +1,2 @@
+entities:
+    - JLaso\Blog\models\Entity\Post

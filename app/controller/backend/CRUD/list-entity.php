@@ -1,11 +1,11 @@
 <?php
 
-    use lib\MyFunctions;
-    use app\models\core\BaseModel;
-    use app\models\core\ValidableInterface;
-    use app\models\core\Pagination\Paginable;
-    use app\models\core\Form\FormSearchTypeInterface;
-    use app\models\core\Search\SearchQueryBuilder;
+use lib\MyFunctions;
+use app\models\core\BaseModel;
+use app\models\core\ValidableInterface;
+use app\models\core\Pagination\Paginable;
+use app\models\core\Form\FormSearchTypeInterface;
+use app\models\core\Search\SearchQueryBuilder;
 
 
 /**
@@ -47,9 +47,9 @@ $app->map('/admin/list/:entity/(:page)', function($entity,$page=1) use ($app) {
         }
 
         $paginator    = new Paginable($ucEntity,array(
-            'query'     => $query,
-            'params'    => $params,
-            'recPerPage'=>10
+            'query'      => $query,
+            'params'     => $params,
+            'recPerPage' => 10
         ));
         $paginator->setBaseRouteAndParams('admin.list-entity',array('entity'=>$entity));
         if (($page > 1) && ($page > $paginator->getPages())) {

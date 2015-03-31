@@ -41,7 +41,7 @@ $app->map('/admin/new/:entity/', function ($entity) use ($app) {
             'item'      => $item,
             'entity'    => $entity,
             'errors'    => $errors,
-            'entityName'=> $ent::getEntityName(),
+            'entityName'=> $ent::_entityName(),
         ));
     } else {
         $app->pass();

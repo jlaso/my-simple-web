@@ -1,13 +1,15 @@
 <?php
 
-//die('asdasdasd');
-
 //session_cache_limiter(false);
 //session_start();
 
 date_default_timezone_set('Europe/Madrid');
 
 error_reporting(E_ALL);
+
+if(!function_exists('_')){
+    function _($key){ return $key; }
+}
 
 print PHP_EOL.PHP_EOL.__DIR__.PHP_EOL;
 $loader = require 'vendor/autoload.php';

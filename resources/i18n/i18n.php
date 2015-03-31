@@ -31,4 +31,3 @@ putenv ("LC_ALL=$iso_code");
 setlocale(LC_ALL, $iso_code);
 
 
-?>

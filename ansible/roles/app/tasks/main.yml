@@ -1,0 +1,4 @@
+#- command: free_form="composer install" chdir="/vagrant"
+- name: Install Composer Dependencies
+  sudo: false
+  composer: working_dir=/vagrant

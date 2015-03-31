@@ -3,9 +3,13 @@
 /**
  * ruta de la home (index)
  */
-$app->get('/(:lang(/))', function ($lang='en') use ($app) {
+function home_route_controller($lang='es')
+{
+    $app = \Router\SlimExt::getInstance();
     $app->render('frontend/home/index.html.twig');
-})->name('home.index');
+}
+$home_route = $app->get('/(:lang(/))', 'home_route_controller');
+$home_route->name('home.index');
 
 /**
  *
@@ -16,7 +20,7 @@ $app->get('/:lang/:slug(/)', function ($lang, $slug) use ($app) {
         ->where('slug',$slug.'.'.$lang)
         ->find_one();
     if (!$static instanceof Entity\Staticpage) {
-        return $app->pass();
+        $app->pass();
     }
     $app->render('frontend/home/staticpage.html.twig',array(
         'static'  => $static,

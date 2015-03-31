@@ -11,8 +11,77 @@
     <meta name="description" content="{{ config('web.description') }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="joseluislaso.es">
-    <link rel="shortcut icon" href="{{ asset('custom/frontend/img/favicon.gif') }}"/>
+    <link rel="shortcut icon" href="{{ asset('custom/frontend/img/favicon.ico') }}?v=2"/>
     {% block stylesheets %}{% endblock %}
+
+
+    <style type="text/css">
+        #forkongithub a {
+            background: #336688;
+            color: #88ccee;
+            text-decoration: none;
+            font-family: arial, sans-serif;
+            text-align: center;
+            font-weight: bold;
+            padding: 5px 40px;
+            font-size: 1rem;
+            line-height: 2rem;
+            position: fixed;
+            transition: 0.5s;
+        }
+
+        #forkongithub a:hover {
+            background: #4499cc;
+            color: #fff;
+        }
+
+        #forkongithub a::before, #forkongithub a::after {
+            content: "";
+            width: 100%;
+            display: block;
+            position: absolute;
+            top: 1px;
+            left: 0;
+            height: 1px;
+            background: #fff;
+        }
+
+        #forkongithub a::after {
+            bottom: 1px;
+            top: auto;
+        }
+
+        @media screen and (min-width: 800px) {
+            #forkongithub {
+                position: fixed;
+                display: block;
+                top: 0;
+                right: 0;
+                width: 200px;
+                overflow: hidden;
+                height: 200px;
+                z-index: 100000;
+            }
+
+            #forkongithub a {
+                width: 200px;
+                position: absolute;
+                top: 60px;
+                right: -60px;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+            }
+        }
+
+        .carousel-control{
+            background: none !important;
+        }
+
+        .btn-group{
+            margin-top: 0px !important;
+        }
+    </style>
 
 </head>
 
@@ -24,6 +93,8 @@
 {% block content %}{% endblock %}
 
 {% block footer %}{% endblock %}
+
+<span id="forkongithub"><a href="https://github.com/jlaso/my-simple-web">Fork me on GitHub</a></span>
 
 </body>
 

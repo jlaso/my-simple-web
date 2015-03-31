@@ -1,0 +1,78 @@
+/* CUSTOM CSS */
+
+/*Twitter Feed - These were left blank so you can add your own styles*/
+
+#jstwitter {
+	padding-left:5px;
+}
+
+#jstwitter .tweet {
+	margin: 0 auto 15px auto;
+	padding: 0 0 15px 0;
+}
+
+#jstwitter .tweet a {
+}
+
+#jstwitter .tweet a:hover {
+	text-decoration: underline;
+}
+
+#jstwitter .tweet .time {
+}
+
+/* Pricing */
+
+.pricing{
+  margin: 18px 0;
+  border: 0;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #ffffff;
+  }
+
+/* Custom Footer Styles */
+footer {
+    background-color: #2E3133;
+    height: 62px;
+    border-top:#e9e9e9;
+    margin-bottom: 10px;
+    margin-top: -9px;
+    padding-top: 45px;
+    font-weight: 200;
+    font-family: "Sans-Serif", sans-serif;
+    font-size:  13px;
+    color: rgba(255,255,255,0.4);
+    padding-left: 50px;
+    padding-right: 50px;
+    position: fixed;
+    bottom: -10px;
+    width: 94%;
+}
+
+footer a {
+    color: #FFC0CB;
+    font-weight: bolder;
+    opacity: 0.4;
+}
+
+footer a:hover{
+    color: #ffffff;
+    opacity: 1;
+    text-decoration: none;
+}
+
+  /* main content */
+#content{
+    min-height: 414px;
+    padding-bottom: 107px;
+    top:78px;
+    position: absolute;
+}
+
+.navbar .nav{
+    margin-top: 13px;
+}
+
+.carousel{
+    margin-bottom: 0 !important;
+}
