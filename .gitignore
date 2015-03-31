@@ -1,6 +1,6 @@
-*.DS_Store
-.idea
 .vagrant
+.idea
+.DS_Store
 _doc
 app/config/dbconfig.php
 app/config/parameters.yml
