@@ -1,3 +1,9 @@
+# Importante
+
+Si buscas la versión publicada en este [libro](http://goo.gl/fzMNaE) mira [la version 1.4](https://github.com/jlaso/my-simple-web/tree/1.4). 
+If you are looking for the version of this [book](http://goo.gl/fzMNaE) see [1.4 release](https://github.com/jlaso/my-simple-web/tree/1.4).
+
+
 Clone the project in your disk
 ------------------------------
 git clone https://github.com/jlaso/my-simple-web.git
