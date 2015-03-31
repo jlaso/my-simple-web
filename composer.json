@@ -32,8 +32,8 @@
     },
     "require": {
         "php":              ">=5.3.0",
-        "slim/slim":        "2.*",
-        "slim/extras":      "2.*",
+        "slim/slim":        "2.2.0",
+        "slim/extras":      "2.0.3",
         "twig/twig":        "1.*",
         "j4mie/paris" :     "1.2.0"
     }
