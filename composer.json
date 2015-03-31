@@ -33,8 +33,8 @@
     },
     "require": {
         "php":              ">=5.3.7",
-        "slim/slim":        "2.4.0",
-        "slim/views":       "0.1.3",
+        "slim/slim":        "2.2.0",
+        "slim/extras":      "2.0.3",
         "twig/twig":        "1.12.0",
         "j4mie/paris" :     "1.2.0",
         "behat/behat":      "2.4.*@stable",

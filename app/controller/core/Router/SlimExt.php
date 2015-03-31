@@ -8,6 +8,7 @@ use \Slim\Slim;
 class SlimExt extends Slim
 {
     protected static $namespacesMap = null;
+    protected $rootDir;
 
     /**
      * @param array $userSettings
@@ -15,6 +16,7 @@ class SlimExt extends Slim
     public function __construct(array $userSettings = array())
     {
         self::getNamespacesMap();
+
         return parent::__construct($userSettings);
     }
 
@@ -105,51 +107,18 @@ class SlimExt extends Slim
      */
     public function render($template, $data = array(), $status = null)
     {
+        if (!is_null($status)) {
+            $this->response->status($status);
+        }
+
+        $rootDir = $this->getRootDir();
         $templates = self::config('templates.path');
         $custom = 'custom/'.$template;
         $file = dirname(dirname(dirname(dirname(__DIR__)))).'/web/'.$templates.'/'.$custom;
         if (file_exists($file)) {
             $template = $custom;
         }
-        parent::render($template,$data,$status);
-
-        return;
-
-        if (!is_null($status)) {
-            $this->response->status($status);
-        }
-
-        $rootDir = static::getRootDir();
-        $templateDir = $templates = self::config('templates.path');
-
-        if(preg_match('/^@(?<name>[^:]*?):(?<path>.*?)$/', $template, $matches)){
-            $map = static::getNamespacesMap();
-            $name = str_replace('/', '\\', $matches['name']);
-            if(isset($map[$name])){
-                $prefix = (is_array($map[$name]) ? $map[$name][0] : $map[$name]) . '/' . $matches['name'] . '/templates/';
-                $path = $matches['path'];
-                //var_dump($rootDir . '/web/custom/' . $matches['name'] . '/' . $path, $prefix . $path); die;
-                if(file_exists($rootDir . '/web/custom/' . $matches['name'] . '/' . $path)){
-                    $templateDir = $rootDir . '/web/custom/' . $matches['name'] . '/';
-                    $template = $path;
-                }elseif(file_exists($prefix . $path)){
-                    $templateDir = $prefix;
-                    $template = $path;
-                }else{
-                    $templateDir = $templates;
-                }
-            }
-        }else{
-
-            $file =  $rootDir . '/web/custom/' . $template;
-            if (file_exists($file)) {
-                $templateDir = $rootDir . '/web/custom/';
-            }
-        }
-        $this->view->setTemplatesDirectory($templateDir);
-
-        $this->view->appendData($data);
-        $this->view->display($template);
+        parent::render($template, $data, $status);
     }
 
 }
