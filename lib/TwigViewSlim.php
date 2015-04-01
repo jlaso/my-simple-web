@@ -22,11 +22,21 @@ class TwigViewSlim extends \Twig_Extension
             new \Twig_SimpleFunction('asset',array('\lib\MyFunctions','asset')),
             new \Twig_SimpleFunction('session',array('\lib\MyFunctions','session')),
             // form widgets
-            new \Twig_SimpleFunction('form_table_head',array('\app\models\core\Form\FormWidget','form_table_head')),
-            new \Twig_SimpleFunction('form_table_row',array('\app\models\core\Form\FormWidget','form_table_row')),
-            new \Twig_SimpleFunction('form_widget',array('\app\models\core\Form\FormWidget','form_widget')),
-            new \Twig_SimpleFunction('form_search_widget',array('\app\models\core\Form\FormWidget','form_search_widget')),
-            new \Twig_SimpleFunction('paginator_backend_render',array('\app\models\core\Pagination\PaginatorViewExtension','render')),
+            new \Twig_SimpleFunction('form_table_head',array('\app\models\core\Form\FormWidget','form_table_head'), array(
+                'is_safe' => array('html')
+            )),
+            new \Twig_SimpleFunction('form_table_row',array('\app\models\core\Form\FormWidget','form_table_row'), array(
+                'is_safe' => array('html')
+            )),
+            new \Twig_SimpleFunction('form_widget',array('\app\models\core\Form\FormWidget','form_widget'), array(
+                'is_safe' => array('html')
+            )),
+            new \Twig_SimpleFunction('form_search_widget',array('\app\models\core\Form\FormWidget','form_search_widget'), array(
+                'is_safe' => array('html')
+            )),
+            new \Twig_SimpleFunction('paginator_backend_render',array('\app\models\core\Pagination\PaginatorViewExtension','render'), array(
+                'is_safe' => array('html')
+            )),
             new \Twig_SimpleFunction('getAllEntities','getAllEntities'),
             new \Twig_SimpleFunction('config',array('\Entity\Config','getConfig')),
             new \Twig_SimpleFunction('langConfig',array($this, 'langConfig')),
